@@ -24,7 +24,7 @@ https://docs.google.com/spreadsheets/d/11PgYcasRN0Z0c6WnST75hBy5a0bEhQT8q1c3VU1_
 
 
 ## ER図
-https://github.com/tatsuyaoozeki/Relaxy/blob/master/docs/オリジナルアプリER図.png
+https://github.com/tatsuyaoozeki/Relaxy/blob/master/docs/ER図.png
 
 
 ## 画面遷移図
