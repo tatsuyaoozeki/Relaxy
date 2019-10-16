@@ -22,11 +22,11 @@ https://docs.google.com/spreadsheets/d/11PgYcasRN0Z0c6WnST75hBy5a0bEhQT8q1c3VU1_
 https://docs.google.com/spreadsheets/d/11PgYcasRN0Z0c6WnST75hBy5a0bEhQT8q1c3VU1_CbQ/edit?usp=sharing
 
 ## ER図
-https://github.com/tatsuyaoozeki/Relaxy/blob/master/docs/ER図.png
+https://github.com/tatsuyaoozeki/Relaxy/blob/master/docs/%E3%82%AA%E3%83%AA%E3%82%A2%E3%83%97ER%E5%9B%B3.png
 
 
 ## 画面遷移図
-https://github.com/tatsuyaoozeki/Relaxy/blob/master/docs/画面遷移図.png
+https://github.com/tatsuyaoozeki/Relaxy/blob/master/docs/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3.png
 
 
 
