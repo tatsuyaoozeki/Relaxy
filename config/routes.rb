@@ -11,9 +11,11 @@ Rails.application.routes.draw do
     get "logout", to: "users/sessions#destroy"
   end
 
-  resources :users, only: [:new, :create, :show] do
+  resources :users, only: [:show] do
     resources :staffs
   end
+
+  resources :relationships, only: [:create, :destroy]
 
   get 'users/show'
   root 'home#index'

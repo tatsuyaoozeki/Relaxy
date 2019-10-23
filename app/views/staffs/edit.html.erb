@@ -1,10 +1,11 @@
-<%= form_with(model: @staff, url: user_staffs_path, local: true) do |form| %>
+<%= form_with(model: @staff, url: user_staff_path, local: true) do |form| %>
 
-<% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %>">
-      <%= message %>
-    </div>
-<% end %>
+  <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>">
+        <%= message %>
+      </div>
+  <% end %>
+
   <div class="form-group">
     <%= form.label :content %>
     <%= form.text_field :content %>
@@ -18,6 +19,6 @@
 <%= form.hidden_field :user_id, :value => current_user.id %>
 
   <div class="form-group">
-    <%= form.submit "登録", class: 'btn btn-primary' %>
+    <%= form.submit "編集", class: 'btn btn-primary' %>
   </div>
 <% end %>
