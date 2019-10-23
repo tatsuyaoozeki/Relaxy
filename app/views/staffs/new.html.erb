@@ -1,0 +1,23 @@
+<%= form_with(model: @staff, url: user_staffs_path, local: true) do |form| %>
+
+<% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>">
+      <%= message %>
+    </div>
+<% end %>
+  <div class="form-group">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+
+  <div class="field">
+    <label><%= form.radio_button :gender, "男" %> 男</label>
+    <label><%= form.radio_button :gender, "女" %> 女</label>
+  </div>
+
+<%= form.hidden_field :user_id, :value => current_user.id %>
+
+  <div class="form-group">
+    <%= form.submit "登録", class: 'btn btn-primary' %>
+  </div>
+<% end %>
