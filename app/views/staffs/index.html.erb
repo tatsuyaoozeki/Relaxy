@@ -1,0 +1,26 @@
+<h1>スタッフ一覧</h1>
+
+<table>
+  <tr>
+    <th>名前</th>
+    <th>スタッフかどうか</th>
+    <th>自己紹介</th>
+    <th>性別</th>
+  </tr>
+
+<% @staffs.each do |staff| %>
+  <tr>
+    <td><%= staff.user.name %></td>
+    <td><%= staff.user.staff %></td>
+    <td><%= staff.content %></td>
+    <td><%= staff.gender %></td>
+
+    <td><%= link_to '詳細を確認する', user_staff_path(user_id: current_user.id, id: staff.id) %></td>
+
+    <% if @staff == current_user.id %>
+      <td><%= link_to "ブログを編集する", edit_staff_path(staff.id), data: { confirm: '本当に編集していいですか？' } %></td>
+      <td><%= link_to 'ブログを削除する', staff_path(staff.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
