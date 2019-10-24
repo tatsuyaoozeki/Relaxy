@@ -8,8 +8,9 @@ class RelationshipsController < ApplicationController
 
   def destroy
     @relationship = current_user.relationships.find_by(staff_id: params[:id]).destroy
+    # @relationship.destroy if @relationship
     @staff = Staff.find(params[:id])
     # render "index.js.erb"
-    redirect_to @staff, notice: "#{@relationship.staff.user.name}さんをフォローを解除しました"
+    redirect_to @staff, notice: "#{@relationshi.staff.user.name}さんをフォローを解除しました"
   end
 end
