@@ -11,7 +11,7 @@ class StaffsController < ApplicationController
   end
 
   def create
-    @staff = Staff.create(staff_params)
+    @staff = Staff.new(staff_params)
     if @staff.save
       redirect_to user_staff_path(user_id: current_user.id, id: @staff.id), notice: "スタッフ情報を登録しました"
      else

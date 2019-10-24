@@ -25,15 +25,13 @@ class MenusController < ApplicationController
   # POST /menus.json
   def create
     @menu = Menu.new(menu_params)
-
-
       if @menu.save
-        
+
       else
 
       end
     end
-  end
+
 
   # PATCH/PUT /menus/1
   # PATCH/PUT /menus/1.json
@@ -58,5 +56,4 @@ class MenusController < ApplicationController
     def menu_params
       params.require(:menu).permit(:name, :time_require, :price, :content)
     end
-end
 end

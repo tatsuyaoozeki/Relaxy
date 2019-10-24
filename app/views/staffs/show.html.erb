@@ -13,6 +13,6 @@
   <% end %>
 <% end %>
 
-  <%= link_to 'スタッフ情報へ', user_staff_path(@staff.id) %>
+<%= link_to 'このスタッフのメニューを見る', menus_path(@staff.id) %>
 
-  <%= link_to '編集する', edit_user_staff_path(@staff.id) %>
+<%= link_to '編集する', edit_user_staff_path(@staff.id) %>
