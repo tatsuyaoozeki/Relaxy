@@ -7,4 +7,5 @@ class User < ApplicationRecord
   # has_one :staff
   # accepts_nested_attributes_for :staff
   has_many :staffs, dependent: :destroy
+  has_many :relationships, dependent: :destroy
 end
