@@ -22,8 +22,8 @@
         <td><%= menu.content %></td>
         <td><%= link_to 'Show', menu %></td>
         <% if current_staff.id == menu.staff_id %>
-        <td><%= link_to 'Edit', edit_menu_path(menu) %></td>
-        <td><%= link_to 'Destroy', menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Edit', edit_menu_path(menu) %></td>
+          <td><%= link_to 'Destroy', menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>

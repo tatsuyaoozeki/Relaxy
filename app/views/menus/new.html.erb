@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :menu_name %>
     <%= form.text_field :name %>
   </div>
 
@@ -27,9 +27,11 @@
   </div>
 
   <div class="field">
-    <%= form.label :content %>
+    <%= form.label :menu_content %>
     <%= form.text_field :content %>
   </div>
+
+  <%= form.hidden_field :staff_id, :value => current_user.staff_ids %>
 
   <div class="actions">
     <%= form.submit %>

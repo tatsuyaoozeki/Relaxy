@@ -7,4 +7,7 @@ class User < ApplicationRecord
   has_many :staffs, dependent: :destroy
   has_many :relationships, dependent: :destroy
   has_many :reservations, dependent: :destroy
+
+  validates :name, presence: true
+  
 end
