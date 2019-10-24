@@ -19,5 +19,5 @@ Rails.application.routes.draw do
 
   get 'users/show'
   root 'home#index'
-  post   'users/:user_id/staffs/:id', to: 'staffs#show'
+  post 'users/:user_id/staffs/:id', to: 'staffs#show'
 end
