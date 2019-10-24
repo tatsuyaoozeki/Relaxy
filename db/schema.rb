@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_23_111418) do
+ActiveRecord::Schema.define(version: 2019_10_24_055153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "menus", force: :cascade do |t|
+    t.string "menu_name", null: false
+    t.integer "time_require", null: false
+    t.integer "price", null: false
+    t.string "menu_content", null: false
+    t.bigint "staff_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["staff_id"], name: "index_menus_on_staff_id"
+  end
 
   create_table "relationships", force: :cascade do |t|
     t.bigint "user_id"
@@ -23,6 +34,17 @@ ActiveRecord::Schema.define(version: 2019_10_23_111418) do
     t.index ["staff_id"], name: "index_relationships_on_staff_id"
     t.index ["user_id", "staff_id"], name: "index_relationships_on_user_id_and_staff_id", unique: true
     t.index ["user_id"], name: "index_relationships_on_user_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "menu_id"
+    t.datetime "start_date", null: false
+    t.datetime "end_date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["menu_id"], name: "index_reservations_on_menu_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "staffs", force: :cascade do |t|
@@ -48,7 +70,10 @@ ActiveRecord::Schema.define(version: 2019_10_23_111418) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "menus", "staffs"
   add_foreign_key "relationships", "staffs"
   add_foreign_key "relationships", "users"
+  add_foreign_key "reservations", "menus"
+  add_foreign_key "reservations", "users"
   add_foreign_key "staffs", "users"
 end

@@ -3,8 +3,11 @@ class Staff < ApplicationRecord
   validates :user_id, presence: true
 
   has_many :staffs, dependent: :destroy
+  has_many :relationships, dependent: :destroy
+  has_many :relationship_users, through: :relationships, source: :user
 
-  def favorite?(staff, user)
-    project.favorites.find_by(user_id: user.id)
+
+  def relationship?(staff, user)
+    staff.relationships.find_by(user_id: user.id)
   end
 end
