@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'reservations/index'
-  get 'menus/index'
   devise_for :users, controllers: {
         registrations: 'users/registrations',
         sessions: 'users/sessions'
@@ -16,8 +14,13 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     resources :staffs
   end
-
   resources :relationships, only: [:create, :destroy]
+
+  resources :menus do
+    resources :reservations
+  end
+  # get 'reservations/index'
+  # get 'menus/index'
 
   get 'users/show'
   root 'home#index'
