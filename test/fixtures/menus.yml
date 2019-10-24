@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  menu_name: MyString
+  time_require: 1
+  price: 1
+  menu_content: MyString
+  staff: one
+
+two:
+  menu_name: MyString
+  time_require: 1
+  price: 1
+  menu_content: MyString
+  staff: two

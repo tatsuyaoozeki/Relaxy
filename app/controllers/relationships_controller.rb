@@ -3,7 +3,7 @@ class RelationshipsController < ApplicationController
     @relationship = current_user.relationships.create(staff_id: params[:staff_id])
     @staff = Staff.find(params[:staff_id])
     # render "index.js.erb"
-    redirect_to @staff, notice: "#{@relationship.staff.user.name}さんをフォローしました"
+    redirect_to user_staff_path(user_id: current_user.id, id: @staff.id), notice: "#{@relationship.staff.user.name}さんをフォローしました"
   end
 
   def destroy
