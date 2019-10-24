@@ -1,0 +1,15 @@
+<h1>Users#show</h1>
+<p>名前: <%= @staff.user.name %></p>
+<p>メールアドレス: <%= @staff.user.email %></p>
+<p><%= @staff.user.staff %></p>
+<p>紹介文: <%= @staff.content %></p>
+<p>性別: <%= @staff.gender %></p>
+
+<div id="favoriteButton">
+  <%= render "favorite_form", staff: @staff, favorite: @favorite %>
+</div>
+
+
+  <%= link_to 'スタッフ情報へ', user_staff_path(@staff.id) %>
+
+  <%= link_to '編集する', edit_user_staff_path(@staff.id) %>
