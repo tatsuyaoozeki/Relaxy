@@ -13,6 +13,7 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
+
   # DELETE /resource/sign_out
   # def destroy
   #   super
@@ -24,7 +25,18 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+
+  def after_sign_in_path_for(resource)
+    if current_user.staffs.ids != @user.staffs.ids
+      user_staff_path(@user.id, @user.staffs.ids)
+    else
+      user_path(id: current_user.id)
+    end
+  end
+
   def after_sign_out_path_for(resource)
     new_user_session_path
   end
 end
+
+# /users/:user_id/staffs/:id(.:format)

@@ -16,12 +16,12 @@
   <tbody>
     <% @menus.each do |menu| %>
       <tr>
-        <td><%= menu.name %></td>
+        <td><%= menu.menu_name %></td>
         <td><%= menu.time_require %></td>
         <td><%= menu.price %></td>
-        <td><%= menu.content %></td>
+        <td><%= menu.menu_content %></td>
         <td><%= link_to 'Show', menu %></td>
-        <% if current_staff.id == menu.staff_id %>
+        <% if current_user.staffs.ids == menu.staff_id %>
           <td><%= link_to 'Edit', edit_menu_path(menu) %></td>
           <td><%= link_to 'Destroy', menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>

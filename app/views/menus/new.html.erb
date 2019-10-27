@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :menu_name %>
-    <%= form.text_field :name %>
+    <%= form.label :menu_name, 'メニュー名' %>
+    <%= form.text_field :menu_name %>
   </div>
 
   <div class="field">
@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :menu_content %>
-    <%= form.text_field :content %>
+    <%= form.text_field :menu_content %>
   </div>
 
   <%= form.hidden_field :staff_id, :value => current_user.staff_ids %>

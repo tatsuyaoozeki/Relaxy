@@ -21,7 +21,7 @@ class StaffsController < ApplicationController
 
   def show
     # @staff = User.find(params[:user_id])
-    @staff = Staff.find(params[:id])
+    # @staff = Staff.find(params[:id])
     @relationship = current_user.relationships.find_by(staff_id: @staff.id)
   end
 

@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
 
   resources :menus do
-    resources :reservations
+    resources :reservations do
+      collection do
+        post :confirm
+      end
+    end
   end
   # get 'reservations/index'
   # get 'menus/index'
