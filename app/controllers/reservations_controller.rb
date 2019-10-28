@@ -5,9 +5,17 @@ class ReservationsController < ApplicationController
     @reservations = Reservation.all.reverse
   end
 
+  def new
+    @reservation = Reservation.new
+  end
+
   def create
-    @reservation = current_user.reservations.create(reservation_params)
-    redirect_to root_path notice:"予約が完了しました"
+    @reservation = Reservation.new(reservation_params)
+    if @reservation.save
+      redirect_to root_path , notice:"予約が完了しました"
+    else
+      render :new
+    end
   end
 
   def show
@@ -24,9 +32,7 @@ class ReservationsController < ApplicationController
     end
   end
 
-  def confirm
-    @reservation = Reservation.new(reservation_params)
-  end
+
 
   private
 

@@ -26,7 +26,7 @@ class MenusController < ApplicationController
   def create
     @menu = Menu.new(menu_params)
     if @menu.save
-      redirect_to @menu, notice: 'メニューを作成しました'
+      redirect_to menus_path, notice: 'メニューを作成しました'
       # format.html { redirect_to @menu, notice: 'Menu was successfully created.' }
       # format.json { render :show, status: :created, location: @menu }
     else

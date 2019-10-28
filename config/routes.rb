@@ -15,22 +15,14 @@ Rails.application.routes.draw do
     resources :staffs
   end
   resources :relationships, only: [:create, :destroy]
+  resources :feeds
 
   resources :menus do
-    resources :reservations do
-      collection do
-        post :confirm
-      end
-    end
-  end
-  # get 'reservations/index'
-  # get 'menus/index'
-  resources 'feeds' do
-    collection do
-      post :confirm
-    end
+    resources :reservations
   end
 
+  # get 'reservations/index'
+  # get 'menus/index'
   get 'users/show'
   root 'home#index'
   post 'users/:user_id/staffs/:id', to: 'staffs#show'

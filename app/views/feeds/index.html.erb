@@ -11,7 +11,7 @@
       <% @feeds.each do |feed| %>
       <div class="content">
         <ul>
-          <li><%= feed.user.name %></li>
+          <li><%= feed.title %></li>
           <li><%= feed.content %></li>
           <%= image_tag(feed.image.url) if feed.image && feed.image.url %>
           <li><%= link_to '詳細', feed_path(feed.id) %></li>
