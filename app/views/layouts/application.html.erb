@@ -12,16 +12,55 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">R e l a x y</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="ナビゲーションの切替">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-header">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">ホーム <span class="sr-only">(現位置)</span></a>
+          </li>
+          <li class="nav-item">
+          <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'アカウント変更', edit_user_registration_path, class: "nav-link" %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            </li>
+          <% else %>
+          <li class="nav-item">
+            <%= link_to "新規作成", new_user_registration_path, class: "nav-link" %>
+            <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+          </li>
 
-    <% if user_signed_in? %>
-      ログインユーザー： <%= current_user.email %>
-      <%= link_to 'アカウント変更', edit_user_registration_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "新規作成", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
-    <% end %>
-    
-    <%= yield %>
+          <% end %>
+
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+
+  <div class="ft">
+      <footer class="footer">
+        <div class="ft-cont">
+          <nav class="ft-nav">
+            <ul class="ft-ul">
+              <li class="ft-link">サポート</li>
+              <li class="ft-link">プライバシー</li>
+              <li class="ft-link">利用規約</li≥
+            </ul>
+          </nav>
+          <span>
+            ©︎2019 SNAPGRAPH.
+          </span>
+        </div>
+      </footer>
+    </div>
+  <%= yield %>
+
+
   </body>
 </html>

@@ -1,18 +1,105 @@
-<h1>Users#show</h1>
-<p>名前: <%= @staff.user.name %></p>
-<p>メールアドレス: <%= @staff.user.email %></p>
-<p><%= @staff.user.staff %></p>
-<p>紹介文: <%= @staff.content %></p>
-<p>性別: <%= @staff.gender %></p>
+<div class="user_show">
+  <form class="user_show2">
+    <div class="text-center mb-4">
+      <article id="clearfix">
+        <h1>スタッフ詳細</h1>
+        <p>名前: <%= @staff.user.name %></p>
+        <p>メールアドレス: <%= @staff.user.email %></p>
+        <p><%= @staff.user.staff %></p>
+        <p>紹介文: <%= @staff.content %></p>
+        <p>性別: <%= @staff.gender %></p>
+      </article>
 
-<% unless @staff.user_id == current_user.id %>
-  <% if @relationship.present? %>
-    <%= link_to 'フォロー解除する', relationship_path(id: @relationship.id), method: :delete, class: 'btn btn-danger' %>
-  <% else %>
-    <%= link_to 'フォローする', relationships_path(staff_id: @staff.id), method: :post, class: 'btn btn-primary' %>
-  <% end %>
-<% end %>
 
-<%= link_to 'このスタッフのメニューを見る', menus_path(@staff.id) %>
+    <% unless @staff.user_id == current_user.id %>
+      <% if @relationship.present? %>
+        <%= link_to 'フォロー解除する', relationship_path(id: @relationship.id), method: :delete, class: 'btn btn-danger' %>
+      <% else %>
+        <%= link_to 'フォローする', relationships_path(staff_id: @staff.id), method: :post, class: 'btn btn-primary' %>
+      <% end %>
+    <% end %>
 
-<%= link_to '編集する', edit_user_staff_path(@staff.id) %>
+    <%= link_to 'このスタッフのメニューを見る', menus_path(@staff.id) %>
+
+    <%= link_to '編集する', edit_user_staff_path(@staff.id) %>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+<article id="clearfix">
+
+
+
+</article>
+
+
+<section id="tokei1" class="clearfix">
+<figure>
+<img src="images/tokei1.png" alt="ラウンド スプリット セコンド ダブルフェイスクロノグラフ"/>
+	</figure>
+
+	<h1>ラウンド スプリット セコンド ダブルフェイスクロノグラフ</h1>
+	<h2>ROUND SPLIT SECONDS DOUBLE FACE CHRONOGRAPH</h2>
+
+	<p>自動巻き／9時位置にスモールセコンド／3時位置に30分積算計／裏蓋側にパルスメーター、テレメーター、タキメーター／18Kピンクゴールドケース、ケースサイズ(39.00×39.00mm)／クロコダイルストラップ／日常生活防水</p>
+
+	<h3>￥6,966,000</h3>
+</section>
+
+
+<section id="tokei2" class="clearfix">
+<figure>
+	<img src="images/tokei2.png" alt="ヴァンガード"/>
+</figure>
+<h1>ヴァンガード</h1>
+<h2>VANGUARD</h2>
+
+<p>自動巻き／6時位置に日付表示／ステンレススティールケース／
+ケースサイズ(53.70×44.00mm)／クロコダイル×ラバーストラップ／日常生活防水</p>
+
+<h3>￥1,080,000</h3>
+</section>
+
+<section id="tokei3" class="clearfix">
+<figure>
+<img src="images/tokei3.png" alt="トノウ カーベックス マスターバンカー"/>
+</figure>
+<h1>トノウ カーベックス マスターバンカー</h1>
+<h2>CINTRÉE CURVEX　MASTER BANKER</h2>
+
+<p>自動巻き／時、分、秒、日付表示、2つのタイムゾーン／18Kピンクゴールドケース／ケースサイズ(55.50×39.50mm)／クロコダイルトラップ／日常生活防水</p>
+
+<h3>￥4,050,000</h3>
+</section>
+
+
+
+<section id="tokei4" class="clearfix">
+
+<figure>
+<img src="images/tokei4.png" alt="ロングアイランド ジョーカー"/>
+</figure>
+<h1>ロングアイランド ジョーカー</h1>
+<h2>LONG ISLAND JOKER</h2>
+
+<p>自動巻き／時分針／18Kホワイトゴールドケース／ケースサイズ(45×32.5mm)／クロコダイルトラップ／日常生活防水</p>
+
+<h3>￥3,564,000</h3>
+
+</section>
+
+
+<small>
+&copy;  The 'Francl Muller' group All rights reserved. WORLD COMMERCE CORPORATION All rights reserved.
+</small>
+
+
+
+
+
+
+</div>
