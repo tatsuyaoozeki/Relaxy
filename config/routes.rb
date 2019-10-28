@@ -25,7 +25,11 @@ Rails.application.routes.draw do
   end
   # get 'reservations/index'
   # get 'menus/index'
-  resources 'feeds'
+  resources 'feeds' do
+    collection do
+      post :confirm
+    end
+  end
 
   get 'users/show'
   root 'home#index'

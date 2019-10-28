@@ -5,9 +5,13 @@ class FeedsController < ApplicationController
   end
 
   def new
+    @feed = Feed.new
+  end
+
+  def create
     @feed = Feed.new(feed_params)
     if @feed.save
-      redirect_to feeds_path, notice:"投稿を作成しました"
+      redirect_to new_feed_path, notice:"投稿を作成しました"
     else
       render :new
     end
