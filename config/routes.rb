@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'feeds/index'
   devise_for :users, controllers: {
         registrations: 'users/registrations',
         sessions: 'users/sessions'
@@ -27,6 +25,7 @@ Rails.application.routes.draw do
   end
   # get 'reservations/index'
   # get 'menus/index'
+  resources 'feeds'
 
   get 'users/show'
   root 'home#index'
