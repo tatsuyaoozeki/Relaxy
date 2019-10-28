@@ -1,41 +1,62 @@
-<h2>Sign up</h2>
+<div class="container-fluid signup">
+  <article class="content">
+      <div class="signup-form">
+        <div class="form-cont">
+        <h1>R e l a x y</h1
+          <form class="xform">
+            <h2>気になるスタッフさんをチェックしよう</h2>
+          </form>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="select-form">
+            <div class="bord"></div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
+            <div class="bord"></div>
+          </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+            <h1>新規登録</h1>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+              <div class="form-input-group">
+                <%= f.label :name, "名前" %><br />
+                <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+              </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+              <div class="form-input-group">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+              </div>
 
-  <div class="field">
-    <p>-------------------------------------------------------------------------</p>
-    <p>スタッフとして掲載希望の方は下記の記入をしてください</p>
-    <%= f.label :staff %><br />
-    <%= f.check_box :staff, autofocus: true, checked_value: true, unchecked_value: false %>
-  </div>
+              <div class="form-input-group">
+                <%= f.label :password %>
+                <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+                <%= f.password_field :password, autocomplete: "new-password" %>
+              </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+              <div class="form-input-group">
+                <%= f.label :password_confirmation %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+              </div>
 
-<%= render "devise/shared/links" %>
+              <div class="form-input-group">
+                <p>----------------------</p>
+                <p>スタッフとして掲載希望の方は下記の記入をしてください</p>
+                <%= f.label :staff %><br />
+                <%= f.check_box :staff, autofocus: true, checked_value: true, unchecked_value: false %>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Sign up", class: "btn btn-primary btn-block" %>
+              </div>
+            <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
+              <div class="acount">
+                <p class="login-link">アカウントをお持ちですか？<%= link_to "ログインする", new_user_session_path %></p>
+              </div>
+          </div>
+      </article>
+    </div>

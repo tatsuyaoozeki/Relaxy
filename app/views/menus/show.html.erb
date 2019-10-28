@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @menu.menu_name %>
+</p>
+
+<p>
+  <strong>Time require:</strong>
+  <%= @menu.time_require %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @menu.price %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @menu.menu_content %>
+</p>
+
+<% if @staff.nil? %>
+  <%= link_to '予約する', new_menu_reservation_path(@menu.id, @menu.reservations.ids) %>
+<% end %>
+
+<%= link_to '戻る', menus_path %>
+<%= link_to '編集', edit_menu_path(@menu) %>

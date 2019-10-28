@@ -3,9 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  # belongs_to :staff
   # has_one :staff
-  # accepts_nested_attributes_for :staff
   has_many :staffs, dependent: :destroy
   has_many :relationships, dependent: :destroy
+  has_many :reservations, dependent: :destroy
+
+  validates :name, presence: true
+  
 end

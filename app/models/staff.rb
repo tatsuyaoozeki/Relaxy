@@ -1,6 +1,8 @@
 class Staff < ApplicationRecord
   belongs_to :user, optional: true, dependent: :destroy
-  validates :user_id, presence: true
+  validates :user_id, presence: true, uniqueness: true
+  validates :content, presence: true
+  validates :gender, presence: true
 
   has_many :staffs, dependent: :destroy
   has_many :relationships, dependent: :destroy

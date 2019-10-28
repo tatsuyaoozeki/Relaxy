@@ -10,6 +10,114 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require font-awesome
+ *= require tempusdominus-bootstrap-4.css
+ *= require bootstrap/dist/css/bootstrap.min
  *= require_tree .
  *= require_self
  */
+
+html,
+body {
+  hight: auto;
+  width: 100%;
+}
+
+
+/* ヘッダー */
+
+.nav-link {
+  display: inline;
+}
+
+.navbar {
+  padding: 1.5rem 1rem;
+}
+p.notice {
+  color: white;
+  z-index: 1;
+}
+p.alert {
+  color: red;
+  z-index: 1;
+}
+
+
+/* フッター */
+
+.ft {
+  position: fixed;
+  top: auto;
+  right: 0;
+  left: 0;
+  bottom:0;
+  z-index: 100;
+}
+
+.footer {
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  position: relative;
+  order: 5;
+  padding: 0 20px;
+  background-color: #fafafa;
+  vertical-align: baseline;
+  border-top: solid 1px #efefef;
+}
+
+.ft-icon {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0 auto;
+  text-transform: uppercase;
+  max-width: 935px;
+  width: 100%;
+  justify-content: space-around
+}
+
+nav.ft-nav {
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.ft-ul {
+  flex-grow: 1;
+  margin-left: 40%;
+}
+
+.ft-link {
+  list-style-type: none;
+  display: inline-block;
+  margin-bottom: 3px;
+  margin-right: 18px;
+  font-weight: 600;
+  color: dark_navy;
+  font-size: 14px;
+}
+
+span {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: 600;
+  vertical-align: baseline;
+  text-align: center;
+  color: #999;
+}

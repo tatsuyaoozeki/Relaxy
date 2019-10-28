@@ -1,3 +1,482 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// html,
+// body {
+//   height: 100%;
+// }
+//
+// body {
+//   display: -ms-flexbox;
+//   display: flex;
+//   -ms-flex-align: center;
+//   align-items: center;
+//   padding-top: 40px;
+//   padding-bottom: 40px;
+//   background-color: #f5f5f5;
+// }
+//
+// .form-signin {
+//   width: 100%;
+//   max-width: 420px;
+//   padding: 15px;
+//   margin: auto;
+// }
+//
+// .form-label-group {
+//   position: relative;
+//   margin-bottom: 1rem;
+// }
+//
+// .form-label-group > input,
+// .form-label-group > label {
+//   height: 3.125rem;
+//   padding: .75rem
+// }
+//
+// .form-label-group > label {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   display: block;
+//   width: 100%;
+//   margin-bottom: 0; /* デフォルトの `<label>` margin を上書き */
+//   line-height: 1.5;
+//   color: #495057;
+//   pointer-events: none;
+//   cursor: text; /* ラベルの下の入力と一致させる */
+//   border: 1px solid transparent;
+//   border-radius: .25rem;
+//   transition: all .1s ease-in-out;
+// }
+//
+// .form-label-group input::-webkit-input-placeholder {
+//   color: transparent;
+// }
+//
+// .form-label-group input:-ms-input-placeholder {
+//   color: transparent;
+// }
+//
+// .form-label-group input::-ms-input-placeholder {
+//   color: transparent;
+// }
+//
+// .form-label-group input::-moz-placeholder {
+//   color: transparent;
+// }
+//
+// .form-label-group input::placeholder {
+//   color: transparent;
+// }
+//
+// .form-label-group input:not(:placeholder-shown) {
+//   padding-top: 1.25rem;
+//   padding-bottom: 1.25rem;
+// }
+//
+// .form-label-group input:not(:placeholder-shown) ~ label {
+//   padding-top: .25rem;
+//   padding-bottom: .25rem;
+//   font-size: 12px;
+//   color: #777;
+// }
+//
+// /* Edge用フォールバック
+// -------------------------------------------------- */
+// @supports (-ms-ime-align: auto) {
+//   .form-label-group > label {
+//     display: none;
+//   }
+//   .form-label-group input::-ms-input-placeholder {
+//     color: #777;
+//   }
+// }
+//
+// /* IE10-11用フォールバック
+// -------------------------------------------------- */
+// @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+//   .form-label-group > label {
+//     display: none;
+//   }
+//   .form-label-group input:-ms-input-placeholder {
+//     color: #777;
+//   }
+// }
+//
+//
+//
+//
+// // ログイン
+//
+// html,
+// body {
+//   height: 100%;
+// }
+//
+// body {
+//   display: -ms-flexbox;
+//   display: flex;
+//   -ms-flex-align: center;
+//   align-items: center;
+//   padding-top: 40px;
+//   padding-bottom: 40px;
+//   background-color: #f5f5f5;
+// }
+//
+// .form-signin {
+//   width: 100%;
+//   max-width: 330px;
+//   padding: 15px;
+//   margin: auto;
+// }
+// .form-signin .checkbox {
+//   font-weight: 400;
+// }
+// .form-signin .form-control {
+//   position: relative;
+//   box-sizing: border-box;
+//   height: auto;
+//   padding: 10px;
+//   font-size: 16px;
+// }
+// .form-signin .form-control:focus {
+//   z-index: 2;
+// }
+// .form-signin input[type="email"] {
+//   margin-bottom: -1px;
+//   border-bottom-right-radius: 0;
+//   border-bottom-left-radius: 0;
+// }
+// .form-signin input[type="password"] {
+//   margin-bottom: 10px;
+//   border-top-left-radius: 0;
+//   border-top-right-radius: 0;
+// }
+
+// ユーザ登録ページレイアウト
+
+.container-fluid.signup {
+  height: 100;
+  width: 100%;
+  background-color: #fafafa;
+  display: flex;
+}
+
+.content {
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: center;
+  margin: 30px auto 0;
+  max-width: 935px;
+  padding-bottom: 44px;
+  width: 100%;
+}
+
+.signup-image {
+  align-self: center;
+  background-position: 0 0;
+  background-image: url("/images/9364675fb26a.png");
+  background-size: 454px 618px;
+  background-repeat: no-repeat;
+  flex-basis: 454px;
+  height: 618px;
+  margin-left: -35px;
+  margin-right: -15px;
+}
+
+.signup-form {
+  color: #262626;
+  max-width: 850px;
+  width: 100%;
+  margin-top: 40px;
+  align-items: stretch;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.form-cont {
+  background-color: #fff;
+  border: solid 1px #e6e6e6;
+  border-radius: 1px;
+  padding: 0 50px;
+  margin: 10px 0;
+}
+
+article, div, footer {
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.xform {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form h1 {
+  height: 51px;
+  width: 175px;
+  font-family: 'Pacifico', cursive;
+  margin: 22px auto 20px;
+}
+
+.signup-form h2 {
+  font-family: sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0 40px 10px;
+  color: #999;
+  text-align: center;
+}
+
+.fb-btn {
+  margin: 8px 40px;
+  flex: 0 0 auto;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.fb-icon {
+  margin-right: 8px;
+  top: 3px;
+  font-size: 16px;
+}
+
+.fb-link {
+  background-color: #3897f0;
+  border: solid 1px #3897f0;
+  outline: 0!important;
+  color: #fff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  padding: 5px 9px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: inherit;
+  text-overflow: ellipsis;
+  user-select: none;
+  width: auto;
+}
+
+.select-form {
+  margin: 10px 40px 18px;
+  flex-direction: row;
+}
+
+.sel {
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 15px;
+  margin: 0 18px;
+  color: #999;
+  text-transform: uppercase;
+}
+
+.bord {
+  flex-grow: 1;
+  flex-shrink: 1;
+  background-color: #efefef;
+  height: 1px;
+  position: relative;
+  top: .45em;
+}
+
+.signup-form dd {
+  margin: 6px 40px 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 18px;
+  text-align: start;
+  cursor: text;
+}
+
+.form-input-group input[type="text"],
+.form-input-group input[type="email"],
+.form-input-group input[type="password"] {
+  background-color: #fafafa;
+  padding: 9px 0 7px 8px;
+  font-size: 12px;
+  font-weight: 200;
+  height: 36px;
+}
+
+input[type="submit"] {
+  background-color: #3897f0;
+  border: solid 1px #3897f0;
+  outline: 0!important;
+  color: #fff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: inherit;
+  text-overflow: ellipsis;
+  user-select: none;
+  width: auto;
+}
+
+.er-mg {
+  color: red;
+  list-style-type: none;
+  font-size: 12px;
+}
+
+.policy {
+  color: #999;
+  margin: 10px 60px;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.policy a {
+  text-decoration: none;
+}
+
+.acount {
+  background-color: #fff;
+  color: #262626;
+  max-width: 850px;
+  width: 100%;
+  margin-top: 0;
+  align-items: stretch;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 10px 10px;
+  border: solid 1px #e6e6e6;
+  border-radius: 1px;
+}
+
+p.login-link {
+  font-size: 14px;
+  font-family: sans-serif;
+  margin: 0;
+  text-align: center;
+}
+
+.dl p {
+  text-align: center;
+  font-weight: normal;
+  margin: 20px;
+}
+
+.dl-icon {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+
+// ログイン画面
+.sign-form {
+  width: 30%;
+  margin: 0 auto 4rem auto;
+  border-radius: 4px;
+  background: white;
+}
+
+.sign-form-wrap {
+    padding-top: 80px;
+
+}
+
+.sign-form_input {
+  width: 100%;
+}
+
+.sign-form_input-wrap {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.sign-form_input_input::placeholder {
+  font-size: 1.6rem;
+}
+
+.sign-form_input_button {
+  width: 80%;
+  outline: 0;
+}
+
+.sign-form_input-wrap {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.sign-form_input_button:hover {
+  opacity: .8;
+}
+.sign-form_link {
+  text-decoration: underline;
+}
+
+.sign-form_link-wrap {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+// 詳細
+div.user_show {
+  // display: -ms-flexbox;
+  // display: flex;
+  // -ms-flex-align: center;
+  // align-items: center;
+  // padding-top: %;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+  height: 980px;
+}
+
+.user_show2 {
+  width: 100%;
+  max-width: 420px;
+  padding: 15px;
+  margin: auto;
+
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0; /* デフォルトの `<label>` margin を上書き */
+  line-height: 1.5;
+  color: #495057;
+  pointer-events: none;
+  cursor: text; /* ラベルの下の入力と一致させる */
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
