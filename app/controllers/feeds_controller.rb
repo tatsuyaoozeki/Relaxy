@@ -1,6 +1,6 @@
 class FeedsController < ApplicationController
   before_action :set_feed, only: [:show, :edit, :update, :destroy]
-
+  before_action :ser_user, only: [:show]
   def index
     @feeds = Feed.all
   end
@@ -44,6 +44,10 @@ class FeedsController < ApplicationController
 
   def set_feed
     @feed = Feed.find(params[:id])
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 
   def feed_params
