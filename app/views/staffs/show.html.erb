@@ -10,9 +10,6 @@
         <p>性別: <%= @staff.gender %></p>
       </article>
 
-      <div id="followButton">
-        <%= render "staffs/follow_form", staff: @staff, follow: @follow %>
-      </div>
 
     <% unless @staff.user_id == current_user.id %>
       <%= link_to 'このスタッフのメニューを見る', menus_path(@staff.id) %>
@@ -21,8 +18,16 @@
       <%= link_to '投稿を作成', new_feed_path %>
     <% end %>
 
-
-    <%= link_to '編集する', edit_staff_path(@staff.id) %>
+    <% if @staff == current_user.id %>
+      <%= link_to '編集する', edit_staff_path(@staff.id) %>
+    <% end %>
     </div>
   </form>
 </div>
+
+
+
+
+<% unless current_user.status == true %>
+  <%= render 'staffs/follow_form' %>
+<% end %>

@@ -17,7 +17,12 @@ Rails.application.routes.draw do
   resources :feeds
   resources :relationships, only: [:create, :destroy]
 
-  resources :users, only: [:show]
+  resources :users, only:[:show] do
+    member do
+     get :following, :followers
+    end
+  end
+  
   resources :staffs
   resources :menus do
     resources :reservations
