@@ -14,13 +14,13 @@
         </tr>
         <tr>
           <th class="status">ユーザーステータス:</th>
-          <td><%= @user.staff %></td>
+          <td><%= @user.status %></td>
         </tr>
       </table>
-      <% if @user.staff == true && @user.staffs.ids.empty? %>
+      <% if @user.status == true && @user.status.ids.empty? %>
         <%= link_to 'スタッフ情報登録へ', new_user_staff_path(@user.id) %>
-      <% elsif @user.staff.present? %>
-        <%= link_to 'スタッフ詳細画面へ', user_staff_path(@user.id, @user.staff.id) %>
+      <% elsif @user.status.present? %>
+        <%= link_to 'スタッフ詳細画面へ', user_staff_path(@user.id) %>
       <% else %>
         <%= link_to 'スタッフ一覧へ', user_staffs_path(@user.id) %>
       <% end %>
