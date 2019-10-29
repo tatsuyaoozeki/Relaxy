@@ -25,8 +25,7 @@ class FeedsController < ApplicationController
   # POST /feeds.json
   def create
     # @feed = Feed.new(feed_params)
-    staff = Staff.new
-    @feed = staff.feeds.build(feed_params)
+    @feed = Feed.new(feed_params)
     if @feed.save
       redirect_to feeds_path, notice: 'メニューを作成しました'
       # format.html { redirect_to @feed, notice: 'feed was successfully created.' }
@@ -72,6 +71,6 @@ class FeedsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def feed_params
-    params.require(:feed).permit(:title, :content, :image, :image_cache, :staff_id)
+    params.require(:feed).permit(:title, :content, :image, :image_cache)
   end
 end

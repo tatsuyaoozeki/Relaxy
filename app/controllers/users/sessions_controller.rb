@@ -27,7 +27,7 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   def after_sign_in_path_for(resource)
-    if current_user.staffs.ids != @user.staffs.ids
+    if current_user.staff.id != @user.staff.id
       user_staff_path(@user.id, @user.staffs.ids)
     else
       user_path(id: current_user.id)

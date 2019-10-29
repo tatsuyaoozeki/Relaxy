@@ -28,27 +28,3 @@
 </div>
 
 </main>
-
-<!-- <main class="sign-form-wrap">
-
-<div class="sign-form">
-  <h2 class="sign-form__title">ログイン</h2>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <p class="sign-form__input-wrap"><%= f.email_field :email, placeholder: "メールアドレス", class: "sign-form__input" %></p>
-    <p class="sign-form__input-wrap"><%= f.password_field :password, placeholder: "パスワード", class: "sign-form__input" %></p>
-    <div class="sign-form__input-wrap">
-      <%= f.check_box :remember_me, class: "sign-form__input2" %>
-      <%= f.label :remember_me, class: "sign-form__input3" %>
-    </div>
-    <p class="sign-form__button-wrap"><%= f.submit "ログイン", class: "sign-form__button" %></p>
-  <% end %>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <%= f.hidden_field :email, value: "test@test.com" %>
-    <%= f.hidden_field :password, value: "tesstess" %>
-    <p class="sign-form__button-wrap"><%= f.submit "テストユーザーでログイン", class: "sign-form__button" %></p>
-  <% end %>
-  <p class="sign-form__link-wrap"><%= link_to "新規登録はこちらから", new_user_registration_path, class: "sign-form__link" %></p>
-  <p class="sign-form__link-wrap"><%= link_to "パスワードを忘れた場合", new_password_path(resource_name), class: "sign-form__link" %></p><br>
-</div>
-
-</main> -->

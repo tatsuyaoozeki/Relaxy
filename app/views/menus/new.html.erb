@@ -33,7 +33,7 @@
         <%= form.text_field :menu_content %>
       </div>
 
-      <%# <%= form.hidden_field :staff_id, :value => current_user.staff_ids %> %>
+      <%= form.hidden_field :staff_id, :value => current_user.staff.id %>
 
 
         <%= form.submit %>

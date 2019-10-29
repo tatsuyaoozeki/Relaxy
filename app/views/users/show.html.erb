@@ -7,10 +7,9 @@
       <p><%= @user.staff %></p>
 
       <% if @user.staff == true && @user.staffs.ids.empty? %>
-        <%# <%= link_to 'スタッフ情報登録へ', user_path(id: current_user.id) %>
         <%= link_to 'スタッフ情報登録へ', new_user_staff_path(@user.id) %>
-      <% elsif @user.staffs.present? %>
-        <%= link_to 'スタッフ詳細画面へ', user_staff_path(@user.id, @user.staffs.ids) %>
+      <% elsif @user.staff.present? %>
+        <%= link_to 'スタッフ詳細画面へ', user_staff_path(@user.id, @user.staff.id) %>
       <% else %>
         <%= link_to 'スタッフ一覧へ', user_staffs_path(@user.id) %>
       <% end %>
