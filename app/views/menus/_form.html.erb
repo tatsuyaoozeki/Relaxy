@@ -1,0 +1,39 @@
+<div class="menu-signin">
+  <h1>メニューを<%= title %></h1>
+    <div class="text-center mb-4">
+    <%= form_with(model: @menu, local: true) do |form| %>
+      <% if @menu.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@menu.errors.count, "error") %> prohibited this @menu from being saved:</h2>
+
+          <ul>
+          <% @menu.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="menu_field">
+        <%= form.label :menu_name, placeholder: 'メニュー名' %>
+        <%= form.text_field :menu_name %>
+      </div>
+
+      <div class="menu_field">
+        <%= form.label :time_require, placeholder: '施術時間' %>
+        <%= form.number_field :time_require %>
+      </div>
+
+      <div class="menu_field">
+        <%= form.label :price, placeholder: '金額' %>
+        <%= form.number_field :price %>
+      </div>
+
+      <div class="menu_field">
+        <%= form.label :menu_content, placeholder:'メニュー内容' %>
+        <%= form.text_field :menu_content %>
+      </div>
+
+      <%= form.submit %>
+    <% end %>
+</div>

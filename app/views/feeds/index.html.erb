@@ -1,0 +1,25 @@
+<div class="container-fluid pic">
+  <div class="row bg-pic">
+    <div class="col-md-4 col-md-offset-3">
+      <nav id="side_menu">
+        <%= link_to new_feed_path do %>
+          <i class="fas fa-upload"></i>投稿を作成
+        <% end %>
+      </nav>
+    </div>
+    <div class="col-md-4 text-center wrapper">
+      <% @feeds.each do |feed| %>
+      <div class="content">
+        <ul>
+          <li><%= feed.title %></li>
+          <li><%= feed.content %></li>
+          <%= image_tag(feed.image.url) if feed.image && feed.image.url %>
+          <li><%= link_to '詳細', feed_path(feed.id) %></li>
+          <li><%= link_to '編集する', edit_feed_path(feed.id), data: { confirm: '本当に編集していいですか？' } %></li>
+          <li><%= button_to '削除する', feed_path(feed.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></li>
+        </ul>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,19 +1,15 @@
 <div class="container-fluid signup">
   <article class="content">
-      <div class="signup-form">
-        <div class="form-cont">
-        <h1>R e l a x y</h1
-          <form class="xform">
-            <h2>気になるスタッフさんをチェックしよう</h2>
-          </form>
-
+    <div class="signup-form">
+      <div class="form-cont">
+        <h1>R e l a x y</h1>
+        <h2>気になるスタッフさんをチェックしよう</h2>
           <div class="select-form">
             <div class="bord"></div>
-
             <div class="bord"></div>
           </div>
 
-            <h1>新規登録</h1>
+          <h2>新規登録</h2>
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
               <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -43,8 +39,8 @@
               <div class="form-input-group">
                 <p>----------------------</p>
                 <p>スタッフとして掲載希望の方は下記の記入をしてください</p>
-                <%= f.label :staff %><br />
-                <%= f.check_box :staff, autofocus: true, checked_value: true, unchecked_value: false %>
+                <%= f.label :status %><br />
+                <%= f.check_box :status, checked_value: true, unchecked_value: false %>
               </div>
 
               <div class="actions">
@@ -52,11 +48,11 @@
               </div>
             <% end %>
 
-      <%= render "devise/shared/links" %>
-    </div>
-              <div class="acount">
-                <p class="login-link">アカウントをお持ちですか？<%= link_to "ログインする", new_user_session_path %></p>
-              </div>
+            <%= render "devise/shared/links" %>
           </div>
-      </article>
-    </div>
+          <div class="acount">
+            <p class="login-link">アカウントをお持ちですか？<%= link_to "ログインする", new_user_session_path %></p>
+          </div>
+      </div>
+  </article>
+</div>

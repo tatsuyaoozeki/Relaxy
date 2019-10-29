@@ -4,7 +4,7 @@ class CreateRelationships < ActiveRecord::Migration[5.2]
       t.references :user, foreign_key: true
       t.references :staff, foreign_key: true
       t.index [:user_id, :staff_id], unique: true
-      
+
       t.timestamps
     end
   end

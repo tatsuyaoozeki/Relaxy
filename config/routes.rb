@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users, controllers: {
         registrations: 'users/registrations',
         sessions: 'users/sessions'
@@ -12,22 +11,15 @@ Rails.application.routes.draw do
     get "logout", to: "users/sessions#destroy"
   end
 
-  resources :users, only: [:show] do
-    resources :staffs
-  end
+  root 'home#index'
+  # post 'users/:user_id/staffs/:id', to: 'staffs#show'
+
+  resources :feeds
   resources :relationships, only: [:create, :destroy]
 
+  resources :users, only: [:show]
+  resources :staffs
   resources :menus do
-    resources :reservations do
-      collection do
-        post :confirm
-      end
-    end
+    resources :reservations
   end
-  # get 'reservations/index'
-  # get 'menus/index'
-
-  get 'users/show'
-  root 'home#index'
-  post 'users/:user_id/staffs/:id', to: 'staffs#show'
 end

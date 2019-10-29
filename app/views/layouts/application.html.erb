@@ -10,18 +10,18 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
+    <%# <!-- <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">R e l a x y</a>
+      <%= link_to "Relaxy", root_path, class: "navbar-brand" %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="ナビゲーションの切替">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbar-header">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">ホーム <span class="sr-only">(現位置)</span></a>
+            <%= link_to "ホーム", root_path, class: "navbar-brand" %>
           </li>
           <li class="nav-item">
           <% if user_signed_in? %>
@@ -34,14 +34,11 @@
             <%= link_to "新規作成", new_user_registration_path, class: "nav-link" %>
             <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
           </li>
-
           <% end %>
-
         </ul>
       </div>
-    </nav>
+    </nav><br>
   </header>
-  
 
   <div class="ft">
       <footer class="footer">

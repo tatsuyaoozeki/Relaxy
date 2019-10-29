@@ -1,0 +1,12 @@
+<h1>詳細画面</h1>
+
+<p>投稿名: <%= @user.name %></p>
+<p>タイトル: <%= @feed.title %></p>
+<p>内容: <%= @feed.content %></p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @feed.image.url %>
+</p>
+
+<%= link_to 'Edit', edit_feed_path(@feed.id) %> |
+<%= link_to 'Back', feeds_path %>

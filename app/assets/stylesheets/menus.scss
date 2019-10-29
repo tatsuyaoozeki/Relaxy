@@ -1,3 +1,81 @@
 // Place all the styles related to the Menus controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// スタッフ新規
+.body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.menu-signin {
+  width: 100%;
+  max-width: 420px;
+  padding: 100px 15px;
+  margin: auto;
+}
+
+.menu_field {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.menu_field > input,
+.menu_field > label {
+  height: 3.125rem;
+  padding: .75rem
+}
+
+.menu_field > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0; /* デフォルトの `<label>` margin を上書き */
+  line-height: 1.5;
+  color: #495057;
+  pointer-events: none;
+  cursor: text; /* ラベルの下の入力と一致させる */
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.menu_field input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.menu_field input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.menu_field input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.menu_field input::-moz-placeholder {
+  color: transparent;
+}
+
+.menu_field input::placeholder {
+  color: transparent;
+}
+
+.menu_field input:not(:placeholder-shown) {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.menu_field input:not(:placeholder-shown) ~ label {
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  font-size: 12px;
+  color: #ccc;
+}
