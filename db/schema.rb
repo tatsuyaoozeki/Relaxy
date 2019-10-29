@@ -37,13 +37,11 @@ ActiveRecord::Schema.define(version: 2019_10_28_053839) do
   end
 
   create_table "relationships", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "staff_id"
+    t.integer "follower_id"
+    t.integer "followed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["staff_id"], name: "index_relationships_on_staff_id"
-    t.index ["user_id", "staff_id"], name: "index_relationships_on_user_id_and_staff_id", unique: true
-    t.index ["user_id"], name: "index_relationships_on_user_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -82,8 +80,6 @@ ActiveRecord::Schema.define(version: 2019_10_28_053839) do
 
   add_foreign_key "feeds", "users"
   add_foreign_key "menus", "users"
-  add_foreign_key "relationships", "staffs"
-  add_foreign_key "relationships", "users"
   add_foreign_key "reservations", "menus"
   add_foreign_key "reservations", "users"
   add_foreign_key "staffs", "users"

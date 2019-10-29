@@ -17,12 +17,15 @@
           <td><%= @user.status %></td>
         </tr>
       </table>
-      <% if @user.status == true && @user.staff.nil? %>
-        <%= link_to 'スタッフ情報登録へ', new_user_staff_path(@user.id) %>
-      <% elsif @user.status.present? %>
-        <%= link_to 'スタッフ詳細画面へ', user_staff_path(@user.id) %>
-      <% else %>
-        <%= link_to 'スタッフ一覧へ', user_staffs_path(@user.id) %>
+      <% if current_user.id == @user.id %>
+        <% if current_user.status == true && current_user.staff.nil? %>
+          <%# <%= link_to 'スタッフ情報登録へ', user_path(id: current_user.id) %>
+          <%= link_to 'スタッフ情報登録へ', new_staff_path %>
+        <% elsif current_user.status.present? %>
+          <%= link_to 'スタッフ詳細画面へ', staff_path(current_user.id) %>
+        <% else %>
+          <%= link_to 'スタッフ一覧へ', staffs_path %>
+        <% end %>
       <% end %>
     </div>
   </form>

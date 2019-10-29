@@ -1,18 +1,24 @@
 class RelationshipsController < ApplicationController
+
   def create
-    @relationship = current_user.relationships.create(staff_id: params[:staff_id])
-    @staff = Staff.find(params[:staff_id])
-    # render "index.js.erb"
-    redirect_to user_staff_path(user_id: current_user.id, id: @staff.id), notice: "#{@relationship.staff.user.name}さんをフォローしました"
+    @user = User.find(params[:followed_id])
+    if current_user.follow(@user)
+      redirect_to user_path(@user.id), notice: "フォローしました"
+      respond_to do |format|
+        format.html { redirect_to @user }
+        format.js
+      end
+    end
   end
 
   def destroy
-    @relationship = current_user.relationships.find_by(staff_id: params[:id])#.destroy
-    @relationship.destroy if @relationship
-    @staff = Staff.find(params[:id])
-    # render "index.js.erb"
-    redirect_to @staff, notice: "#{@relationshi.staff.user.name}さんをフォローを解除しました"
-    # else
-    #   render :show
+    @user = Relationship.find(params[:id]).followed
+    if current_user.unfollow(@user)
+      redirect_to user_path(@user.id), notice: "フォロー解除しました"
+      respond_to do |format|
+        format.html { redirect_to @user }
+        format.js
+      end
+    end
   end
 end
