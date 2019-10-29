@@ -1,11 +1,22 @@
+<div id="wrapper">
 <div class="user_show">
   <form class="user_show2">
     <div class="text-center mb-4">
-      <h1>Users#show</h1>
-      <p>名前: <%= @user.name %></p>
-      <p>メールアドレス: <%= @user.email %></p>
-      <p><%= @user.staff %></p>
-
+      <h1>ユーザー情報</h1>
+      <table>
+        <tr>
+          <th class="name">名前:</th>
+          <td><%= @user.name %></td>
+        </tr>
+        <tr>
+          <th class="email">メールアドレス:</th>
+          <td><%= @user.email %></td>
+        </tr>
+        <tr>
+          <th class="status">ユーザーステータス:</th>
+          <td><%= @user.staff %></td>
+        </tr>
+      </table>
       <% if @user.staff == true && @user.staffs.ids.empty? %>
         <%= link_to 'スタッフ情報登録へ', new_user_staff_path(@user.id) %>
       <% elsif @user.staff.present? %>
@@ -16,3 +27,20 @@
     </div>
   </form>
 </div>
+</div>
+
+
+
+<!-- <body id="top" class="medium">
+	<header class="clearfix">
+		<div>
+    <figure>
+	    <img src="images/logo.png" width="251" height="30" alt="logo"/>
+			</figure>
+			<ul class="clearfix">
+				<li id="button_small"><a href="#" onClick="classchange('top','small');">S</a></li>
+				<li id="button_medium"><a href="#" onClick="classchange('top','medium');">M</a></li>
+				<li id="button_large"><a href="#" onClick="classchange('top','large');">L</a></li>
+			</ul>
+	    </div>
+	</header> -->
