@@ -11,8 +11,9 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.user_id = current_user.id
     if @reservation.save
-      redirect_to root_path , notice:"予約が完了しました"
+      redirect_to menu_reservations_path(@reservation.id), notice:"予約が完了しました"
     else
       render :new
     end
@@ -31,8 +32,6 @@ class ReservationsController < ApplicationController
       render
     end
   end
-
-
 
   private
 

@@ -19,7 +19,6 @@
       </table>
       <% if current_user.id == @user.id %>
         <% if current_user.status == true && current_user.staff.nil? %>
-          <%# <%= link_to 'スタッフ情報登録へ', user_path(id: current_user.id) %>
           <%= link_to 'スタッフ情報登録へ', new_staff_path %>
         <% elsif current_user.status.present? %>
           <%= link_to 'スタッフ詳細画面へ', staff_path(current_user.id) %>
