@@ -1,5 +1,0 @@
-<%= form_for(current_user.followed_relationships.build, remote: true) do |f| %>
-  <%= hidden_field_tag :followed_id, @user.id %>
-  <%= f.submit "フォローする" %>
-  <%= Relationship.where(followed_id: params[:followed_id]).size %>
-<% end %> 

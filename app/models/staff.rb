@@ -3,8 +3,9 @@ class Staff < ApplicationRecord
   validates :user_id, presence: true, uniqueness: true
   validates :content, presence: true
   validates :gender, presence: true
+  has_many :following, dependent: :destroy
 
-  def relationship?(staff, user)
-    staff.relationships.find_by(user_id: user.id)
+  def following?(staff, user)
+    staff.following.find_by(user_id: user.id)
   end
 end

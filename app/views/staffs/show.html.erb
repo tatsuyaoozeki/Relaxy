@@ -10,7 +10,9 @@
         <p>性別: <%= @staff.gender %></p>
       </article>
 
-    <%= render "users/follow_form" %>
+      <div id="followButton">
+        <%= render "staffs/follow_form", staff: @staff, follow: @follow %>
+      </div>
 
     <% unless @staff.user_id == current_user.id %>
       <%= link_to 'このスタッフのメニューを見る', menus_path(@staff.id) %>

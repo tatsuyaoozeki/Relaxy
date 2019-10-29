@@ -1,0 +1,11 @@
+<% if @staff.following?(@staff, current_user) %>
+  <%= link_to relationship_path(id: @staff.id), method: :delete, remote: true do %>
+    フォロー解除
+  <% end %>
+  <p>フォロワー：<%= @staff.following.size %>件</p>
+<% else %>
+  <%= link_to relationships_path(staff_id: @staff.id), method: :post, remote: true do %>
+    フォロー
+  <% end %>
+  <p>フォロワー：<%= @staff.following.size %>件</p>
+<% end %> 

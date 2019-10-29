@@ -11,18 +11,8 @@ class User < ApplicationRecord
   has_many :menus, dependent: :destroy
   has_many :followed_relationships, foreign_key: "follower_id", class_name: "Relationship",  dependent: :destroy
   has_many :followed, through: :followed_relationships
+  has_many :following, dependent: :destroy
 
   validates :name, presence: true
 
-  def followed?(user)
-    followed_relationships.find_by(followed_id: user.id)
-  end
-
-  def follow(user)
-    followed_relationships.create!(followed_id: user.id)
-  end
-
-  def unfollow(user)
-    followed_relationships.find_by(followed_id: user.id).destroy
-  end
 end
