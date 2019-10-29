@@ -4,7 +4,7 @@ class CreateFeeds < ActiveRecord::Migration[5.2]
       t.string :title,       null: false
       t.string :content,     null: false
       t.string :image,       null: false
-      t.references :staff, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

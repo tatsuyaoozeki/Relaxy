@@ -6,8 +6,7 @@ class Staff < ApplicationRecord
 
   has_many :relationships, dependent: :destroy
   has_many :relationship_users, through: :relationships, source: :user
-  has_many :feeds, dependent: :destroy
-
+  
   def relationship?(staff, user)
     staff.relationships.find_by(user_id: user.id)
   end

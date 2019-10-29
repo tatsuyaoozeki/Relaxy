@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 2019_10_28_053839) do
     t.string "title", null: false
     t.string "content", null: false
     t.string "image", null: false
-    t.bigint "staff_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["staff_id"], name: "index_feeds_on_staff_id"
+    t.index ["user_id"], name: "index_feeds_on_user_id"
   end
 
   create_table "menus", force: :cascade do |t|
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 2019_10_28_053839) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "feeds", "staffs"
+  add_foreign_key "feeds", "users"
   add_foreign_key "menus", "staffs"
   add_foreign_key "relationships", "staffs"
   add_foreign_key "relationships", "users"
