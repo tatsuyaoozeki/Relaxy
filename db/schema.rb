@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 2019_10_28_053839) do
     t.integer "time_require", null: false
     t.integer "price", null: false
     t.string "menu_content", null: false
-    t.bigint "staff_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["staff_id"], name: "index_menus_on_staff_id"
+    t.index ["user_id"], name: "index_menus_on_user_id"
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2019_10_28_053839) do
   end
 
   add_foreign_key "feeds", "users"
-  add_foreign_key "menus", "staffs"
+  add_foreign_key "menus", "users"
   add_foreign_key "relationships", "staffs"
   add_foreign_key "relationships", "users"
   add_foreign_key "reservations", "menus"

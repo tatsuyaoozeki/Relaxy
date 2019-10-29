@@ -5,7 +5,7 @@ class CreateMenus < ActiveRecord::Migration[5.2]
       t.integer :time_require,  null: false
       t.integer :price,         null: false
       t.string :menu_content,   null: false
-      t.references :staff, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

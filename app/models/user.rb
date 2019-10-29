@@ -9,7 +9,8 @@ class User < ApplicationRecord
   has_many :relationships, dependent: :destroy
   has_many :reservations, dependent: :destroy
   has_many :feeds, dependent: :destroy
-  
+  has_many :menus, dependent: :destroy
+
   validates :name, presence: true
 
 end

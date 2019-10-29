@@ -1,7 +1,7 @@
 <div class="feed_new">
   <div class="fn_container">
     <div class="fn_form">
-      <h1 class="h4 mb-3 font-weight-bold">新しく創る</h1>
+      <h1 class="h4 mb-3 font-weight-bold">投稿を<%= title %></h1>
       <%= form_with(model: @feed, local: true) do |form| %>
         <% if @feed.errors.any? %>
           <div id="error_explanation">
@@ -28,4 +28,3 @@
     </div>
   </div>
 </div>
- 

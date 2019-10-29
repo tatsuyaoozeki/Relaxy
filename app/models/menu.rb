@@ -1,8 +1,8 @@
 class Menu < ApplicationRecord
-  belongs_to :staff
+  belongs_to :user
   has_many :reservations
   has_many :reservations_users, through: :reservations, source: :user
-  
+
   validates :menu_name, presence: true
   validates :time_require, presence: true
   validates :price, presence: true
