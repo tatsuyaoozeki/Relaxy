@@ -14,6 +14,7 @@
           <li><%= feed.title %></li>
           <li><%= feed.content %></li>
           <%= image_tag(feed.image.url) if feed.image && feed.image.url %>
+          <% link_to %>
           <li><%= link_to '詳細', feed_path(feed.id) %></li>
           <li><%= link_to '編集する', edit_feed_path(feed.id), data: { confirm: '本当に編集していいですか？' } %></li>
           <li><%= button_to '削除する', feed_path(feed.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></li>
