@@ -17,7 +17,7 @@
           <td><%= @user.status %></td>
         </tr>
       </table>
-      <% if @user.status == true && @user.status.ids.empty? %>
+      <% if @user.status == true && @user.staff.nil? %>
         <%= link_to 'スタッフ情報登録へ', new_user_staff_path(@user.id) %>
       <% elsif @user.status.present? %>
         <%= link_to 'スタッフ詳細画面へ', user_staff_path(@user.id) %>
@@ -28,19 +28,3 @@
   </form>
 </div>
 </div>
-
-
-
-<!-- <body id="top" class="medium">
-	<header class="clearfix">
-		<div>
-    <figure>
-	    <img src="images/logo.png" width="251" height="30" alt="logo"/>
-			</figure>
-			<ul class="clearfix">
-				<li id="button_small"><a href="#" onClick="classchange('top','small');">S</a></li>
-				<li id="button_medium"><a href="#" onClick="classchange('top','medium');">M</a></li>
-				<li id="button_large"><a href="#" onClick="classchange('top','large');">L</a></li>
-			</ul>
-	    </div>
-	</header> -->
