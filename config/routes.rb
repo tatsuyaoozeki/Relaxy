@@ -22,9 +22,9 @@ Rails.application.routes.draw do
      get :following, :followers
     end
   end
-  
+
   resources :staffs
   resources :menus do
-    resources :reservations
+    resources :reservations#, only: [:new, :create, :show, :destroy]
   end
 end

@@ -1,19 +1,28 @@
-<%= form_with(model: @reservation, local: true, url: menu_reservations_path, method: "POST") do |f| %>
-  <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>">
-        <%= message %>
+<div class="wrapper">
+  <div class="mne-contents">
+    <div class="mne-container">
+        <%= form_with(model: @reservation, local: true, url: menu_reservations_path, method: "POST") do |f| %>
+        <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>">
+              <%= message %>
+            </div>
+        <% end %>
+        <div class=menu-mne>
+          <ul class="mne-content">
+            <div class="form-group start_date">
+              <%= f.text_field :start_date, class: "form-control datetimepicker-input", id: "start_date", data: {toggle: "datetimepicker", target: "#start_date"} %>
+            </div>
+            <div class="form-group end_date">
+              <%= f.text_field :end_date, class: "form-control datetimepicker-input", id: "end_date", data: {toggle: "datetimepicker", target: "#end_date"} %>
+            </div>
+             <%= f.hidden_field :menu_id, value: params[:menu_id]%>
+
+            <%# <%= f.hidden_field :user_id, :value => current_user.id %>
+            <%= f.submit 'この時間で登録する' %>
+          <% end %>
+        </ul>
       </div>
-  <% end %>
-
-  <div class="form-group start_date">
-    <%= f.text_field :start_date, class: "form-control datetimepicker-input", id: "start_date", data: {toggle: "datetimepicker", target: "#start_date"} %>
+    <%= link_to "メニュー一覧画面にもどる", @reservations_path %>
+    </div>
   </div>
-  <div class="form-group end_date">
-    <%= f.text_field :end_date, class: "form-control datetimepicker-input", id: "end_date", data: {toggle: "datetimepicker", target: "#end_date"} %>
-  </div>
-
-  <%# <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.submit 'この時間で登録する' %>
-<% end %>
-
-<%= link_to "メニュー一覧画面にもどる", @reservations_path %>
+</div>
