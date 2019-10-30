@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="mi-contents">
     <div class="mi-container">
-      <h1>メニュー</h1>
+      <h1><%= t('.index_title') %></h1>
         <div>
           <%= search_form_for @search do |f| %>
             <%= f.search_field :menu_name_or_menu_content_cont, required: true %>
@@ -19,12 +19,12 @@
                 <li class="all mif-time_require"><%= menu.time_require %></li>
                 <li class="all mif-price"><%= menu.price %></li>
                 <li class="all mif-menu-content"><%= menu.menu_content %></li>
-                <li class="f-show"><%= link_to '詳細', menu_path(menu.id), class: "btn btn-primary btn-show" %></li>
+                <li class="f-show"><%= link_to t('.show_menu'), menu_path(menu.id), class: "btn btn-primary btn-show" %></li>
               </ul>
             </div>
             <% if current_user.id == menu.user.id %>
-              <%= link_to '編集', edit_menu_path(menu), class: "btn btn-primary mif_brn1" %>
-              <%= link_to '削除', menu, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary mif_brn2" %>
+              <%= link_to t('.show_edit'), edit_menu_path(menu), class: "btn btn-primary mif_brn1" %>
+              <%= link_to t('.show_destroy'), menu, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary mif_brn2" %>
             <% end %>
           </div>
         </div>

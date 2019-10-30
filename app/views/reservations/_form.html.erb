@@ -18,11 +18,11 @@
              <%= f.hidden_field :menu_id, value: params[:menu_id]%>
 
             <%# <%= f.hidden_field :user_id, :value => current_user.id %>
-            <%= f.submit 'この時間で登録する' %>
+            <%= f.submit '予約する', class: 'btn btn-primary' %>
           <% end %>
         </ul>
       </div>
-    <%= link_to "メニュー一覧画面にもどる", @reservations_path %>
+    <%= link_to "メニュー一覧画面にもどる", menus_path %>
     </div>
   </div>
 </div>

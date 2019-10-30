@@ -12,15 +12,17 @@
             </ul>
           </div>
             <p id="notice"><%= notice %></p>
-          <div class="ms-link">
-              <li class="menu-btn-show"><%= link_to '戻る', menus_path, class: "btn btn-primary ms-btn" %></li>
-            <% if current_user.status == false %>
-              <li><%= link_to '予約する', new_menu_reservation_path(@menu.id, @menu.reservations.ids), class: "btn btn-primary" %></li>
-            <% end %>
+          <div class="">
+            <div class="menu-btn-wrap">
+              <%= link_to '戻る', menus_path, class: "btn btn-primary" %>
+                <% if current_user.status == false %>
+                <%= link_to '予約する', new_menu_reservation_path(@menu.id, @menu.reservations.ids), class: "btn btn-primary" %>
+              <% end %>
 
-            <% if @staff == current_user.id %>
-              <li><%= link_to '編集', edit_menu_path(@menu), class: "btn btn-primary" %></li>
-            <% end %>
+              <% if @staff == current_user.id %>
+                <li><%= link_to '編集', edit_menu_path(@menu), class: "btn btn-primary" %></li>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,22 @@
+ja:
+  menus:
+    index:
+      index_title: メニュー一覧
+      menu_name: メニュー名
+      time_require: 施術時間
+      price: 価格
+      menu_content: メニュー内容
+      show_menu: 詳細
+      show_edit: 編集
+      show_destroy: 削除
+      create_menu: メニューを作成する
+      search: 検索する
+    show:
+      menu_name: メニュー名
+      time_require: 施術時間
+      price: 価格
+      menu_content: メニュー内容
+    new:
+      new_title: メニューを作成する
+    edit:
+      edit_title: メニューを編集する

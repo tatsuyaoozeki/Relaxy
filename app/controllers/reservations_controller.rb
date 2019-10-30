@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: [:show, :edit, :update, :destroy, :index]
+  before_action :set_reservation, only: [:show]
 
   def index
     # @reservation = Reservation.where(user_id: current_user.id).where(menu_id: menu_id)
@@ -21,17 +21,6 @@ class ReservationsController < ApplicationController
 
   def show
     @menu = @reservation.menu
-  end
-
-  def edit
-  end
-
-  def update
-    if @reservation.update(reservation_params)
-      redirect_to
-    else
-      render
-    end
   end
 
   private
