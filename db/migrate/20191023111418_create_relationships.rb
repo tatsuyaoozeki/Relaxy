@@ -1,11 +1,14 @@
 class CreateRelationships < ActiveRecord::Migration[5.2]
   def change
     create_table :relationships do |t|
-      t.references :user, foreign_key: true
-      t.references :staff, foreign_key: true
-      t.index [:user_id, :staff_id], unique: true
-      
+      t.integer :follower_id
+      t.integer :following_id
+
       t.timestamps
     end
+
+    add_index :relationships, :follower_id
+    add_index :relationships, :following_id
+    add_index :relationships, [:follower_id, :following_id], unique: true
   end
 end

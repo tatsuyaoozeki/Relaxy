@@ -11,13 +11,20 @@ Rails.application.routes.draw do
     get "logout", to: "users/sessions#destroy"
   end
 
-  resources :users, only: [:show] do
-    resources :staffs
-  end
+  root 'home#index'
+  # post 'users/:user_id/staffs/:id', to: 'staffs#show'
 
+  resources :feeds
   resources :relationships, only: [:create, :destroy]
 
-  get 'users/show'
-  root 'home#index'
-  post 'users/:user_id/staffs/:id', to: 'staffs#show'
+  resources :users, only:[:show] do
+    member do
+     get :following, :followers
+    end
+  end
+
+  resources :staffs
+  resources :menus do
+    resources :reservations#, only: [:new, :create, :show, :destroy]
+  end
 end

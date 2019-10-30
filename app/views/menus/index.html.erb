@@ -1,0 +1,44 @@
+<div class="wrapper">
+  <div class="mi-contents">
+    <div class="mi-container">
+      <h1><%= t('.index_title') %></h1>
+        <div>
+          <%= search_form_for @search do |f| %>
+            <%= f.search_field :menu_name_or_menu_content_cont, required: true %>
+            <%= f.submit "検索" %>
+          <% end %>
+        </div>
+        <%= render "search_result" %>
+
+        <% @menus.each do |menu| %>
+        <div class="mi-container-inner">
+          <div class="mi-container-content">
+            <div>
+              <ul class="mi-cont">
+                <li class="all mif-menu-name"><%= menu.menu_name %></li>
+                <li class="all mif-time_require"><%= menu.time_require %></li>
+                <li class="all mif-price"><%= menu.price %></li>
+                <li class="all mif-menu-content"><%= menu.menu_content %></li>
+                <li class="f-show"><%= link_to t('.show_menu'), menu_path(menu.id), class: "btn btn-primary btn-show" %></li>
+              </ul>
+            </div>
+            <% if current_user.id == menu.user.id %>
+              <%= link_to t('.show_edit'), edit_menu_path(menu), class: "btn btn-primary mif_brn1" %>
+              <%= link_to t('.show_destroy'), menu, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary mif_brn2" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <div class="mif-link">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+      <p id="notice"><%= notice %></p>
+      <br>
+
+    <% if current_user.staff == true %>
+      <%= link_to 'New Menu', new_menu_path %>
+    <% end %>

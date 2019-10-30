@@ -1,5 +1,6 @@
 class StaffsController < ApplicationController
   before_action :set_staff, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show]
 
   def index
     @staffs = Staff.all
@@ -11,28 +12,24 @@ class StaffsController < ApplicationController
   end
 
   def create
-    @staff = Staff.create(staff_params)
+    @staff = Staff.new(staff_params)
+    @staff.user_id = current_user.id
     if @staff.save
-      redirect_to user_staff_path(user_id: current_user.id, id: @staff.id), notice: "スタッフ情報を登録しました"
-     else
+      redirect_to staff_path(@staff.id), notice: "スタッフ情報を登録しました"
+    else
       render :new, notice: "失敗しました"
     end
   end
 
   def show
-    # @staff = User.find(params[:user_id])
-    @staff = Staff.find(params[:id])
-    @relationship = current_user.relationships.find_by(staff_id: @staff.id)
   end
 
   def edit
-    # @staff = Staff.find(params[:id])
   end
 
   def update
-    # @staff = Staff.find(params[:id])
     if @staff.update(staff_params)
-      redirect_to user_staff_path(user_id: current_user.id, id: @staff.id), notice: "スタッフ情報を編集しました"
+      redirect_to staff_path(@staff.id), notice: "スタッフ情報を編集しました"
     else
       render :edit
     end
@@ -40,18 +37,33 @@ class StaffsController < ApplicationController
 
   def destroy
     # @staff = Staff.find(params[:id])
-    @staff.destory
+    @staff.destroy
     redirect_to staffs_path, notice: "スタッフ情報を削除しました"
   end
 
+  def following
+      @user  = User.find(params[:id])
+      @users = @user.followings
+      render 'show_follow'
+  end
+
+  def followers
+    @user  = User.find(params[:id])
+    @users = @user.followers
+    render 'show_follower'
+  end
 
   private
 
   def staff_params
-    params.require(:staff).permit(:content, :gender, :user_id)
+    params.require(:staff).permit(:content, :gender)
   end
 
   def set_staff
     @staff = Staff.find(params[:id])
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end

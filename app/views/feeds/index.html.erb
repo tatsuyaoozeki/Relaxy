@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="home-wrapper">
+    <div class="home-image">
+      <img src="/images/relaxy_home2.jpg" alt="好きな施術師さんと繋がれる">
+    </div>
+  </div>
+
+  <div class="contents">
+    <div class="container">
+      <h2 container-header><%= t('.index_title') %></h2>
+      <% @feeds.each do |feed| %>
+      <div class="container-inner">
+        <div class="container-content">
+
+          <div>
+            <ul class="feed-content">
+              <li class="all"><%= feed.title %></li>
+              <li class="all"><%= feed.content %></li>
+              <li class="all"><%= image_tag(feed.image.url) if feed.image && feed.image.url %></li>
+              <li class="f-show"><%= link_to t('.show_'), feed_path(feed.id), class: "btn btn-primary" %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

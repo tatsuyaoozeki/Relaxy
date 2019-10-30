@@ -1,0 +1,451 @@
+// Place all the styles related to the Menus controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// // スタッフ新規
+// .body {
+//   display: -ms-flexbox;
+//   display: flex;
+//   -ms-flex-align: center;
+//   align-items: center;
+//   padding-top: 40px;
+//   padding-bottom: 40px;
+//   background-color: #f5f5f5;
+// }
+//
+// .menu-signin {
+//   width: 100%;
+//   max-width: 420px;
+//   padding: 100px 15px;
+//   margin: auto;
+// }
+//
+// .menu_field {
+//   position: relative;
+//   margin-bottom: 1rem;
+// }
+//
+// .menu_field > input,
+// .menu_field > label {
+//   height: 3.125rem;
+//   padding: .75rem
+// }
+//
+// .menu_field > label {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   display: block;
+//   width: 100%;
+//   margin-bottom: 0; /* デフォルトの `<label>` margin を上書き */
+//   line-height: 1.5;
+//   color: #495057;
+//   pointer-events: none;
+//   cursor: text; /* ラベルの下の入力と一致させる */
+//   border: 1px solid transparent;
+//   border-radius: .25rem;
+//   transition: all .1s ease-in-out;
+// }
+//
+// .menu_field input::-webkit-input-placeholder {
+//   color: transparent;
+// }
+//
+// .menu_field input:-ms-input-placeholder {
+//   color: transparent;
+// }
+//
+// .menu_field input::-ms-input-placeholder {
+//   color: transparent;
+// }
+//
+// .menu_field input::-moz-placeholder {
+//   color: transparent;
+// }
+//
+// .menu_field input::placeholder {
+//   color: transparent;
+// }
+//
+// .menu_field input:not(:placeholder-shown) {
+//   padding-top: 1.25rem;
+//   padding-bottom: 1.25rem;
+// }
+//
+// .menu_field input:not(:placeholder-shown) ~ label {
+//   padding-top: .25rem;
+//   padding-bottom: .25rem;
+//   font-size: 12px;
+//   color: #ccc;
+// }
+
+.wrapper {
+  width: 100%;
+  background: #f2f2f2;
+}
+
+
+.mi-contents {
+  padding: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+}
+
+.mi-container {
+  margin-bottom: 8px;
+  height: 1000px;
+
+}
+
+.mi-container,
+.mi-container-inner {
+  margin: 0 auto;
+  padding: 34px 48px;
+  width: 100%;
+  max-width: 984px;
+  background: #fff;
+}
+
+.mi-container-inner {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  min-height: 330px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  box-shadow: 0 0 15px 0 rgba(191,203,222,0.4);
+  position: relative;
+  margin: 0 auto 26px;
+}
+
+.mi-container-header {
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+
+.mi-container-content {
+  margin-top: 20px;
+}
+
+.mi-cont {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.mif-link {
+  // display: flex;
+  // flex-direction: column;
+  margin: 0;
+  padding:  0;
+  width: 50px;
+  height: 38px;
+
+
+  list-style-type: none;
+}
+
+.all {
+ margin: 10px 0 20px 20px;
+ float:left;
+}
+
+.f-show {
+  text-align: right;
+}
+
+form#menu_search.menu_search {
+  margin-bottom: 50px;
+}
+
+
+// .mif-link {
+//   display: flex;
+//   flex-direction: column;
+//   text-align: right;
+//   height: 38px;
+//   width: 55px;
+//   position: absolute;
+//   bottom: 10rem;
+//   left: 70%;
+//   margin-left: 30px;
+//   list-style-type: none;
+// }
+
+
+.mif-menu-name {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.mif-time_require {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.mif-price {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.mif-menu-content {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+
+// メニュー詳細
+.ms-contents {
+  margin-top: 50px;
+  height: auto;
+  padding: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  overflow: hidden;
+}
+
+.ms-container {
+  margin-bottom: 10px;
+  height: 45rem;
+  margin-bottom: 100px;
+  margin: 0 auto;
+  padding: 32px 48px 48px;
+  width: 100%;
+  max-width: 984px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.ms-contents {
+  display: flex;
+  flex-direction: column;
+  margin: 32px 48px 48px;
+  padding:  0;
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+
+.ms-menu-name {
+  font-size: 24px
+}
+
+.ms-time_require {
+  font-size: 24px
+}
+
+.ms-price {
+  font-size: 24px;
+}
+
+.ms-menu-name {
+  font-size: 24px;
+}
+
+.ms-link {
+  // display: flex;
+  // flex-direction: column;
+  text-align: center;
+  height: 38px;
+  width: 55px;
+  position: absolute;
+  bottom: 10rem;
+  left: 70%;
+  margin-left: 30px;
+  list-style-type: none;
+}
+
+.ms-btn {
+  text-align: center;
+  height: 38px;
+  width: 55px;
+  position: absolute;
+  bottom: 10rem;
+  left: 70%;
+  margin-left: 30px;
+  list-style-type: none;
+}
+
+
+
+// .ne-contents {
+//   margin-top: 50px;
+//   height: auto;
+//   padding: 0;
+//   width: 100%;
+//   background-color: #f2f2f2;
+//   overflow: hidden;
+// }
+//
+// .ne-container {
+//   margin-bottom: 10px;
+//   height: 45rem;
+//   margin-bottom: 100px;
+//   margin: 0 auto;
+//   padding: 32px 48px 48px;
+//   width: 100%;
+//   max-width: 984px;
+//   background: #fff;
+//   border-radius: 10px;
+// }
+//
+// .fne-contents {
+//   display: flex;
+//   flex-direction: column;
+//   margin: 32px 48px 48px;
+//   padding:  0;
+//   font-size: 18px;
+//   margin-bottom: 32px;
+// }
+//
+// .ne-title {
+//   font-weight: bold;
+//   width: 300px;
+// }
+//
+// input#feed_title {
+//   width: 800px;
+//   margin-bottom: 30px;
+//   padding: 5px 10px;
+// }
+//
+// .ne-content {
+//   height: 150px;
+// }
+//
+// textarea#feed_content {
+//   width: 800px;
+//   padding: 10px 10px 200px 10px;
+//   border: 1px solid #ccc;
+//   overflow: hidden;
+//   resize: none;
+// }
+//
+// .ne-sample {
+//   margin: 100px 0 0;
+//   padding: 10px 0 0;
+//   overflow: hidden;
+//   border-radius: 4px;
+//   line-height: 0;
+//   vertical-align: bottom;
+//   object-fit: cover;
+// }
+//
+// .feed-btn-wrap {
+//   display: flex;
+//   width: 200px;
+//   margin-left: auto;
+// }
+//
+// .fup-link {
+//   // display: flex;
+//   text-align: center;
+//   height: 45px;
+//   width: 60px;
+//   position: absolute;
+//   bottom: 10rem;
+//   left: 70%;
+//   margin-left: 30px;
+//   list-style-type: none;
+// }
+
+
+
+
+// 新規投稿・編集ページ
+.mne-contents {
+  margin-top: 50px;
+  height: auto;
+  padding: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  overflow: hidden;
+}
+
+.mne-container {
+  margin-bottom: 10px;
+  height: 45rem;
+  margin-bottom: 100px;
+  margin: 0 auto;
+  padding: 32px 48px 48px;
+  width: 100%;
+  max-width: 984px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.mne-content {
+  display: flex;
+  flex-direction: column;
+  margin: 32px 48px 48px;
+  padding:  0;
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+
+.mne-menu_name {
+  width: 400px;
+  margin: 30px auto;
+}
+
+.mne-time_require {
+  width: 400px;
+  margin: 30px auto;
+}
+
+.mne-price {
+  width: 400px;
+  margin: 30px auto;
+}
+
+.mne-menu_content {
+  width: 400px;
+  margin: 30px auto;
+}
+
+.menu-btn-wrap {
+  margin-top: 300px;
+  text-align: center;
+}
+// .ne-sample {
+//   margin: 100px 0 0;
+//   padding: 10px 0 0;
+//   overflow: hidden;
+//   border-radius: 4px;
+//   line-height: 0;
+//   vertical-align: bottom;
+//   object-fit: cover;
+// }
+//
+// .feed-btn-wrap {
+//   display: flex;
+//   width: 200px;
+//   margin-left: auto;
+// }
+//
+// .fup-link {
+//   // display: flex;
+//   text-align: center;
+//   height: 45px;
+//   width: 60px;
+//   position: absolute;
+//   bottom: 10rem;
+//   left: 70%;
+//   margin-left: 30px;
+//   list-style-type: none;
+// }

@@ -60,12 +60,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
-  def after_update_path_for(resources)
-    user_path(id: current_user.id)
+  def after_update_path_for(resource)
+    user_path(resource)
   end
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    user_path(id: current_user.id)
+    user_path(resource)
   end
 end
