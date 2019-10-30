@@ -1,32 +1,31 @@
 <div id="wrapper">
-<div class="user_show">
-  <form class="user_show2">
-    <div class="text-center mb-4">
+  <div class="us-contents">
+    <div class="us-container">
       <h1>ユーザー情報</h1>
-      <table>
-        <tr>
-          <th class="name">名前:</th>
-          <td><%= @user.name %></td>
-        </tr>
-        <tr>
-          <th class="email">メールアドレス:</th>
-          <td><%= @user.email %></td>
-        </tr>
-        <tr>
-          <th class="status">ユーザーステータス:</th>
-          <td><%= @user.status %></td>
-        </tr>
-      </table>
-      <% if current_user.id == @user.id %>
-        <% if current_user.status == true && current_user.staff.nil? %>
-          <%= link_to 'スタッフ情報登録へ', new_staff_path %>
-        <% elsif current_user.status.present? %>
-          <%= link_to 'スタッフ詳細画面へ', staff_path(current_user.id) %>
-        <% else %>
-          <%= link_to 'スタッフ一覧へ', staffs_path %>
+      <div>
+        <ul class="us-content">
+          <li class="all fs-name">名前:            <%= @user.name %></li>
+          <li class="all fs-email">メールアドレス:    <%= @user.email %></li>
+          <li class="all fs-status">ユーザーステータス: <%= @user.status %></li>
+        </ul>
+      </div>
+      <div class="us-link">
+        <% if current_user.id == @user.id %>
+          <% if current_user.status == true && current_user.staff.nil? %>
+            <%= link_to 'スタッフ情報登録へ', new_staff_path %>
+          <% elsif current_user.status.present? %>
+            <%= link_to 'スタッフ詳細画面へ', staff_path(current_user.id) %>
+          <% else %>
+            <%= link_to 'スタッフ一覧へ', staffs_path %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
-  </form>
+  </div>
 </div>
-</div>
+
+
+
+
+
+　　　

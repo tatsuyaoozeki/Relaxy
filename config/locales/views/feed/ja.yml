@@ -1,0 +1,21 @@
+ja:
+  feeds:
+    index:
+      index_title: 投稿一覧
+      title: タイトル
+      content: 内容
+      image: 投稿画像
+      show_feed: 詳細
+      show_edit: 編集をする
+      show_destroy: 削除する
+      create_feed: 投稿を作成する
+      created_at: 作成日時
+    show:
+      title: タスク詳細
+      content: タスク名
+      image: タスク詳細
+    new:
+      new_title: 投稿を作成する
+    edit:
+      edit_title: 投稿を編集する
+    

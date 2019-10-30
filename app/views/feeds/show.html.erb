@@ -1,12 +1,18 @@
-<h1>詳細画面</h1>
-
-<p>投稿名: <%= @user.name %></p>
-<p>タイトル: <%= @feed.title %></p>
-<p>内容: <%= @feed.content %></p>
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @feed.image.url %>
-</p>
-
-<%= link_to 'Edit', edit_feed_path(@feed.id) %> |
-<%= link_to 'Back', feeds_path %>
+<div class="wrapper">
+  <div class="show-contents">
+    <div class="show-container">
+      <h2 container-header>詳細画面</h2>
+        <div>
+          <ul class="fs-contents">
+            <li class="all fs-title"><%= @feed.title %></li>
+            <li class="all fs-content"><%= @feed.content %></li>
+            <li class="all fs-image"><%= image_tag @feed.image.url %></li>
+          </ul>
+        </div>
+      <div class="fs-link">
+        <li><%= link_to 'EDIT', edit_feed_path(@feed.id), class: "btn btn-primary" %></li>
+        <li><%= link_to 'back', feeds_path, class: "btn btn-primary" %></li>
+      </div>
+    </div>
+  </div>
+</div>

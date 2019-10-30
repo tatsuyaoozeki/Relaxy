@@ -1,0 +1,30 @@
+ja:
+  activerecord:
+    models:
+      feed: 投稿
+    attributes:
+      feed:
+        title: タイトル
+        content: 内容
+        image: 画像
+        id: ID
+        created_at: 作成日時
+        update_at: 更新日時
+        deadline: 終了期限
+    errors:
+      models:
+        feed:
+          attributes:
+            name:
+              blank: が記入されていません
+            content:
+              blank: が記入されていません
+            image:
+              blank: が入っていません
+  feeds:
+    create:
+      success: 登録しました!
+    update:
+      success: 編集しました!
+    destroy:
+      success: 削除しました!

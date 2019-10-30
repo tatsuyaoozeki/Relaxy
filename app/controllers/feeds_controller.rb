@@ -1,8 +1,9 @@
 class FeedsController < ApplicationController
   before_action :set_feed, only: [:show, :edit, :update, :destroy]
-  before_action :ser_user, only: [:show]
+  before_action :set_user, only: [:show]
+
   def index
-    @feeds = Feed.all
+    @feeds = Feed.all.reverse
   end
 
   def show
@@ -18,9 +19,9 @@ class FeedsController < ApplicationController
 
   def create
     @feed = current_user.feeds.build(feed_params)
-    @feed = Feed.new(feed_params)
+    # @feed = Feed.new(feed_params)
     if @feed.save
-      redirect_to feeds_path, notice: 'メニューを作成しました'
+      redirect_to feeds_path, notice: '投稿を作成しました'
     else
       render :new
     end
@@ -28,7 +29,7 @@ class FeedsController < ApplicationController
 
   def update
     if @feed.update(feed_params)
-      redirect_to @feed, notice: 'メニューを編集しました'
+      redirect_to @feed, notice: '投稿を編集しました'
     else
       render :edit
     end
@@ -36,7 +37,7 @@ class FeedsController < ApplicationController
 
   def destroy
     @feed.destroy
-    redirect_to @feed, notice: 'メニューを削除しました'
+    redirect_to @feed, notice: '投稿を削除しました'
   end
 
 

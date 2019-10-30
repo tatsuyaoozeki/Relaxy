@@ -21,18 +21,32 @@ html,
 body {
   hight: auto;
   width: 100%;
+  background-color: #f2f2f2;
 }
 
 
 /* ヘッダー */
 
-.nav-link {
-  display: inline;
+.header-link {
+  display: inline; */
+  color: #fff;
+  margin: 0 20px;
+}
+
+.header-link:hover {
+  opacity: 0.5;
+  color: #fff;
+  text-decoration: none;
 }
 
 .navbar {
   padding: 1.5rem 1rem;
 }
+
+.navbar-brand {
+  font-size: 30px;
+}
+
 p.notice {
   color: white;
   z-index: 1;
@@ -42,6 +56,10 @@ p.alert {
   z-index: 1;
 }
 
+.nav-link {
+  display: inline;
+  color: #fff;
+}
 
 /* フッター */
 
@@ -100,6 +118,7 @@ nav.ft-nav {
 .ft-ul {
   flex-grow: 1;
   margin-left: 40%;
+  color: #ccc;
 }
 
 .ft-link {
@@ -110,14 +129,5 @@ nav.ft-nav {
   font-weight: 600;
   color: dark_navy;
   font-size: 14px;
-}
 
-span {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-weight: 600;
-  vertical-align: baseline;
-  text-align: center;
-  color: #999;
 }

@@ -8,7 +8,7 @@ RSpec.feature "投稿管理機能", type: :feature do
     FactoryBot.create(:feed, user_id: @user.id)
     FactoryBot.create(:second_feed, user_id: @user.id)
     FactoryBot.create(:third_feed, user_id: @user.id)
-    visit new_session_path
+    visit new_user_session_path
     fill_in 'session[name]', with: 'ユーザーa'
     fill_in 'session[email]', with: 'a@example.com'
     fill_in 'session[password]', with: 'aaaaaa'
@@ -22,16 +22,6 @@ RSpec.feature "投稿管理機能", type: :feature do
     expect(page).to have_content 'Factoryで作ったデフォルトのコンテント１'
   end
 
-  scenario "投稿作成のテスト" do
-    visit new_feed_path
-
-    fill_in '投稿名', with: 'Factoryで作ったデフォルトのタイトル１'
-    fill_in '投稿詳細', with: 'Factoryで作ったデフォルトのコンテント１'
-    click_on '登録する'
-    expect(page).to have_content 'Factoryで作ったデフォルトのタイトル１'
-    expect(page).to have_content 'Factoryで作ったデフォルトのコンテント１'
-  end
-
   scenario "投稿詳細のテスト" do
     # feed.create!(name: 'Factoryで作ったデフォルトのタイトル１', content: 'Factoryで作ったデフォルトのコンテント１', deadline: '2019.09.20.11.11')
     visit feeds_path
@@ -39,3 +29,4 @@ RSpec.feature "投稿管理機能", type: :feature do
     expect(page).to have_content 'Factoryで作ったデフォルトのタイトル１'
     expect(page).to have_content 'Factoryで作ったデフォルトのコンテント１'
   end
+end

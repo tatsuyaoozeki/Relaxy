@@ -1,20 +1,29 @@
-<h1>スタッフ一覧</h1>
+<div class="wrapper">
+  <div class="home-wrapper">
+    <div class="home-image">
+      <img src="/images/relaxy_home2.jpg" alt="好きな施術師さんと繋がれる">
+    </div>
+  </div>
 
-<table>
+  <div class="contents">
+    <div class="container">
+      <h2 container-header>新規投稿</h2>
+      <%# @menus.each do |menu| %>
+      <div class="container-inner">
+        <div class="container-content">
 
-<% @menus.each do |menu| %>
-  <tr>
-    <td><%= menu.reservation.menu_name %></td>
-    <td><%= menu.reservation.time_require %></td>
-    <td><%= menu.reservation.price %></td>
-    <td><%= menu.reservation.menu_content %></td>
+          <div>
+            <%= @reservation %>
+            <ul class="feed-content">
+              <li class="all"><%= @reservation.start_date %></li>
+              <li class="all"><%= @reservation.end_date %></li>
 
-    <td><%= link_to '詳細を確認する', staff_path(staff.id) %></td>
-
-    <% if @staff == current_user.id %>
-      <td><%= link_to "ブログを編集する", edit_staff_path(staff.id), data: { confirm: '本当に編集していいですか？' } %></td>
-      <td><%= link_to 'ブログを削除する', staff_path(staff.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
-    <% end %>
-  </tr>
-<% end %>
-</table>
+              <li class="f-show"><%= link_to '詳細', menu_reservation_path(), class: "btn btn-primary" %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <%# end %>
+    </div>
+  </div>
+</div>

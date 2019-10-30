@@ -1,28 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="wrapper">
+  <div class="ms-contents">
+    <div class="ms-container">
+      <h2 container-header>詳細画面</h2>
+        <div>
+          <div>
+            <ul class="ms-content">
+              <li class="all ms-manu_name">メニュー名:<%= @menu.menu_name %></li>
+              <li class="all ms-time_require">施術時間:<%= @menu.time_require %></li>
+              <li class="all ms-price">価格:<%= @menu.price %></li>
+              <li class="all ms-image">メニュー内容:<%= @menu.menu_content %></li>
+            </ul>
+          </div>
+            <p id="notice"><%= notice %></p>
+          <div class="">
+            <div class="menu-btn-wrap">
+              <%= link_to '戻る', menus_path, class: "btn btn-primary" %>
+                <% if current_user.status == false %>
+                <%= link_to '予約する', new_menu_reservation_path(@menu.id, @menu.reservations.ids), class: "btn btn-primary" %>
+              <% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @menu.menu_name %>
-</p>
-
-<p>
-  <strong>Time require:</strong>
-  <%= @menu.time_require %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @menu.price %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @menu.menu_content %>
-</p>
-
-<% if @staff.nil? %>
-  <%= link_to '予約する', new_menu_reservation_path(@menu.id, @menu.reservations.ids) %>
-<% end %>
-
-<%= link_to '戻る', menus_path %>
-<%= link_to '編集', edit_menu_path(@menu) %>
+              <% if @staff == current_user.id %>
+                <li><%= link_to '編集', edit_menu_path(@menu), class: "btn btn-primary" %></li>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

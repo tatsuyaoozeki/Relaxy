@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show]
 
   def index
-    @reservations = Reservation.all.reverse
+    # @reservation = Reservation.where(user_id: current_user.id).where(menu_id: menu_id)
   end
 
   def new
@@ -13,24 +13,14 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.user_id = current_user.id
     if @reservation.save
-      redirect_to menu_reservations_path(@reservation.id), notice:"予約が完了しました"
+      redirect_to menu_reservation_path(menu_id: @reservation.menu_id, id: @reservation), notice:"予約が完了しました"
     else
       render :new
     end
   end
 
   def show
-  end
-
-  def edit
-  end
-
-  def update
-    if @reservation.update(reservation_params)
-      redirect_to
-    else
-      render
-    end
+    @menu = @reservation.menu
   end
 
   private

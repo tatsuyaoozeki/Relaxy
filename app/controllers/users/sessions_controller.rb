@@ -27,7 +27,7 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   def after_sign_in_path_for(resource)
-    if current_user.status == true && current_user.status.present?
+    if current_user.status == true && current_user.staff.present?
       staff_path(current_user.staff.id)
     else
       user_path(resource)

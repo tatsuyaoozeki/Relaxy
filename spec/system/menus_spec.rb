@@ -8,7 +8,7 @@ RSpec.feature "メニュー管理機能", type: :feature do
     FactoryBot.create(:menu, user_id: @user.id)
     FactoryBot.create(:second_menu, user_id: @user.id)
     FactoryBot.create(:third_menu, user_id: @user.id)
-    visit new_session_path
+    visit new_user_session_path
     fill_in 'session[email]', with: 'j@example.com'
     fill_in 'session[password]', with: 'aaaaaa'
     click_button 'Log in'
@@ -38,3 +38,4 @@ RSpec.feature "メニュー管理機能", type: :feature do
     expect(page).to have_content 'Factoryで作ったデフォルトのタイトル１'
     expect(page).to have_content 'Factoryで作ったデフォルトのコンテント１'
   end
+end

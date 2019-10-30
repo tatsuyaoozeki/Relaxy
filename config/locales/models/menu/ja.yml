@@ -1,0 +1,29 @@
+ja:
+  activerecord:
+    models:
+      menu: メニュー
+    attributes:
+      menu:
+        menu_name: メニュー名
+        time_require: 施術時間
+        price: 価格
+        menu_content: メニュー内容
+        id: ID
+        created_at: 作成日時
+        update_at: 更新日時
+        deadline: 終了期限
+    errors:
+      models:
+        menu:
+          attributes:
+            name:
+              blank: が記入されていません
+            content:
+              blank: が記入されていません
+  menus:
+    create:
+      success: 登録しました!
+    update:
+      success: 編集しました!
+    destroy:
+      success: 削除しました!

@@ -1,39 +1,46 @@
-<div class="menu-signin">
-  <h1>メニューを<%= title %></h1>
-    <div class="text-center mb-4">
-    <%= form_with(model: @menu, local: true) do |form| %>
-      <% if @menu.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@menu.errors.count, "error") %> prohibited this @menu from being saved:</h2>
+<div class="wrapper">
+  <div class="mne-contents">
+    <div class="mne-container">
+        <h1>メニューを<%= title %></h1>
+          <div class="text-center mb-4">
+          <%= form_with(model: @menu, local: true) do |form| %>
+            <% if @menu.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@menu.errors.count, "error") %> prohibited this @menu from being saved:</h2>
 
-          <ul>
-          <% @menu.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
+                <ul>
+                <% @menu.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class=menu-mne>
+              <ul class="mne-content">
+                <div class="mne-menu_name">
+                  <p>メニュー名:<%= form.text_field :menu_name, placeholder: 'メニュー名をいれてください' %></p>
+                </div>
+
+                <div class="mne-time_require">
+                  <p>施術時間:<%= form.number_field :time_require, placeholder: '施術時間をいれてください' %></p>
+                </div>
+
+                <div class="mne-price">
+                  <p>価格:<%= form.number_field :price, placeholder: '金額をいれてください' %></p>
+                </div>
+
+                <div class="mne-menu_content">
+                  <p>メニュー内容<%= form.text_field :menu_content, placeholder:'メニュー内容をいれてください' %></p>
+                </div>
+              </ul>
+            </div>
+            <div class="feed-btn-wrap">
+              <p class="feed-btn"><%= link_to 'back', menus_path, class: "btn btn-primary" %></p>&ensp;
+              <p class="feed-btn"><%= form.submit '作成', class: 'btn btn-primary' %></p>
+            </div>
           <% end %>
-          </ul>
         </div>
-      <% end %>
-
-      <div class="menu_field">
-        <%= form.label :menu_name, placeholder: 'メニュー名' %>
-        <%= form.text_field :menu_name %>
       </div>
-
-      <div class="menu_field">
-        <%= form.label :time_require, placeholder: '施術時間' %>
-        <%= form.number_field :time_require %>
-      </div>
-
-      <div class="menu_field">
-        <%= form.label :price, placeholder: '金額' %>
-        <%= form.number_field :price %>
-      </div>
-
-      <div class="menu_field">
-        <%= form.label :menu_content, placeholder:'メニュー内容' %>
-        <%= form.text_field :menu_content %>
-      </div>
-
-      <%= form.submit %>
-    <% end %>
-</div>
+    </div>
+  </div>
