@@ -18,11 +18,11 @@
           </ul>
         </div>
         <div class="sfe-f-group">
+          <div class="sfe_back">
+            <%= link_to 'back', user_path(current_user.id), class: "btn btn-primary" %>&emsp;
+          </div>
           <div class="sfe_submit">
             <%= form.submit "登録", class: 'btn btn-primary' %>
-          </div>
-          <div class="sfe_back">
-            <%= link_to 'back', user_path(@staff.user_id), class: "btn btn-primary" %>
           </div>
         </div>
       <% end %>
