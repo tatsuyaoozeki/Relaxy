@@ -1,33 +1,34 @@
-<div class="user_show">
-  <form class="user_show2">
-    <div class="text-center mb-4">
-      <article id="clearfix">
-        <h1>スタッフ詳細</h1>
-        <p>名前: <%= @staff.user.name %></p>
-        <p>メールアドレス: <%= @staff.user.email %></p>
-        <p><%= @staff.user.status %></p>
-        <p>紹介文: <%= @staff.content %></p>
-        <p>性別: <%= @staff.gender %></p>
-      </article>
-
-
-    <% unless @staff.user_id == current_user.id %>
-      <%= link_to 'このスタッフのメニューを見る', menus_path(@staff.id) %>
-    <% else %>
-      <%= link_to 'メニュー作成', new_menu_path %>
-      <%= link_to '投稿を作成', new_feed_path %>
-    <% end %>
-
-    <% if @staff == current_user.id %>
-      <%= link_to '編集する', edit_staff_path(@staff.id) %>
-    <% end %>
+<div class="wrapper">
+  <div class="ss-contents">
+    <div class="ss-container">
+      <h2 container-header>詳細画面</h2>
+        <div>
+          <ul class="fs-contents">
+            <li class="all ss-name">名前: <%= @staff.user.name %></li>
+            <li class="all ss-email">メールアドレス: <%= @staff.user.email %></li>
+            <li class="all ss-status">ユーザーステータス:<%= @staff.user.status %></li>
+            <li class="all ss-content">紹介文: <%= @staff.content %></li>
+            <li class="all ss-gender">性別: <%= @staff.gender %></li>
+            <li>
+            <% unless @staff.user_id == current_user.id %>
+              <%= link_to 'このスタッフのメニューを見る', menus_path(@staff.id) %>
+            <% else %>
+            </li>
+              <li>
+                <%= link_to 'メニュー作成', new_menu_path, class:'btn btn-primary' %>
+                <%= link_to '投稿を作成', new_feed_path, class:'btn btn-primary' %>
+              </li>
+            <% end %>
+          </ul>
+          <div class="edit_link">
+            <li class="back_feed">
+              <% if @staff.user_id == current_user.id %>
+                <%= link_to '編集する', edit_staff_path(@staff.id), class:'btn btn-primary' %>
+              <% end %>
+            </li>
+            <li class="back_feed"><%= link_to 'back', staffs_path, class: "btn btn-primary" %></li>
+          </div>
+        </div>
     </div>
-  </form>
+  </div>
 </div>
-
-
-
-
-<% unless current_user.status == true %>
-  <%= render 'staffs/follow_form' %>
-<% end %>

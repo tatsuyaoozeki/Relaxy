@@ -1,30 +1,29 @@
-<div class="staff_new">
-  <div class="staff_new2">
-    <div class="text-center mb-4">
+<div class="wrapper">
+  <div class="sfe-contents">
+    <div class="sfe-container">
+      <h2>スタッフ情報登録</h2>
       <%= form_with(model: @staff, local: true) do |form| %>
-
-      <% flash.each do |message_type, message| %>
-          <div class="alert alert-<%= message_type %>">
-            <%= message %>
+        <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>">
+              <%= message %>
+            </div>
+        <% end %>
+        <div class="staff_edit">
+          <ul class="sfe-content">
+            <li class="sfe-content">自己紹介文:<%= form.text_area :content, placehlder: 'どんな施術が得意か何時くらいが予約が取れやすいかetc' %></li>
+            <li class="sfe-gender">
+              <%= form.radio_button :gender, "男", class: 'mens' %>男
+              <%= form.radio_button :gender, "女", class: 'females' %>女
+            </li>
+          </ul>
+        </div>
+        <div class="sfe-f-group">
+          <div class="sfe_submit">
+            <%= form.submit "登録", class: 'btn btn-primary' %>
           </div>
-      <% end %>
-      <table>
-        <tr>
-          <th><%= form.label :content, "自己紹介文" %></th>
-        </tr>
-        <tr>
-          <td><%= form.text_field :content %></td>
-        </tr>
-
-        <tr class="field">
-          <td class="men"><label><%= form.radio_button :gender, "男" %> 男</label></td>
-          <td class="female"><label><%= form.radio_button :gender, "女" %> 女</label></td>
-        </tr>
-
-      </table>
-
-        <div class="form-group">
-          <%= form.submit "登録", class: 'btn btn-primary' %>
+          <div class="sfe_back">
+            <%= link_to 'back', user_path(@staff.user_id), class: "btn btn-primary" %>
+          </div>
         </div>
       <% end %>
     </div>

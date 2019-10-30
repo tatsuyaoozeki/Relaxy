@@ -1,72 +1,57 @@
-<div class="container-fluid signup">
-  <article class="content">
-      <div class="signup-form">
-        <div class="form-cont">
-        <h1>R e l a x y</h1
-          <form class="xform">
-            <h2>気になるスタッフさんをチェックしよう</h2>
-          </form>
-
-          <div class="select-form">
-            <div class="bord"></div>
-
-            <div class="bord"></div>
-          </div><h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-            <%= render "devise/shared/error_messages", resource: resource %>
-
-            <div class="field">
-              <%= f.label :name %><br />
+<div class="container">
+   <div class="row">
+     <div class="col-lg-10 col-xl-9 mx-auto">
+       <div class="card card-signin flex-row my-5">
+        <div class="card-img-left d-none d-md-flex">
+            <!-- Background image for card set in CSS! -->
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center">Register</h5>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="form-signin">
+            <label><%= f.label 'UserName' %></label>
+            <div class="form-label-group">
+              <!-- <input type="text" id="inputUserame" class="form-control" placeholder="Username" required autofocus> -->
               <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+              <!-- <label for="inputUsername">Username</label> -->
             </div>
 
-            <div class="field">
-              <%= f.label :email %><br />
+            <label for="inputEmail">Email address</label>
+            <div class="form-label-group">
+              <!-- <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required> -->
               <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
             </div>
 
-            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-            <% end %>
+            <hr>
 
-            <div class="field">
-              <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-              <%= f.password_field :password, autocomplete: "new-password" %>
+            <label for="inputPassword">Password</label>
+            <div class="form-label-group">
+              <%= f.password_field :password, autocomplete: "new-password" %><br />
               <% if @minimum_password_length %>
-                <br />
-                <em><%= @minimum_password_length %> characters minimum</em>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
               <% end %>
+              <!-- <input type="password" id="inputPassword" class="form-control" placeholder="Password" required> -->
             </div>
 
-            <div class="field">
-              <%= f.label :password_confirmation %><br />
+            <label for="inputConfirmPassword">Confirm password</label>
+            <div class="form-label-group">
               <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-            </div>
-
-            <div class="field">
-              <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-              <%= f.password_field :current_password, autocomplete: "current-password" %>
-            </div>
-
-            <div class="field">
-              <p>-------------------------------------------------------------------------</p>
-              <p>スタッフとして掲載希望の方は下記の記入をしてください</p>
-              <%= f.label :staff %><br />
-              <%= f.check_box :staff, checked_value: "true", unchecked_value: "false" %>
-            </div>
+              <!-- <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" required> -->
+             </div>
 
             <div class="actions">
-              <%= f.submit "Update" %>
+              <%= f.submit "Sign up", class: "btn btn-primary btn-block" %>
             </div>
           <% end %>
 
-          <h3>Cancel my account</h3>
-
-          <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-          <%= link_to "Back", :back %>
+            <%= render "devise/shared/links" %>
+          </div>
+          <div class="acount">
+            <p class="login-link">アカウントをお持ちですか？<%= link_to "ログインする", new_user_session_path %></p>
           </div>
         </div>
-    </article>
+      </div>
+    </div>
   </div>
+</div>

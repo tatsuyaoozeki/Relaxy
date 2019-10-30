@@ -1,2 +1,35 @@
-<h1>ホーム</h1>
-<%= link_to "マイページ", user_path(current_user.id) %> 
+<div class="wrapper">
+  <div class="home-wrapper">
+    <div class="home-image">
+      <img src="/images/relaxy_home2.jpg" alt="好きな施術師さんと繋がれる">
+    </div>
+    <nav class="get_start">
+      <ul class="home">
+        <% if user_signed_in? %>
+          <p class="get_word">ユーザーを登録していろんなメニューを見てみよう！</p>
+          <li class="get_new"><%= link_to "Get start", new_user_registration_path, class: "btn btn-primary"%></li>
+        <% end %>
+      </ul>
+    </nav>
+  <div class="contents">
+    <div class="container">
+      <h2 container-header>新規投稿</h2>
+      <% @feeds.each do |feed| %>
+      <div class="container-inner">
+        <div class="container-content">
+          <div>
+            <ul class="feed-content">
+              <li class="all"><%= feed.title %></li>
+              <li class="all"><%= feed.content %></li>
+              <li class="all"><%= image_tag(feed.image.url) if feed.image && feed.image.url %></li>
+              <% if @user.nil? %>
+                <li class="f-show"><%= link_to '詳細', feed_path(feed.id), class: "btn btn-primary" %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div

@@ -5,6 +5,7 @@ class Staff < ApplicationRecord
   validates :gender, presence: true
   has_many :following, dependent: :destroy
 
+
   # def following?(staff, user)
   #   staff.following.find_by(user_id: user.id)
   # end

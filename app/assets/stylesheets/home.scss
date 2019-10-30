@@ -1,3 +1,125 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+div {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.wrapper {
+  width: 100%;
+  background: #f2f2f2;
+}
+
+.home-image {
+  margin-bottom: 50px;
+}
+
+.contents {
+  padding: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+}
+
+.container {
+  margin-bottom: 10px;
+  height: 980px;
+  margin-bottom: 100px;
+}
+
+.container,
+.container-inner {
+  margin: 0 auto;
+  padding: 32px 48px 48px;
+  width: 100%;
+  max-width: 984px;
+  background: #fff;
+}
+
+.container-inner {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  min-height: 330px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 8px;
+  box-shadow: 0 0 15px 0 rgba(191,203,222,0.4);
+  position: relative;
+}
+
+.container-header {
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+
+.container-content {
+  margin-top: 20px;
+}
+
+.get_start ul {
+  margin: 0px;
+  padding: 10px 20px;
+  list-style: none;
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+ul.feed-content {
+  list-style-type: none;
+}
+
+.feed-content {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding:  0;
+}
+
+.all {
+ margin: 10px 0 20px 20px;
+ float:left;
+}
+
+.f-show {
+  text-align: right;
+}
+
+.get_start {
+
+}
+
+.home {
+  list-style-type: none;
+  
+}
+
+.home-nav {
+  list-style-type: none;
+  text-align: center;
+}
+
+.get_word {
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+}
+
+.get_new {
+  list-style-type: none;
+  text-align: center;
+
+
+}

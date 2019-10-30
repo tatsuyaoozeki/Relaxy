@@ -3,7 +3,7 @@ class FeedsController < ApplicationController
   before_action :set_user, only: [:show]
 
   def index
-    @feeds = Feed.all
+    @feeds = Feed.all.reverse
   end
 
   def show

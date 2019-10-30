@@ -1,7 +1,7 @@
-<div class="feed_new">
-  <div class="fn_container">
-    <div class="fn_form">
-      <h1 class="h4 mb-3 font-weight-bold">投稿を<%= title %></h1>
+<div class="wrapper">
+  <div class="ne-contents">
+    <div class="ne-container">
+      <h2 container-header><%= title %>画面</h2>
       <%= form_with(model: @feed, local: true) do |form| %>
         <% if @feed.errors.any? %>
           <div id="error_explanation">
@@ -15,15 +15,18 @@
           </div>
         <% end %>
 
-        <div class="feed_title">
-          <%= image_tag(@feed.image.url) if @feed.image.url %>
-          <%= form.text_field :title %>
-          <%= form.text_field :content %>
-          <%= form.label :image %>
-          <%= form.file_field :image %>
+        <div class="feed_edit">
+          <ul class="fne-contents">
+            <li class="ne-title"><%= form.text_field :title, placeholder: "タイトル" %></li>
+            <li class="ne-content"><%= form.text_area :content, placeholder: "内容" %></li><br>
+            <li class="ne-sample"><%= image_tag(@feed.image.url) if @feed.image.url %></li>
+            <li class="ne-image"><%= form.file_field :image %></li>
+          </ul>
         </div>
-
-        <%= form.submit %>
+        <div class="feed-btn-wrap">
+          <p class="feed-btn"><%= link_to 'back', feeds_path, class: "btn btn-primary" %></p>&ensp;
+          <p class="feed-btn"><%= form.submit '作成', class: 'btn btn-primary' %></p>
+        </div>
       <% end %>
     </div>
   </div>
