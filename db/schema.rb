@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 2019_10_28_053839) do
   create_table "reservations", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "menu_id"
-    t.string "start_date", null: false
-    t.string "end_date", null: false
+    t.datetime "start_date", null: false
+    t.datetime "end_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["menu_id"], name: "index_reservations_on_menu_id"
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2019_10_28_053839) do
 
   create_table "staffs", force: :cascade do |t|
     t.string "content", null: false
-    t.boolean "gender", default: false, null: false
+    t.string "gender", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

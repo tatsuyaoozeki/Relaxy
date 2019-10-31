@@ -1,3 +1,6 @@
+
+
+
 <div class="wrapper">
   <div class="ss-contents">
     <div class="ss-container">
@@ -9,7 +12,6 @@
             <li class="all ss-status">ユーザーステータス:<%= @staff.user.status %></li>
             <li class="all ss-content">紹介文: <%= @staff.content %></li>
             <li class="all ss-gender">性別: <%= @staff.gender %></li>
-
             <% unless @staff.user_id == current_user.id %>
               <li
                 <%= link_to 'このスタッフのメニューを見る', menus_path(@staff.id) %>

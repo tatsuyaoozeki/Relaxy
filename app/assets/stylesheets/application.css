@@ -44,7 +44,8 @@ body {
 }
 
 .navbar-brand {
-  font-size: 30px;
+  font-size: 45px;
+  font-weight: bold;
 }
 
 p.notice {
@@ -60,6 +61,17 @@ p.alert {
   display: inline;
   color: #fff;
 }
+
+.loginuser {
+  color: #fff;
+  font-size: 16px;
+  margin: 10px 0 0;
+}
+
+
+
+
+
 
 /* フッター */
 

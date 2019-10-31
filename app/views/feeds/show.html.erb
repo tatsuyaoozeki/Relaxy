@@ -10,7 +10,10 @@
           </ul>
         </div>
       <div class="fs-link">
-        <li><%= link_to 'EDIT', edit_feed_path(@feed.id), class: "btn btn-primary" %></li>
+        <% if @feed.user_id == current_user.id %>
+          <li><%= link_to 'EDIT', edit_feed_path(@feed.id), class: "btn btn-primary" %></li>
+        <% end %>
+        <div class="menuindex"><%= link_to 'メニュー一覧へ', menus_path %></div>
         <li><%= link_to 'back', feeds_path, class: "btn btn-primary" %></li>
       </div>
     </div>
