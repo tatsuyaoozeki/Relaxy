@@ -4,5 +4,8 @@ class HomeController < ApplicationController
   end
 
   def mypage
+
   end
+
+
 end

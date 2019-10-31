@@ -29,10 +29,10 @@ RSpec.describe Menu, type: :model do
   # end
 
 
-  it "menu_name, time_require, price, menu_contentに内容が記載されていればバリデーションが通る" do
-    menu = Menu.new(menu_name: 'テスト成功', time_require: 'テスト成功',  price: 'テスト成功', menu_content: 'テスト成功')
-
-    expect(menu).to be_valid
-  end
+  # it "menu_name, time_require, price, menu_contentに内容が記載されていればバリデーションが通る" do
+  #   menu = Menu.new(menu_name: 'テスト成功', time_require: 'テスト成功',  price: 'テスト成功', menu_content: 'テスト成功')
+  #
+  #   expect(menu).to be_valid
+  # end
 
 end

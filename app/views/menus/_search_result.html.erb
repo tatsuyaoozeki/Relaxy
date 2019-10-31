@@ -1,11 +1,11 @@
 <div>
   <% if @params.present? %>
     <p>検索結果:<%= @result.count %>件</p>
-    <% @result.each do |result| %>
-      <div>
-        <p>タイトル：<%= result.menu_name %></p>
-        <p>内容：<%= result.menu_content %></p>
-      </div>
-    <% end %>
+      <% @result.each do |result| %>
+        <div>
+          <p>タイトル：<%= result.menu_name %></p>
+          <p>内容：<%= result.menu_content %></p>
+        </div>
+      <% end %>
   <% end %>
 </div>

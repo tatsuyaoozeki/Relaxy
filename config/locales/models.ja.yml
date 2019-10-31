@@ -2,6 +2,7 @@ ja:
   activerecord:
     attributes:
       user:
+        name: 名前
         email: メールアドレス
         password: パスワード
         password_confirmation: 確認用パスワード
@@ -13,3 +14,6 @@ ja:
         gender:
           true: 男性
           false: 女性
+      reservation:
+        start_date: 開始時間
+        end_date: 終了時間
