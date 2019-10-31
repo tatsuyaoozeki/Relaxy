@@ -8,8 +8,10 @@ RSpec.feature "メニュー管理機能", type: :feature do
     FactoryBot.create(:menu, user_id: @user.id)
     FactoryBot.create(:second_menu, user_id: @user.id)
     FactoryBot.create(:third_menu, user_id: @user.id)
+
     visit new_user_session_path
-    fill_in 'session[email]', with: 'j@example.com'
+    fill_in 'session[email]', with: 'a@example.com'
+>>>>>>> Stashed changes
     fill_in 'session[password]', with: 'aaaaaa'
     click_button 'Log in'
   end
@@ -33,7 +35,7 @@ RSpec.feature "メニュー管理機能", type: :feature do
 
   scenario "メニュー詳細のテスト" do
     # menu.create!(name: 'Factoryで作ったデフォルトのタイトル１', content: 'Factoryで作ったデフォルトのコンテント１', deadline: '2019.09.20.11.11')
-    visit menus_path
+    visit menu_path
     page.first("#show").click
     expect(page).to have_content 'Factoryで作ったデフォルトのタイトル１'
     expect(page).to have_content 'Factoryで作ったデフォルトのコンテント１'
