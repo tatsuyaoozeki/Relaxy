@@ -6,9 +6,9 @@
           <h5 class="card-title text-center">Sign In</h5>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
               <p class="sign-form_input-wrap"><%= f.email_field :email, placeholder: "メールアドレス", class: "sign-form_input" %>
-              <p class="sign-form_input-wrap"><%= f.password_field :password, placeholder: "パスワード", class: "sign-form_input" %></p>
+              <p class="sign-form_input-wrap"><%= f.password_field :password, placeholder: "パスワード", class: "sign-form_input", id: "passcode" %></p>
             <div class="field">
-              <%= f.password_field :password, autocomplete: "current-password",  placeholder: "確認用パスワード", class: "sign-form_input" %>
+              <%= f.password_field :password, autocomplete: "current-password",  placeholder: "確認用パスワード", class: "sign-form_input", id: "passcode_confirmation" %>
             </div>
             <% if devise_mapping.rememberable? %>
               <div class="sign-form_input-wrap">

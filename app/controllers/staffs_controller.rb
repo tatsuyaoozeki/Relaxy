@@ -7,7 +7,6 @@ class StaffsController < ApplicationController
   end
 
   def new
-    # @staff = current_user.staff.build
     @staff = Staff.new
   end
 
@@ -22,6 +21,7 @@ class StaffsController < ApplicationController
   end
 
   def show
+
   end
 
   def edit
@@ -37,7 +37,7 @@ class StaffsController < ApplicationController
 
   def destroy
     # @staff = Staff.find(params[:id])
-    @staff.destroy
+    @staff.destrory
     redirect_to staffs_path, notice: "スタッフ情報を削除しました"
   end
 
