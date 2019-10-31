@@ -38,9 +38,22 @@ class StaffsController < ApplicationController
 
   def destroy
     # @staff = Staff.find(params[:id])
-    @staff.destory
+    @staff.destrory
     redirect_to staffs_path, notice: "スタッフ情報を削除しました"
   end
+
+  def following
+      @user  = User.find(params[:id])
+      @users = @user.followings
+      render 'show_follow'
+  end
+
+  def followers
+    @user  = User.find(params[:id])
+    @users = @user.followers
+    render 'show_follower'
+  end
+
 
 
   private
