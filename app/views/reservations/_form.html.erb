@@ -1,12 +1,17 @@
 <div class="wrapper">
   <div class="mne-contents">
     <div class="mne-container">
-        <%= form_with(model: @reservation, local: true, url: menu_reservations_path, method: "POST") do |f| %>
-        <% flash.each do |message_type, message| %>
-            <div class="alert alert-<%= message_type %>">
-              <%= message %>
-            </div>
-        <% end %>
+      <%= form_with(model: @reservation, local: true, url: menu_reservations_path, method: "POST") do |f| %>
+      <% if @reservation.errors.any? %>
+        <div id="error_explanation">
+
+          <ul>
+          <% @reservation.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
         <div class=menu-mne>
           <ul class="mne-content">
             <div class="form-group start_date">

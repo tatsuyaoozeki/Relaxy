@@ -13,3 +13,6 @@ ja:
         gender:
           true: 男性
           false: 女性
+      reservation:
+        start_date: 開始時間
+        end_date: 終了時間
