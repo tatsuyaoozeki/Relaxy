@@ -2,14 +2,14 @@
   <div class="mi-contents">
     <div class="mi-container">
       <h1><%= t('.index_title') %></h1>
-        <div>
+        <div class="form_search">
           <%= search_form_for @search do |f| %>
-            <%= f.search_field :menu_name_or_menu_content_cont, required: true %>
-            <%= f.submit "検索" %>
+            <%= f.search_field :menu_name_or_menu_content_cont, required: true, placeholder: 'キーワードを入力してください' %>
+            <%= f.submit "検索", class: 'btn btn-primary' %>
           <% end %>
         </div>
         <%= render "search_result" %>
-        <%= link_to 'クリア', menus_path %>
+        <%= link_to 'クリア', menus_path, class: 'btn btn-danger' %>
       <% unless @params.present? %>
         <% @menus.each do |menu| %>
           <div class="mi-container-inner">
@@ -30,6 +30,7 @@
             <% end %>
           </div>
         </div>
+        <% end %>
       <% end %>
       <div class="mif-link">
 

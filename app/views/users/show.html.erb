@@ -11,12 +11,12 @@
       </div>
       <div class="us-link">
         <% if current_user.id == @user.id %>
-          <% if current_user.status == true && current_user.staff.nil? %>
-            <%= link_to 'スタッフ情報登録へ', new_staff_path %>
+          <% if current_user.status == "スタッフ" && current_user.staff.nil? %>
+            <%= link_to 'スタッフ情報登録へ', new_staff_path, class: 'btn btn-primary' %>
           <% elsif current_user.status.present? %>
-            <%= link_to 'スタッフ詳細画面へ', staff_path(current_user.id) %>
+            <%= link_to 'スタッフ詳細画面へ', staff_path(current_user.id), class: 'btn btn-primary' %>
           <% else %>
-            <%= link_to 'スタッフ一覧へ', staffs_path %>
+            <%= link_to 'スタッフ一覧へ', staffs_path, class: 'btn btn-primary' %>
           <% end %>
         <% end %>
       </div>

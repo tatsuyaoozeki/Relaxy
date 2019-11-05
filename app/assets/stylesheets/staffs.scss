@@ -128,10 +128,10 @@ article {
 
 .ss-container {
   margin-bottom: 10px;
-  height: 45rem;
+  height: auto;
   margin-bottom: 100px;
   margin: 0 auto;
-  padding: 32px 48px 48px;
+  padding: 32px 48px 10px;
   width: 100%;
   max-width: 984px;
   background: #fff;
@@ -161,25 +161,21 @@ article {
 
 .ss-content {
   font-size: 24px;
-  height: 150px;
+  height: auto;
+
 }
 
 .ss-gender {
   font-size: 24px;
 }
 
-.edit_link {
-  display: flex;
-  flex-direction: row;
-  margin: 32px 48px 48px;
-}
+// .edit_link {
+//   display: flex;
+//   flex-direction: row;
+//   margin: 32px 48px 48px;
+// }
 
-.back_feed {
-  text-align: right;
-  vertical-align: middle;
-  list-style-type: none;
-  margin-right: 5px;
-}
+
 
 .ss-link {
   display: flex;
@@ -194,6 +190,25 @@ article {
   list-style-type: none;
 }
 
+.staff_links {
+  display: flex;
+  flex-direction: row;
+}
+
+.links_margin1 {
+  margin-right: 5px;
+}
+
+.links_margin2 {
+  margin-left: 5px;
+}
+
+.back_feed {
+  text-align: right;
+  vertical-align: middle;
+  list-style-type: none;
+  margin-left: 55%;
+}
 
 // スタッフ編集
 

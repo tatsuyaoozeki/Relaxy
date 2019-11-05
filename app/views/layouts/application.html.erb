@@ -42,10 +42,11 @@
           <% else %>
            <%= link_to "メニュー一覧", menus_path %>
           <% end %>
-          
+          </li>
           <li class="nav-item">
             <%= link_to 'アカウント変更', edit_user_registration_path, class: "header-link" %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-link" %>
+            <p class="loginuser">ログインユーザー： <%= current_user.name %></p>
             </li>
           <% else %>
           <li class="nav-item">
@@ -57,6 +58,8 @@
       </div>
     </nav><br>
   </header>
+
+  <div style="margin-bottom: 60px;">&emsp;</div>
 
   <%= yield %>
 

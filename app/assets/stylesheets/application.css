@@ -51,6 +51,7 @@ p.notice {
   color: white;
   z-index: 1;
 }
+
 p.alert {
   color: red;
   z-index: 1;
@@ -60,6 +61,13 @@ p.alert {
   display: inline;
   color: #fff;
 }
+
+.loginuser {
+  color: #fff;
+  font-size: 16px;
+  margin: 10px 0 0;
+}
+
 
 /* フッター */
 
