@@ -2,14 +2,20 @@
   <div class="mi-contents">
     <div class="mi-container">
       <h1><%= t('.index_title') %></h1>
-        <div class="form_search">
+        <!-- <form class="form-inline"> -->
+        <div class="form-search">
           <%= search_form_for @search do |f| %>
-            <%= f.search_field :menu_name_or_menu_content_cont, required: true, placeholder: 'キーワードを入力してください' %>
-            <%= f.submit "検索", class: 'btn btn-primary' %>
+            <%= f.search_field :menu_name_or_menu_content_cont, required: true, placeholder: 'キーワード検索...', class: "form-control mr-sm-2" %>
+            <%= f.submit "検索", class: "btn btn-outline-success my-2 my-sm-0" %>
           <% end %>
         </div>
+    <!-- <input class="form-control mr-sm-2" type="search" placeholder="検索..." aria-label="検索...">
+    <button type="submit" class="btn btn-outline-success my-2 my-sm-0">検索</button> -->
+
+
+        <!-- </form> -->
         <%= render "search_result" %>
-        <%= link_to 'クリア', menus_path, class: 'btn btn-danger' %>
+        <%= link_to 'クリア', menus_path, class: 'btn btn-outline-danger' %>
       <% unless @params.present? %>
         <% @menus.each do |menu| %>
           <div class="mi-container-inner">
@@ -25,8 +31,8 @@
               </ul>
             </div>
             <% if current_user.id == menu.user.id %>
-              <%= link_to t('.show_edit'), edit_menu_path(menu), class: "btn btn-primary mif_brn1" %>
               <%= link_to t('.show_destroy'), menu, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary mif_brn2" %>
+              <%= link_to t('.show_edit'), edit_menu_path(menu), class: "btn btn-primary mif_brn1" %>
             <% end %>
           </div>
         </div>

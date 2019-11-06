@@ -28,6 +28,7 @@
 
           <div class="us-link">
             <% if current_user.id == current_user.id %>
+
               <% if current_user.status == true && current_user.staff.nil? %>
                 <%= link_to 'スタッフ情報登録へ', new_staff_path %>
               <% elsif current_user.status.present? %>
@@ -44,7 +45,7 @@
           <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to 'アカウント変更', edit_user_registration_path, class: "header-link" %>
+            <%= link_to 'ユーザー情報編集', edit_user_registration_path, class: "header-link" %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-link" %>
             <p class="loginuser">ログインユーザー： <%= current_user.name %></p>
             </li>
@@ -59,9 +60,10 @@
     </nav><br>
   </header>
 
-  <div style="margin-bottom: 60px;">&emsp;</div>
+
 
   <%= yield %>
+  <div style="margin-bottom: 60px;">&emsp;</div>
 
   <div class="ft">
       <footer class="footer">
