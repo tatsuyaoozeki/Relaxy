@@ -192,7 +192,7 @@
 
 .ui-container,
 .ui-container-inner {
-  margin: 0 auto;
+  margin: 50px auto;
   padding: 32px 48px 48px;
   width: 100%;
   max-width: 984px;
@@ -251,7 +251,7 @@
 
 .ui-cont {
   font-size: 16px;
-  line-height: 0.8rem;
+  line-height: 1.2rem;
   margin: 5px 10px;
   height: 120px;
 }
@@ -365,6 +365,7 @@ div.user_show {
   max-width: 984px;
   background: #fff;
   border-radius: 10px;
+  position: relative;
 }
 
 .us-content {
@@ -388,15 +389,14 @@ div.user_show {
   font-size: 24px;
 }
 
-.ss-link {
+.us-link {
   display: flex;
-  flex-direction: column;
-  text-align: right;
-  height: 38px;
-  width: 55px;
   position: absolute;
-  bottom: 10rem;
-  left: 70%;
-  margin-left: 30px;
+  right: 48px;
+  bottom: 48px;
   list-style-type: none;
+}
+
+.eurp {
+  margin-left: 10px;
 }

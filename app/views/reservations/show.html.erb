@@ -2,12 +2,39 @@
   <div class="rsn-contents">
     <div class="rsn-container">
       <h2 container-header>詳細画面</h2>
-        <div>
-          <ul class="rsn-content">
-            <li class="all rsn-title"><%= @reservation.start_date %></li>
-            <li class="all rsn-content"><%= @reservation.end_date %></li>
-          </ul>
+
+        <!-- <div>
+          <ul class="rsn-content"> -->
+        <div class="r-show-groups row mt-5">
+          <label class="col-sm-4 col-form-label">予約者</label>
+            <div class="col-mr-sm-8">
+              <%= @user.name%>
+          </div>
         </div>
+        <div class="r-show-groups row mt-5">
+          <label class="col-sm-4 col-form-label">メニュー名</label>
+            <div class="col-mr-sm-8">
+              <%= @menu.menu_name %>
+          </div>
+        </div>
+
+        <div class="r-show-groups row mt-5">
+          <label class="col-sm-4 col-form-label">施術時間</label>
+            <div class="col-mr-sm-8">
+              <%= @menu.time_require %>
+          </div>
+        </div>
+        <div class="r-show-groups row mt-5">
+          <label class="col-sm-4 col-form-label">予約時間</label>
+            <div class="col-mr-sm-8">
+              <%= @reservation.start_date.strftime("%Y-%m-%d %H:%M") %>
+          </div>
+        </div>
+
+
+
+          <!-- </ul>
+        </div> -->
       <div class="rsn-link">
         <li><%= link_to '戻る',menu_path(@menu.id), class: "btn btn-primary" %></li>
       </div>

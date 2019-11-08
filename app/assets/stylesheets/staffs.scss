@@ -129,8 +129,7 @@ article {
 .ss-container {
   margin-bottom: 10px;
   height: auto;
-  margin-bottom: 100px;
-  margin: 0 auto;
+  margin: 50px auto;
   padding: 32px 48px 10px;
   width: 100%;
   max-width: 984px;
@@ -168,14 +167,6 @@ article {
 .ss-gender {
   font-size: 24px;
 }
-
-// .edit_link {
-//   display: flex;
-//   flex-direction: row;
-//   margin: 32px 48px 48px;
-// }
-
-
 
 .ss-link {
   display: flex;
@@ -265,11 +256,13 @@ textarea#staff_content {
   font-size: 24px;
   margin-left: 150px;
   width: 30px;
+  color: #42b9f5;
 }
 
 .females {
   width: 30px;
   margin-left: 100px;
+  color: #fca4b3;
 }
 
 .sfe-f-group {

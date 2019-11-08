@@ -26,13 +26,12 @@
           <li class="nav-item">
           <% if user_signed_in? %>
 
-          <div class="us-link">
+          <div class="header-link">
             <% if current_user.id == current_user.id %>
 
               <% if current_user.status == true && current_user.staff.nil? %>
                 <%= link_to 'スタッフ情報登録へ', new_staff_path %>
-              <% elsif current_user.status.present? %>
-                <%= link_to 'スタッフ詳細画面へ', staff_path(current_user.id) %>
+
               <% else %>
                 <%= link_to 'スタッフ一覧へ', staffs_path %>
               <% end %>
@@ -45,7 +44,7 @@
           <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to 'ユーザー情報編集', edit_user_registration_path, class: "header-link" %>
+            <%= link_to 'マイページ', user_path(current_user.id), class: "header-link" %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-link" %>
             <p class="loginuser">ログインユーザー： <%= current_user.name %></p>
             </li>

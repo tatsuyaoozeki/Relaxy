@@ -15,8 +15,8 @@
           <div class="">
             <div class="menu-btn-wrap">
               <%= link_to '戻る', menus_path, class: "btn btn-primary" %>
-                <% if current_user.status == false %>
-                <%= link_to '予約する', new_menu_reservation_path(@menu.id, @menu.reservations.ids), class: "btn btn-primary" %>
+                <% if current_user.status == "一般ユーザー" %>
+                <%= link_to '予約する', new_menu_reservation_path(@menu.id, @menu.reservations.ids), class: "btn btn-success rrr" %>
               <% end %>
 
               <% if @staff == current_user.id %>

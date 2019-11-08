@@ -80,6 +80,9 @@
 //   color: #ccc;
 // }
 
+
+//メニュー一覧
+
 .wrapper {
   width: 100%;
   background: #f2f2f2;
@@ -94,13 +97,13 @@
 
 .mi-container {
   margin-bottom: 8px;
-  height: 1000px;
+  height: auto;
 
 }
 
 .mi-container,
 .mi-container-inner {
-  margin: 0 auto;
+  margin: 50px auto;
   padding: 34px 48px;
   width: 100%;
   max-width: 984px;
@@ -118,7 +121,6 @@
   margin-bottom: 8px;
   box-shadow: 0 0 15px 0 rgba(191,203,222,0.4);
   position: relative;
-  margin: 0 auto 26px;
 }
 
 .mi-container-header {
@@ -152,16 +154,6 @@ input[type="search"] {
   float: left;
 }
 
-.btn-danger {
-
-}
-
-// form#menu_search.menu_search {
-//   margin-bottom: 50px;
-//   width: 300px;
-//   height:40px;
-// }
-
 ul {
   list-style-type: none;
   display: flex;
@@ -183,6 +175,10 @@ ul {
 
 .f-show {
   text-align: right;
+}
+
+.ttt {
+  margin-left: 34%;
 }
 
 
@@ -230,14 +226,14 @@ ul {
 
 .ms-container {
   margin-bottom: 10px;
-  height: 45rem;
-  margin-bottom: 100px;
-  margin: 0 auto;
+  height:40rem;
+  margin: 50px auto;
   padding: 32px 48px 48px;
   width: 100%;
   max-width: 984px;
   background: #fff;
   border-radius: 10px;
+  position: relative;
 }
 
 .ms-contents {
@@ -287,6 +283,17 @@ ul {
   left: 70%;
   margin-left: 30px;
   list-style-type: none;
+}
+
+.menu-btn-wrap {
+  position: absolute;
+  bottom: 48px;
+  top: auto;
+  right: 48px;
+}
+
+.rrr {
+  margin-left: 20px;
 }
 
 

@@ -16,11 +16,12 @@
         <!-- </form> -->
         <%= render "search_result" %>
         <%= link_to 'クリア', menus_path, class: 'btn btn-outline-danger' %>
+        <%= link_to 'スタッフ一覧へ', staffs_path, class: 'btn btn-primary ttt' %>
       <% unless @params.present? %>
         <% @menus.each do |menu| %>
           <div class="mi-container-inner">
             <div class="mi-container-content">
-          <div class="mi-container-content">
+          <!-- <div class="mi-container-content"> -->
             <div>
               <ul class="mi-cont">
                 <li class="all mif-menu-name"><%= menu.menu_name %></li>
