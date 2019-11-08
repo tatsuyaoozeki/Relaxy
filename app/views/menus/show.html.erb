@@ -32,9 +32,7 @@
             </div>
           </div>
 
-
-
-          <div class="">
+          <div>
             <div class="menu-btn-wrap">
               <%= link_to '戻る', menus_path, class: "btn btn-primary" %>
                 <% if current_user.status == "一般ユーザー" %>
@@ -50,16 +48,3 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-  <!-- <div>
-    <ul class="ms-content">
-      <li class="all ms-manu_name">メニュー名:<%= @menu.menu_name %></li>
-      <li class="all ms-time_require">施術時間:<%= @menu.time_require %></li>
-      <li class="all ms-price">価格:<%= @menu.price %></li>
-      <li class="all ms-image">メニュー内容:<%= @menu.menu_content %></li>
-    </ul>
-  </div> -->

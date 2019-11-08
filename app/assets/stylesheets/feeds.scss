@@ -81,11 +81,8 @@ ul {
   text-align: right;
 }
 
-
-
-
 // / 投稿詳細
-.show-contents {
+.fs-contents {
   margin-top: 50px;
   height: auto;
   padding: 0;
@@ -94,11 +91,9 @@ ul {
   overflow: hidden;
 }
 
-.show-container {
-  margin-bottom: 10px;
-  height: 45rem;
-  margin-bottom: 100px;
-  margin: 0 auto;
+.fs-container {
+  height: 55rem;
+  margin: 100px auto 100px;
   padding: 32px 48px 48px;
   width: 100%;
   max-width: 984px;
@@ -106,17 +101,16 @@ ul {
   border-radius: 10px;
 }
 
-.fs-contents {
+.fss-contents {
   display: flex;
   flex-direction: column;
-  margin: 32px 48px 48px;
-  padding:  0;
+  padding: 32px 48px 48px;
   font-size: 18px;
   margin-bottom: 32px;
 }
 
-.fs-title {
-  font-weight: bold;
+.fs-name {
+  font-weight: 700;
 }
 
 .fs-content {
@@ -137,17 +131,35 @@ ul {
 
 .fs-link {
   display: flex;
-  flex-direction: row;
-  text-align: right;
-  height: 38px;
-  width: 55px;
-  position: absolute;
+
+  // text-align: right;
+  // height: 38px;
+  // width: 55px;
+  // position: absolute;
   bottom: 10rem;
-  left: 70%;
+  // left: 70%;
   margin-left: 30px;
   list-style-type: none;
+
 }
 
+// .fss-link {
+//   display: flex;
+// }
+
+// .menuindex {
+//   display: flex;
+//   width: auto;
+// }
+
+// .fsm {
+//   font-size: 1.2rem;
+//   font-weight: 600;
+// }
+
+.menu-btn-wrap {
+  display: flex;
+}
 
 // 新規投稿・編集ページ
 .ne-contents {

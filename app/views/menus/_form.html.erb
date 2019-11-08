@@ -7,7 +7,7 @@
             <%= form_with(model: @menu, local: true) do |form| %>
               <% if @menu.errors.any? %>
                 <div id="error_explanation">
-                  
+
 
                   <ul>
                   <% @menu.errors.full_messages.each do |message| %>
@@ -21,7 +21,7 @@
               <ul class="mne-content">
                 <div class="mne-menu_name"> -->
                 <div class="form-groups row mt-5">
-                  <label for="inputEmail" class="col-sm-4 col-form-label">メニュー名</label>
+                  <label class="col-sm-4 col-form-label mne">メニュー名</label>
                   <div class="col-mr-sm-8">
                     <%= form.text_field :menu_name, class: 'form-control' %>
                   </div>
@@ -29,21 +29,21 @@
                 <!-- </div> -->
 
                 <div class="form-groups row mt-5">
-                  <label for="inputEmail" class="col-sm-4 col-form-label">施術時間</label>
+                  <label class="col-sm-4 col-form-label mne">施術時間</label>
                   <div class="col-mr-sm-8">
                     <%= form.number_field :time_require, min: 30, max: 90, step: 15  %>&nbsp;分
                 </div>
               </div>
 
               <div class="form-groups row mt-5">
-                <label for="inputEmail" class="col-sm-4 col-form-label">価格</label>
+                <label class="col-sm-4 col-form-label mne">価格</label>
                 <div class="col-mr-sm-8">
                   <%= form.number_field :price, min: 0, max: 1000000, step: 100 %>&nbsp;円
                 </div>
               </div>
 
               <div class="form-groups row mt-5">
-                <label for="inputEmail" class="col-sm-4 col-form-label">メニュー内容</label>
+                <label class="col-sm-4 col-form-label mne">メニュー内容</label>
                 <div class="col-mr-sm-8">
                   <%= form.text_area :menu_content, :size => "60x15" %>
                 </div>

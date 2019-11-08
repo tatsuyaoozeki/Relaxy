@@ -24,29 +24,40 @@ body {
   background-color: #f2f2f2;
 }
 
-/* body {
-    font-family: "Helvetica Neue", Helvetica, Arial, "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, 'Open Sans', sans-serif;
+.hlb {
+  color: white;
+  text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Helvetica Neue", Helvetica, Arial, "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, 'Open Sans', sans-serif;
-} */
+.hlb:hover {
+  color: #66c2ff;
+  text-decoration: none;
+}
+
+.hlb:active {
+  color: #33adff;
+  text-decoration: none;
+}
+
+
 
 #error_explanation {
   display: contents;
 }
+
 
 /* ヘッダー */
 
 h1 {
   font-size: 1.8rem;
   font-weight: 600;
+  color: #525e66;
 }
 
 .header-link {
   display: inline; */
   color: #fff;
-  margin: 0 20px;
+  margin-left: 20px;
 }
 
 .header-link:hover {
@@ -56,15 +67,16 @@ h1 {
 }
 
 .header-feed {
-  margin-left: 20px;
+  margin: 0 20px;
 }
 
 .navbar {
-  padding: 1.5rem 1rem;
+  padding: 1rem 1rem;
 }
 
 .navbar-brand {
-  font-size: 30px;
+  font-size: 36px;
+  font-weight: 600;
 }
 
 p.notice {

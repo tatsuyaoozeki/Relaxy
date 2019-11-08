@@ -4,6 +4,14 @@
 
 
 // ユーザ登録ページレイアウト
+.u-in-container {
+  margin: 100px auto 80px;
+  padding: 32px 48px 48px;
+  width: 100%;
+  height: auto;
+  max-width: 984px;
+  background: #fff;
+}
 
 :root {
   --input-padding-x: 1.5rem;
@@ -124,6 +132,14 @@
 
 
 // ログイン画面
+.log-container {
+  margin: 100px auto 80px;
+  padding: 32px 48px 48px;
+  width: 100%;
+  height: auto;
+  max-width: 984px;
+  background: #fff;
+}
 .sign-form {
   width: 30%;
   margin: 0 auto 4rem auto;
@@ -132,8 +148,7 @@
 }
 
 .sign-form-wrap {
-    padding-top: 80px;
-
+  padding-top: 80px;
 }
 
 .sign-form_input {
