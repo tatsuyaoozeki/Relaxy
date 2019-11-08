@@ -40,6 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 1.8rem;
+  font-weight: 600;
 }
 
 .header-link {
@@ -52,6 +53,10 @@ h1 {
   opacity: 0.5;
   color: #fff;
   text-decoration: none;
+}
+
+.header-feed {
+  margin-left: 20px;
 }
 
 .navbar {
@@ -77,10 +82,11 @@ p.alert {
   color: #fff;
 }
 
-.loginuser {
+.login-user {
   color: #fff;
   font-size: 16px;
-  margin: 10px 0 0;
+  margin: 0 0 0 auto;
+  text-align: right;
 }
 
 

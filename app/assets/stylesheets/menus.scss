@@ -245,25 +245,7 @@ ul {
   margin-bottom: 32px;
 }
 
-.ms-menu-name {
-  font-size: 24px
-}
-
-.ms-time_require {
-  font-size: 24px
-}
-
-.ms-price {
-  font-size: 24px;
-}
-
-.ms-menu-name {
-  font-size: 24px;
-}
-
 .ms-link {
-  // display: flex;
-  // flex-direction: column;
   text-align: center;
   height: 38px;
   width: 55px;
@@ -294,6 +276,11 @@ ul {
 
 .rrr {
   margin-left: 20px;
+}
+
+.msl {
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 

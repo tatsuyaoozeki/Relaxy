@@ -21,19 +21,19 @@ div {
   margin-bottom: 50px;
 }
 
-.contents {
+.f-contents {
   padding: 0;
   width: 100%;
   background-color: #f2f2f2;
 }
 
-.container {
+.f-container {
   margin-bottom: 10px;
   height: auto;
 }
 
-.container,
-.container-inner {
+.f-container,
+.f-container-inner {
   margin: 0 auto;
   padding: 32px 48px 48px;
   width: 100%;
@@ -41,21 +41,20 @@ div {
   background: #fff;
 }
 
-.container-inner {
+.f-container-inner {
   border: 1px solid #ccc;
   border-radius: 10px;
   min-height: 330px;
   background: #fff;
   border-radius: 10px;
   padding: 24px;
-  margin-bottom: 8px;
+  margin: 50px 0 8px;
   box-shadow: 0 0 15px 0 rgba(191,203,222,0.4);
   position: relative;
 }
 
-.container-header {
+.f-container-header {
   font-size: 18px;
-  margin-bottom: 32px;
 }
 
 .container-content {
