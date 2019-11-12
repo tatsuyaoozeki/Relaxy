@@ -54,16 +54,10 @@ h1 {
   color: #525e66;
 }
 
-.header-link {
-  display: inline; */
+ .header-link {
+  display: inline;
   color: #fff;
   margin-left: 20px;
-}
-
-.header-link:hover {
-  opacity: 0.5;
-  color: #fff;
-  text-decoration: none;
 }
 
 .header-feed {

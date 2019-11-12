@@ -34,7 +34,7 @@ div {
 
 .f-container,
 .f-container-inner {
-  margin: 0 auto;
+  margin: 0 auto 80px;
   padding: 32px 48px 48px;
   width: 100%;
   max-width: 984px;
@@ -106,7 +106,8 @@ ul {
   flex-direction: column;
   padding: 32px 48px 48px;
   font-size: 18px;
-  margin-bottom: 32px;
+  height: 45rem;
+  // margin-bottom: 32px;
 }
 
 .fs-name {
@@ -131,34 +132,20 @@ ul {
 
 .fs-link {
   display: flex;
-
-  // text-align: right;
-  // height: 38px;
-  // width: 55px;
-  // position: absolute;
   bottom: 10rem;
-  // left: 70%;
   margin-left: 30px;
   list-style-type: none;
 
 }
 
-// .fss-link {
-//   display: flex;
-// }
-
-// .menuindex {
-//   display: flex;
-//   width: auto;
-// }
-
-// .fsm {
-//   font-size: 1.2rem;
-//   font-weight: 600;
-// }
-
 .menu-btn-wrap {
   display: flex;
+  margin-left: 70%;
+  margin-bottom: 48px;
+}
+
+.mbw {
+  margin-right: 10px;
 }
 
 // 新規投稿・編集ページ
@@ -172,10 +159,8 @@ ul {
 }
 
 .ne-container {
-  margin-bottom: 10px;
   height: 45rem;
-  margin-bottom: 100px;
-  margin: 0 auto;
+  margin: 100px auto 80px;
   padding: 32px 48px 48px;
   width: 100%;
   max-width: 984px;
