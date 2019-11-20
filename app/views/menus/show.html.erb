@@ -1,22 +1,42 @@
 <div class="wrapper">
   <div class="ms-contents">
     <div class="ms-container">
-      <h2 container-header>詳細画面</h2>
+      <h1 container-header>詳細画面</h1>
+      <p id="notice"><%= notice %></p>
         <div>
-          <div>
-            <ul class="ms-content">
-              <li class="all ms-manu_name">メニュー名:<%= @menu.menu_name %></li>
-              <li class="all ms-time_require">施術時間:<%= @menu.time_require %></li>
-              <li class="all ms-price">価格:<%= @menu.price %></li>
-              <li class="all ms-image">メニュー内容:<%= @menu.menu_content %></li>
-            </ul>
+          <div class="form-groups row mt-5">
+            <label class="col-sm-4 col-form-label msl">メニュー名</label>
+            <div class="col-mr-sm-8">
+              <%= @menu.menu_name %>
+            </div>
           </div>
-            <p id="notice"><%= notice %></p>
-          <div class="">
+
+          <div class="form-groups row mt-5">
+            <label class="col-sm-4 col-form-label msl">施術時間</label>
+            <div class="col-mr-sm-8">
+              <%= @menu.time_require %>
+            </div>
+          </div>
+
+          <div class="form-groups row mt-5">
+            <label class="col-sm-4 col-form-label msl">価格</label>
+            <div class="col-mr-sm-8">
+              <%= @menu.price %>
+            </div>
+          </div>
+
+          <div class="form-groups row mt-5">
+            <label class="col-sm-4 col-form-label msl">メニュー内容</label>
+            <div class="col-mr-sm-8">
+              <%= @menu.menu_content %>
+            </div>
+          </div>
+
+          <div>
             <div class="menu-btn-wrap">
               <%= link_to '戻る', menus_path, class: "btn btn-primary" %>
-                <% if current_user.status == false %>
-                <%= link_to '予約する', new_menu_reservation_path(@menu.id, @menu.reservations.ids), class: "btn btn-primary" %>
+                <% if current_user.status == "一般ユーザー" %>
+                <%= link_to '予約する', new_menu_reservation_path(@menu.id, @menu.reservations.ids), class: "btn btn-success rrr" %>
               <% end %>
 
               <% if @staff == current_user.id %>

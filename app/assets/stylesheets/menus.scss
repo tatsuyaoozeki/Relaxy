@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//メニュー一覧
 
 .wrapper {
   width: 100%;
@@ -17,13 +18,13 @@
 
 .mi-container {
   margin-bottom: 8px;
-  height: 1000px;
+  height: auto;
 
 }
 
 .mi-container,
 .mi-container-inner {
-  margin: 0 auto;
+  margin: 100px auto 80px;
   padding: 34px 48px;
   width: 100%;
   max-width: 984px;
@@ -40,7 +41,6 @@
   margin-bottom: 8px;
   box-shadow: 0 0 15px 0 rgba(191,203,222,0.4);
   position: relative;
-  margin: 0 auto 26px;
 }
 
 .mi-container-header {
@@ -57,7 +57,24 @@
   padding: 0;
 }
 
-ul {
+.form-search {
+  width: 43%;
+  float: left;
+}
+
+input[type="search"] {
+  width: 300px;
+  height:40px;
+  float: left;
+}
+
+.form- {
+  width: 300px;
+  height:40px;
+  float: left;
+}
+
+.mi-cont{
   list-style-type: none;
   display: flex;
   flex-direction: column;
@@ -80,38 +97,9 @@ ul {
   text-align: right;
 }
 
-form#menu_search.menu_search {
-  margin-bottom: 50px;
+.ttt {
+  margin-left: 34%;
 }
-
-.mif-menu-name {
-  font-size: 24px;
-  margin: 0;
-  padding: 0;
-  border-bottom: 1px solid #ccc;
-}
-
-.mif-time_require {
-  font-size: 24px;
-  margin: 0;
-  padding: 0;
-  border-bottom: 1px solid #ccc;
-}
-
-.mif-price {
-  font-size: 24px;
-  margin: 0;
-  padding: 0;
-  border-bottom: 1px solid #ccc;
-}
-
-.mif-menu-content {
-  font-size: 24px;
-  margin: 0;
-  padding: 0;
-  border-bottom: 1px solid #ccc;
-}
-
 
 // メニュー詳細
 .ms-contents {
@@ -125,14 +113,14 @@ form#menu_search.menu_search {
 
 .ms-container {
   margin-bottom: 10px;
-  height: 45rem;
-  margin-bottom: 100px;
-  margin: 0 auto;
+  height:40rem;
+  margin: 50px auto;
   padding: 32px 48px 48px;
   width: 100%;
   max-width: 984px;
   background: #fff;
   border-radius: 10px;
+  position: relative;
 }
 
 .ms-contents {
@@ -142,22 +130,6 @@ form#menu_search.menu_search {
   padding:  0;
   font-size: 18px;
   margin-bottom: 32px;
-}
-
-.ms-menu-name {
-  font-size: 24px
-}
-
-.ms-time_require {
-  font-size: 24px
-}
-
-.ms-price {
-  font-size: 24px;
-}
-
-.ms-menu-name {
-  font-size: 24px;
 }
 
 .ms-link {
@@ -182,6 +154,16 @@ form#menu_search.menu_search {
   list-style-type: none;
 }
 
+.rrr {
+  margin-left: 20px;
+}
+
+.msl {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #525e66;
+}
+
 // 新規投稿・編集ページ
 .mne-contents {
   margin-top: 50px;
@@ -193,10 +175,8 @@ form#menu_search.menu_search {
 }
 
 .mne-container {
-  margin-bottom: 10px;
-  height: 45rem;
-  margin-bottom: 100px;
-  margin: 0 auto;
+  height: auto;
+  margin: 80px auto 80px;
   padding: 32px 48px 48px;
   width: 100%;
   max-width: 984px;
@@ -204,36 +184,8 @@ form#menu_search.menu_search {
   border-radius: 10px;
 }
 
-.mne-content {
-  display: flex;
-  flex-direction: column;
-  margin: 32px 48px 48px;
-  padding:  0;
-  font-size: 18px;
-  margin-bottom: 32px;
-}
-
-.mne-menu_name {
-  width: 400px;
-  margin: 30px auto;
-}
-
-.mne-time_require {
-  width: 400px;
-  margin: 30px auto;
-}
-
-.mne-price {
-  width: 400px;
-  margin: 30px auto;
-}
-
-.mne-menu_content {
-  width: 400px;
-  margin: 30px auto;
-}
-
-.menu-btn-wrap {
-  margin-top: 300px;
-  text-align: center;
+.mne {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #525e66;
 }

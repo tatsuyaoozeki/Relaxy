@@ -21,12 +21,13 @@ class ReservationsController < ApplicationController
 
   def show
     @menu = @reservation.menu
+    @user = User.find(current_user.id)
   end
 
   private
 
   def reservation_params
-    params.require(:reservation).permit(:start_date, :end_date, :menu_id, :user_id)
+    params.require(:reservation).permit(:start_date, :menu_id, :user_id)
   end
 
   def set_reservation

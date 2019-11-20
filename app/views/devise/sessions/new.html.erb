@@ -1,15 +1,17 @@
-<div class="container">
+<div class="log-container">
   <div class="row">
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
       <div class="card card-signin my-5">
         <div class="card-body">
           <h5 class="card-title text-center">Sign In</h5>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <% flash.each do |message_type, message| %>
+                <div class="alert alert-<%= message_type %>">
+                  <%= message %>
+                </div>
+            <% end %>
               <p class="sign-form_input-wrap"><%= f.email_field :email, placeholder: "メールアドレス", class: "sign-form_input" %>
-              <p class="sign-form_input-wrap"><%= f.password_field :password, placeholder: "パスワード", class: "sign-form_input", id: "passcode" %></p>
-            <div class="field">
-              <%= f.password_field :password, autocomplete: "current-password",  placeholder: "確認用パスワード", class: "sign-form_input", id: "passcode_confirmation" %>
-            </div>
+              <p class="sign-form_input-wrap"><%= f.password_field :password, placeholder: "パスワード", class: "sign-form_input" %></p>
             <% if devise_mapping.rememberable? %>
               <div class="sign-form_input-wrap">
                 <%= f.check_box :remember_me %>

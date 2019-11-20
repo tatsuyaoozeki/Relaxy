@@ -24,34 +24,60 @@ body {
   background-color: #f2f2f2;
 }
 
-
-/* ヘッダー */
-
-.header-link {
-  display: inline; */
-  color: #fff;
-  margin: 0 20px;
-}
-
-.header-link:hover {
-  opacity: 0.5;
-  color: #fff;
+.hlb {
+  color: white;
   text-decoration: none;
 }
 
+.hlb:hover {
+  color: #66c2ff;
+  text-decoration: none;
+}
+
+.hlb:active {
+  color: #33adff;
+  text-decoration: none;
+}
+
+
+
+#error_explanation {
+  display: contents;
+}
+
+
+/* ヘッダー */
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #525e66;
+}
+
+ .header-link {
+  display: inline;
+  color: #fff;
+  margin-left: 20px;
+}
+
+.header-feed {
+  margin: 0 20px;
+}
+
 .navbar {
-  padding: 1.5rem 1rem;
+  padding: 1rem 1rem;
 }
 
 .navbar-brand {
-  font-size: 45px;
-  font-weight: bold;
+  font-size: 36px;
+  font-weight: 600;
 }
 
 p.notice {
   color: white;
   z-index: 1;
 }
+
 p.alert {
   color: red;
   z-index: 1;
@@ -62,15 +88,13 @@ p.alert {
   color: #fff;
 }
 
-.loginuser {
+
+.login-user {
   color: #fff;
   font-size: 16px;
-  margin: 10px 0 0;
+  margin: 0 0 0 auto;
+  text-align: right;
 }
-
-
-
-
 
 
 /* フッター */
@@ -141,5 +165,4 @@ nav.ft-nav {
   font-weight: 600;
   color: dark_navy;
   font-size: 14px;
-
 }
