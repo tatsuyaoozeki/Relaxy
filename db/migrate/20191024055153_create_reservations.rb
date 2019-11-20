@@ -4,7 +4,6 @@ class CreateReservations < ActiveRecord::Migration[5.2]
       t.references :user, foreign_key: true
       t.references :menu, foreign_key: true
       t.datetime :start_date,     null: false
-      t.datetime :end_date,       null: false
 
       t.timestamps
     end

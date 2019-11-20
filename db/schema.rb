@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 2019_10_28_053839) do
     t.bigint "user_id"
     t.bigint "menu_id"
     t.datetime "start_date", null: false
-    t.datetime "end_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["menu_id"], name: "index_reservations_on_menu_id"
