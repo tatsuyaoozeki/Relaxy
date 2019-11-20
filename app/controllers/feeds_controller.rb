@@ -19,7 +19,6 @@ class FeedsController < ApplicationController
 
   def create
     @feed = current_user.feeds.build(feed_params)
-    # @feed = Feed.new(feed_params)
     if @feed.save
       redirect_to feeds_path, notice: '投稿を作成しました'
     else
@@ -29,7 +28,7 @@ class FeedsController < ApplicationController
 
   def update
     if @feed.update(feed_params)
-      redirect_to @feed, notice: '投稿を編集しました'
+      redirect_to feeds_path, notice: '投稿を編集しました'
     else
       render :edit
     end

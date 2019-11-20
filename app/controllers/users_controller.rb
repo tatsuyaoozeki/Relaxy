@@ -1,22 +1,16 @@
 class UsersController < ApplicationController
-  before_action :test, only: [:show]
+  before_action :test, only: [:show, :edit, :update]
+
   def show
     @user = User.find(params[:id])
   end
 
-  # def following
-  #     @user  = User.find(params[:id])
-  #     @users = @user.followings
-  #     render 'show_follow'
-  # end
-  #
-  # def followers
-  #   @user  = User.find(params[:id])
-  #   @users = @user.followers
-  #   render 'show_follower'
-  # end
+  def edit
+
+  end
 
   private
+
 
   def test
     @user = User.find(params[:id])

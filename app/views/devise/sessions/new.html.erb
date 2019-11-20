@@ -12,7 +12,6 @@
             <% end %>
               <p class="sign-form_input-wrap"><%= f.email_field :email, placeholder: "メールアドレス", class: "sign-form_input" %>
               <p class="sign-form_input-wrap"><%= f.password_field :password, placeholder: "パスワード", class: "sign-form_input" %></p>
-
             <% if devise_mapping.rememberable? %>
               <div class="sign-form_input-wrap">
                 <%= f.check_box :remember_me %>

@@ -1,9 +1,9 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show]
 
-  def index
-    # @reservation = Reservation.where(user_id: current_user.id).where(menu_id: menu_id)
-  end
+  # def index
+  #   @reservation = Reservation.where(user_id: current_user.id).where(menu_id: menu_id)
+  # end
 
   def new
     @reservation = Reservation.new
