@@ -1,4 +1,4 @@
-<div class="container us-in">
+<div class="u-in-container">
    <div class="row">
      <div class="col-lg-10 col-xl-9 mx-auto">
        <div class="card card-signin flex-row my-5">
@@ -27,7 +27,7 @@
 
             <label for="inputPassword">パスワード</label>
             <div class="form-label-group">
-              <%= f.password_field :password, autocomplete: "new-password", id: "icode" %><br />
+              <%= f.password_field :password, autocomplete: "new-password" %><br />
               <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %>文字以上で入力してください)</em>
               <% end %>
@@ -36,20 +36,20 @@
 
             <label for="inputConfirmPassword">確認用パスワード</label>
             <div class="form-label-group">
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", id: "icode_confirmation" %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
               <!-- <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" required> -->
              </div>
 
-            <label for="inputStatus">ステータス
+            <label for="inputStatus">ステータス</label>
             <div class="form-label-group">
               <p>スタッフとして掲載希望の方は下記の記入をしてください</p>
-              <%= f.check_box :status, autofocus: true, checked_value: true, unchecked_value: false, id: "userStatus" %>
+              <%= f.check_box :status, {}, "スタッフ", "一般ユーザー" %>
             </div>
 
             <div class="actions">
               <%= f.submit "Sign up", class: "btn btn-primary btn-block" %>
-              </div>
-            </label>
+
+            </div>
           <% end %>
 
 

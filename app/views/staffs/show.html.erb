@@ -4,35 +4,58 @@
 <div class="wrapper">
   <div class="ss-contents">
     <div class="ss-container">
-      <h2 container-header>詳細画面</h2>
-        <div>
-          <ul class="fs-contents">
-            <li class="all ss-name">名前: <%= @staff.user.name %></li>
-            <li class="all ss-email">メールアドレス: <%= @staff.user.email %></li>
-            <li class="all ss-status">ユーザーステータス:<%= @staff.user.status %></li>
-            <li class="all ss-content">紹介文: <%= @staff.content %></li>
-            <li class="all ss-gender">性別: <%= @staff.gender %></li>
-            <% unless @staff.user_id == current_user.id %>
-              <li
-                <%= link_to 'このスタッフのメニューを見る', menus_path(@staff.id) %>
-                <%= render "staffs/follow_form" %>
-              </li>
-            <% else %>
-              <li>
-                <%= link_to 'メニュー作成', new_menu_path, class:'btn btn-primary' %>
-                <%= link_to '投稿を作成', new_feed_path, class:'btn btn-primary' %>
-              </li>
-            <% end %>
-          </ul>
-          <div class="edit_link">
-            <li class="back_feed">
-              <% if @staff.user_id == current_user.id %>
-                <%= link_to '編集する', edit_staff_path(@staff.id), class:'btn btn-primary' %>
-              <% end %>
-            </li>
-            <li class="back_feed"><%= link_to 'back', staffs_path, class: "btn btn-primary" %></li>
+      <h1 container-header>詳細画面</h1>
+        <div class="ss-form-groups row mt-5">
+          <label class="col-sm-4 col-form-label msl">お名前</label>
+          <div class="col-mr-sm-8">
+            <%= @staff.user.name %>
           </div>
         </div>
+
+        <div class="ss-form-groups row mt-5">
+          <label class="col-sm-4 col-form-label msl">メールアドレス</label>
+          <div class="col-mr-sm-8">
+            <%= @staff.user.email %>
+          </div>
+        </div>
+
+        <div class="ss-form-groups row mt-5">
+          <label class="col-sm-4 col-form-label msl">ユーザーステータス</label>
+          <div class="col-mr-sm-8">
+            <%= @staff.user.status %>
+          </div>
+        </div>
+
+        <div class="ss-form-groups row mt-5">
+          <label class="col-sm-4 col-form-label msl">紹介文:<br></label>
+          <div class="col-mr-sm-8">
+            <%= @staff.content %>
+          </div>
+        </div>
+
+        <div class="ss-form-groups row mt-5">
+          <label class="col-sm-4 col-form-label msl">性別</label>
+          <div class="col-mr-sm-8">
+            <%= @staff.gender %>
+          </div>
+        </div>
+
+        <ul class="staff_links">
+          <% unless @staff.user_id == current_user.id %>
+              <li class="links_margin1"><%= link_to 'このスタッフのメニューを見る', menus_path(@staff.id), class:'btn btn-info' %></li>
+              <li class="links_margin1"><%= render "staffs/follow_form" %></li>
+          <% else %>
+              <li class="links_margin1"><%= link_to 'メニュー作成', new_menu_path, class:'btn btn-info' %></li>
+              <li class="links_margin1"><%= link_to '投稿を作成', new_feed_path, class:'btn btn-success' %></li>
+          <% end %>
+
+        <li class="back_feed">
+          <% if @staff.user_id == current_user.id %>
+            <%= link_to '編集する', edit_staff_path(@staff.id), class:'btn btn-primary' %>
+          <% end %>
+        </li>
+        <li class="links_margin2"><%= link_to 'back', staffs_path, class: "btn btn-primary" %></li>
+      </ul>
     </div>
   </div>
 </div>

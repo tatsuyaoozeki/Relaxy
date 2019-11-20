@@ -1,9 +1,10 @@
 <div class="wrapper">
-  <div class="show-contents">
-    <div class="show-container">
-      <h2 container-header>詳細画面</h2>
+  <div class="fs-contents">
+    <div class="fs-container">
+      <h1 container-header>投稿詳細</h1>
         <div>
-          <ul class="fs-contents">
+          <ul class="fss-contents">
+            <li class="all fs-name"><%= @user.name %></li>
             <li class="all fs-title"><%= @feed.title %></li>
             <li class="all fs-content"><%= @feed.content %></li>
             <li class="all fs-image"><%= image_tag @feed.image.url %></li>
@@ -11,10 +12,14 @@
         </div>
       <div class="fs-link">
         <% if @feed.user_id == current_user.id %>
-          <li><%= link_to 'EDIT', edit_feed_path(@feed.id), class: "btn btn-primary" %></li>
+          <li>
+            <%= link_to 'EDIT', edit_feed_path(@feed.id), class: "btn btn-primary" %>
+          </li>
         <% end %>
-        <div class="menuindex"><%= link_to 'メニュー一覧へ', menus_path %></div>
-        <li><%= link_to 'back', feeds_path, class: "btn btn-primary" %></li>
+        <ul class="menu-btn-wrap">
+          <li><%= link_to 'back', feeds_path, class: 'btn btn-primary mbw' %></li>
+          <li><%= link_to 'メニュー一覧へ', menus_path, class: 'btn btn-primary'%></li>
+        </ul>
       </div>
     </div>
   </div>

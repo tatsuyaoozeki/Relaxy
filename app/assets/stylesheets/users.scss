@@ -4,6 +4,14 @@
 
 
 // ユーザ登録ページレイアウト
+.u-in-container {
+  margin: 100px auto 80px;
+  padding: 32px 48px 48px;
+  width: 100%;
+  height: auto;
+  max-width: 984px;
+  background: #fff;
+}
 
 :root {
   --input-padding-x: 1.5rem;
@@ -124,6 +132,14 @@
 
 
 // ログイン画面
+.log-container {
+  margin: 100px auto 80px;
+  padding: 32px 48px 48px;
+  width: 100%;
+  height: auto;
+  max-width: 984px;
+  background: #fff;
+}
 .sign-form {
   width: 30%;
   margin: 0 auto 4rem auto;
@@ -132,8 +148,7 @@
 }
 
 .sign-form-wrap {
-    padding-top: 80px;
-
+  padding-top: 80px;
 }
 
 .sign-form_input {
@@ -192,7 +207,7 @@
 
 .ui-container,
 .ui-container-inner {
-  margin: 0 auto;
+  margin: 50px auto;
   padding: 32px 48px 48px;
   width: 100%;
   max-width: 984px;
@@ -251,7 +266,7 @@
 
 .ui-cont {
   font-size: 16px;
-  line-height: 0.8rem;
+  line-height: 1.2rem;
   margin: 5px 10px;
   height: 120px;
 }
@@ -266,7 +281,6 @@
 }
 
 .ui-menu .btn{
-  // float: left;
   width: 250px;
 }
 
@@ -287,10 +301,6 @@
   list-style-type: none;
 }
 
-
-
-
-
 // 詳細
 div.user_show {
   padding-bottom: 40px;
@@ -303,7 +313,6 @@ div.user_show {
   max-width: 420px;
   padding: 15px;
   margin: auto;
-
 }
 
 .form-label-group {
@@ -329,8 +338,6 @@ div.user_show {
 
 
 // ユーザー詳細画面
-
-
 .us-contents {
   margin-top: 50px;
   height: auto;
@@ -341,15 +348,14 @@ div.user_show {
 }
 
 .us-container {
-  margin-bottom: 10px;
   height: 45rem;
-  margin-bottom: 100px;
-  margin: 0 auto;
+  margin: 100px auto 80px;
   padding: 32px 48px 48px;
   width: 100%;
   max-width: 984px;
   background: #fff;
   border-radius: 10px;
+  position: relative;
 }
 
 .us-content {
@@ -373,15 +379,20 @@ div.user_show {
   font-size: 24px;
 }
 
-.ss-link {
+.us-link {
   display: flex;
-  flex-direction: column;
-  text-align: right;
-  height: 38px;
-  width: 55px;
   position: absolute;
-  bottom: 10rem;
-  left: 70%;
-  margin-left: 30px;
+  right: 48px;
+  bottom: 48px;
   list-style-type: none;
+}
+
+.eurp {
+  margin-left: 10px;
+}
+
+//編集
+
+.us-in {
+  margin-top: 100px;
 }

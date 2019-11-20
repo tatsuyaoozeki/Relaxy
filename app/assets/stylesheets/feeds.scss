@@ -21,41 +21,40 @@ div {
   margin-bottom: 50px;
 }
 
-.contents {
+.f-contents {
   padding: 0;
   width: 100%;
   background-color: #f2f2f2;
 }
 
-.container {
+.f-container {
   margin-bottom: 10px;
   height: auto;
 }
 
-.container,
-.container-inner {
-  margin: 0 auto;
+.f-container,
+.f-container-inner {
+  margin: 0 auto 80px;
   padding: 32px 48px 48px;
   width: 100%;
   max-width: 984px;
   background: #fff;
 }
 
-.container-inner {
+.f-container-inner {
   border: 1px solid #ccc;
   border-radius: 10px;
   min-height: 330px;
   background: #fff;
   border-radius: 10px;
   padding: 24px;
-  margin-bottom: 8px;
+  margin: 50px 0 8px;
   box-shadow: 0 0 15px 0 rgba(191,203,222,0.4);
   position: relative;
 }
 
-.container-header {
+.f-container-header {
   font-size: 18px;
-  margin-bottom: 32px;
 }
 
 .container-content {
@@ -82,11 +81,8 @@ ul {
   text-align: right;
 }
 
-
-
-
 // / 投稿詳細
-.show-contents {
+.fs-contents {
   margin-top: 50px;
   height: auto;
   padding: 0;
@@ -95,11 +91,9 @@ ul {
   overflow: hidden;
 }
 
-.show-container {
-  margin-bottom: 10px;
-  height: 45rem;
-  margin-bottom: 100px;
-  margin: 0 auto;
+.fs-container {
+  height: 55rem;
+  margin: 100px auto 100px;
   padding: 32px 48px 48px;
   width: 100%;
   max-width: 984px;
@@ -107,17 +101,17 @@ ul {
   border-radius: 10px;
 }
 
-.fs-contents {
+.fss-contents {
   display: flex;
   flex-direction: column;
-  margin: 32px 48px 48px;
-  padding:  0;
+  padding: 32px 48px 48px;
   font-size: 18px;
-  margin-bottom: 32px;
+  height: 45rem;
+  // margin-bottom: 32px;
 }
 
-.fs-title {
-  font-weight: bold;
+.fs-name {
+  font-weight: 700;
 }
 
 .fs-content {
@@ -138,17 +132,21 @@ ul {
 
 .fs-link {
   display: flex;
-  flex-direction: row;
-  text-align: right;
-  height: 38px;
-  width: 55px;
-  position: absolute;
   bottom: 10rem;
-  left: 70%;
   margin-left: 30px;
   list-style-type: none;
+
 }
 
+.menu-btn-wrap {
+  display: flex;
+  margin-left: 70%;
+  margin-bottom: 48px;
+}
+
+.mbw {
+  margin-right: 10px;
+}
 
 // 新規投稿・編集ページ
 .ne-contents {
@@ -161,10 +159,8 @@ ul {
 }
 
 .ne-container {
-  margin-bottom: 10px;
-  height: 55rem;
-  margin-bottom: 100px;
-  margin: 0 auto;
+  height: 45rem;
+  margin: 100px auto 80px;
   padding: 32px 48px 48px;
   width: 100%;
   max-width: 984px;

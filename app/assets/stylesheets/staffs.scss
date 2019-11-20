@@ -3,6 +3,130 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+// ユーザー一覧
+.wrapper {
+  width: 100%;
+  background: #f2f2f2;
+}
+
+.usi-contents {
+  padding: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+}
+
+.usi-container {
+  margin-bottom: 10px;
+  height: auto;
+}
+
+.usi-container,
+.usi-container-inner {
+  margin: 100px auto;
+  padding: 32px 48px 48px;
+  width: 100%;
+  max-width: 984px;
+  background: #fff;
+}
+
+.usi-container-inner {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  min-height: 330px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 8px;
+  box-shadow: 0 0 15px 0 rgba(191,203,222,0.4);
+  position: relative;
+}
+
+.usi-container-header {
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+
+.usi-container-content {
+  margin-top: 20px;
+}
+
+.usi-content {
+  list-style-type: none;
+}
+
+.usi-content {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding:  0;
+}
+
+.all {
+ margin: 10px 0 20px 20px;
+ float:left;
+}
+
+.ui-name {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1.5rem;
+  border-bottom: 1px solid #cfcfcf;
+  margin: 10px 10px;
+}
+
+.cont_memo {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.usi-cont {
+  font-size: 16px;
+  line-height: 1.2rem;
+  margin: 5px 10px;
+  height: 120px;
+}
+
+.usi-gender {
+  font-size: 14px;
+  margin-left: 50px;
+}
+
+.usi-link {
+  display: flex;
+  // text-align: right;
+  // height: 38px;
+  // width: 55px;
+  // position: absolute;
+  // bottom: 10rem;
+  // left: 70%;
+  // margin-left: 30px;
+  // list-style-type: none;
+}
+
+.usi-menu .btn{
+  // float: left;
+  width: 250px;
+}
+
+.usi-show {
+  width: 130px;
+  margin-left: 30px;
+  // text-align: right;
+}
+
+.usi-link2 {
+  display: flex;
+  text-align: right;
+  height: 38px;
+  width: 55px;
+  position: absolute;
+  bottom: 10rem;
+  left: 70%;
+  margin-left: 30px;
+  list-style-type: none;
+}
+
+
 // スタッフ新規
 div.staff_new {
   padding-bottom: 40px;
@@ -49,7 +173,6 @@ div.staff_new {
   display: flex;
   flex-direction: row;
 }
-
 
 .men {
   width: 100px;
@@ -108,8 +231,6 @@ article {
 }
 
 
-
-
 //スタッフ詳細
 .ss-contents {
   margin-top: 50px;
@@ -121,24 +242,14 @@ article {
 }
 
 .ss-container {
-  margin-bottom: 10px;
   height: 45rem;
-  margin-bottom: 100px;
-  margin: 0 auto;
-  padding: 32px 48px 48px;
+  margin: 50px auto;
+  padding: 32px 48px 10px;
   width: 100%;
   max-width: 984px;
   background: #fff;
   border-radius: 10px;
-}
-
-.ss-contents {
-  display: flex;
-  flex-direction: column;
-  margin: 32px 48px 48px;
-  padding:  0;
-  font-size: 18px;
-  margin-bottom: 32px;
+  position: relative;
 }
 
 .ss-name {
@@ -155,39 +266,34 @@ article {
 
 .ss-content {
   font-size: 24px;
-  height: 150px;
+  height: auto;
+
 }
 
 .ss-gender {
   font-size: 24px;
 }
 
-.edit_link {
+.staff_links {
   display: flex;
   flex-direction: row;
-  margin: 32px 48px 48px;
+  margin-top: 13%;
+}
+
+.links_margin1 {
+  margin-right: 5px;
+}
+
+.links_margin2 {
+  margin-left: 5px;
 }
 
 .back_feed {
   text-align: right;
   vertical-align: middle;
   list-style-type: none;
-  margin-right: 5px;
+  margin-left: 55%;
 }
-
-.ss-link {
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-  height: 38px;
-  width: 55px;
-  position: absolute;
-  bottom: 20px;
-  left: 80%;
-  margin-left: 30px;
-  list-style-type: none;
-}
-
 
 // スタッフ編集
 
@@ -198,14 +304,11 @@ article {
   width: 100%;
   background-color: #f2f2f2;
   overflow: hidden;
-
 }
 
 .sfe-container {
-  margin-bottom: 10px;
-  height: 45rem;
-  margin-bottom: 100px;
-  margin: 0 auto;
+  height: auto;
+  margin: 100px auto 80px;
   padding: 32px 48px 48px;
   width: 100%;
   max-width: 984px;
@@ -244,11 +347,13 @@ textarea#staff_content {
   font-size: 24px;
   margin-left: 150px;
   width: 30px;
+  color: #42b9f5;
 }
 
 .females {
   width: 30px;
   margin-left: 100px;
+  color: #fca4b3;
 }
 
 .sfe-f-group {

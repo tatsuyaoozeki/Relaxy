@@ -7,9 +7,7 @@ RSpec.feature "ユーザーログイン機能", type: :system do
 
   it "ユーザーがログインできること" do
     visit new_user_session_path
-
     fill_in 'user[email]', with: 'a@example.com'
-
     fill_in "passcode", with: 'aaaaaa'
     fill_in "passcode_confirmation", with: "aaaaaa"
     click_on 'commit'

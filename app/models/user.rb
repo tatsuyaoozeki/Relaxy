@@ -15,6 +15,8 @@ class User < ApplicationRecord
   has_many :followers, through: :follower_relationships
 
   validates :name, presence: true
+  enum status: { スタッフ: true, 一般ユーザー: false }
+  validates :status, inclusion: {in: ["スタッフ", "一般ユーザー"]}
 
   def following?(other_user)
     following_relationships.find_by(following_id: other_user.id)
@@ -27,5 +29,4 @@ class User < ApplicationRecord
   def unfollow!(other_user)
     following_relationships.find_by(following_id: other_user.id).destroy
   end
-
 end
