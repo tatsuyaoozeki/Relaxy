@@ -155,9 +155,10 @@ input[type="search"] {
 // }
 
 .menu-btn-wrap {
-  display: flex;
-  margin-left: 70%;
-  margin-bottom: 48px;
+  // display: flex;
+  position: absolute;
+  left: 40%;
+  bottom: 10px;
 }
 
 .rrr {

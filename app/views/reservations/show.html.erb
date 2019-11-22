@@ -2,9 +2,6 @@
   <div class="rsn-contents">
     <div class="rsn-container">
       <h1 container-header>詳細画面</h1>
-
-        <!-- <div>
-          <ul class="rsn-content"> -->
         <div class="r-show-groups row mt-5">
           <label class="col-sm-4 col-form-label">予約者</label>
             <div class="col-mr-sm-8">
@@ -30,11 +27,6 @@
               <%= @reservation.start_date.strftime("%Y-%m-%d %H:%M") %>
           </div>
         </div>
-
-
-
-          <!-- </ul>
-        </div> -->
       <div class="rsn-link">
         <li><%= link_to '戻る',menu_path(@menu.id), class: "btn btn-primary" %></li>
       </div>
