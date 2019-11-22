@@ -18,9 +18,9 @@
               <li class="all"><%= feed.title %></li>
               <li class="all"><%= feed.content %></li>
               <li class="all"><%= image_tag(feed.image.url) if feed.image && feed.image.url %></li>
-              <!-- <li class="f-show"> -->
-                <%= link_to t('.show_'), feed_path(feed.id), class: "btn btn-primary" %>
-              <!-- </li> -->
+              <li class="f-show">
+                <%= link_to '詳細', feed_path(feed.id), class: "btn btn-primary" %>
+              </li>
             </ul>
           </div>
         </div>

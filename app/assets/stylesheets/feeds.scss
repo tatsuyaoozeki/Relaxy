@@ -94,20 +94,23 @@ ul {
 .fs-container {
   height: 55rem;
   margin: 100px auto 100px;
-  padding: 32px 48px 48px;
+  padding: 32px 48px 0px;
   width: 100%;
   max-width: 984px;
   background: #fff;
   border-radius: 10px;
-}
+
 
 .fss-contents {
   display: flex;
   flex-direction: column;
-  padding: 32px 48px 48px;
+  padding: 32px 48px 0px;
   font-size: 18px;
   height: 45rem;
   // margin-bottom: 32px;
+
+}
+
 }
 
 .fs-name {
@@ -132,20 +135,32 @@ ul {
 
 .fs-link {
   display: flex;
-  bottom: 10rem;
+  bottom: 2rem;
   margin-left: 30px;
   list-style-type: none;
-
+  position: relative;
 }
 
-.menu-btn-wrap {
-  display: flex;
-  margin-left: 70%;
-  margin-bottom: 48px;
+.mbv {
+  margin-right: 10px;
+  position: absolute;
+  bottom: -3rem;
+  left: 15%;
 }
+
 
 .mbw {
+  margin-right: 30px;
+  position: absolute;
+  bottom: -3rem;
+  left: 72%;
+}
+
+.mbz {
   margin-right: 10px;
+  position: absolute;
+  bottom: -3rem;
+  left: 80%;
 }
 
 // 新規投稿・編集ページ

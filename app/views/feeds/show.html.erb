@@ -11,15 +11,16 @@
           </ul>
         </div>
       <div class="fs-link">
+        <div class="feeds-btn-wrap">
         <% if @feed.user_id == current_user.id %>
-          <li>
-            <%= link_to 'EDIT', edit_feed_path(@feed.id), class: "btn btn-primary" %>
-          </li>
+          <div>
+            <%= link_to '編集', edit_feed_path(@feed.id), class: "btn btn-primary mbv" %>
+          </div>
         <% end %>
-        <ul class="menu-btn-wrap">
-          <li><%= link_to 'back', feeds_path, class: 'btn btn-primary mbw' %></li>
-          <li><%= link_to 'メニュー一覧へ', menus_path, class: 'btn btn-primary'%></li>
-        </ul>
+
+          <div><%= link_to '戻る', feeds_path, class: 'btn btn-primary mbw' %></div>
+          <div><%= link_to 'メニュー一覧へ', menus_path, class: 'btn btn-primary mbz'%></div>
+        </div>
       </div>
     </div>
   </div>
