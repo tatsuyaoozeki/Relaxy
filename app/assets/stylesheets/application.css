@@ -29,6 +29,12 @@ body {
   text-decoration: none;
 }
 
+.hlb2 {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
 .hlb:hover {
   color: #66c2ff;
   text-decoration: none;

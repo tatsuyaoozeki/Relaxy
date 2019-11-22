@@ -35,6 +35,7 @@
             </div>
             <% if current_user.staff.present? %>
               <%= link_to 'メニュー作成', new_menu_path, class: "hlb" %>
+              <%= link_to '投稿作成', new_feed_path, class: "hlb2" %>
             <% else %>
              <%= link_to 'メニュー一覧', menus_path, class: "hlb" %>
             <% end %>
