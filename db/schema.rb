@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2019_10_28_053839) do
 
   create_table "staffs", force: :cascade do |t|
     t.string "content", null: false
-    t.string "gender", null: false
+    t.integer "gender", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
