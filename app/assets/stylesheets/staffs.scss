@@ -340,19 +340,17 @@ textarea#staff_content {
 
 .gender  {
   font-size: 24px;
-  float: left;
+  text-align: center;
 }
 
 .mens {
   font-size: 24px;
-  margin-left: 150px;
-  width: 30px;
+  margin: auto 150px auto 10px;
   color: #42b9f5;
 }
 
 .females {
-  width: 30px;
-  margin-left: 100px;
+  margin: auto 150px auto 10px;
   color: #fca4b3;
 }
 
