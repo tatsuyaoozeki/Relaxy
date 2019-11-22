@@ -4,7 +4,7 @@
       <h1 container-header>投稿詳細</h1>
         <div>
           <ul class="fss-contents">
-            <li class="all fs-name"><%= @user.name %></li>
+            <li class="all fs-name"><%= @feed.user.name %></li>
             <li class="all fs-title"><%= @feed.title %></li>
             <li class="all fs-content"><%= @feed.content %></li>
             <li class="all fs-image"><%= image_tag @feed.image.url %></li>
