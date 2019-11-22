@@ -3,7 +3,7 @@
     <div class="ms-container">
       <h1 container-header>詳細画面</h1>
       <p id="notice"><%= notice %></p>
-        <div>
+
           <div class="form-groups row mt-5">
             <label class="col-sm-4 col-form-label msl">メニュー名</label>
             <div class="col-mr-sm-8">
@@ -32,7 +32,7 @@
             </div>
           </div>
 
-          <div>
+
             <div class="menu-btn-wrap">
               <%= link_to '戻る', menus_path, class: "btn btn-primary" %>
                 <% if current_user.status == "一般ユーザー" %>
@@ -43,8 +43,6 @@
                 <li><%= link_to '編集', edit_menu_path(@menu), class: "btn btn-primary" %></li>
               <% end %>
             </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
