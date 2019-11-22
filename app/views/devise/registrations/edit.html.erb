@@ -6,8 +6,8 @@
             <!-- Background image for card set in CSS! -->
         </div>
         <div class="card-body">
-          <h5 class="card-title text-center">登録</h5>
-            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <h5 class="card-title text-center">編集</h5>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put}) do |f| %>
               <%= render "devise/shared/error_messages", resource: resource %>
           <div class="form-signin">
             <label><%= f.label '名前' %></label>
@@ -43,7 +43,7 @@
             <label for="inputStatus">ステータス</label>
             <div class="form-label-group">
               <p>スタッフとして掲載希望の方は下記の記入をしてください</p>
-              <%= f.check_box :status, autofocus: true, checked_value: true, unchecked_value: false %>
+              <%= f.check_box :status, {}, "スタッフ", "一般ユーザー" %>
             </div>
 
             <div class="actions">
