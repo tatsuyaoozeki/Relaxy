@@ -31,14 +31,16 @@
                   <%= link_to 'スタッフ一覧', staffs_path, class: "hlb" %>
                 <% end %>
                 <%= link_to '投稿一覧', feeds_path, class: 'header-feed hlb' %>
+                <%= link_to 'メニュー一覧', menus_path, class: "hlb" %>
               <% end %>
             </div>
             <% if current_user.staff.present? %>
               <%= link_to 'メニュー作成', new_menu_path, class: "hlb" %>
               <%= link_to '投稿作成', new_feed_path, class: "hlb2" %>
-            <% else %>
-             <%= link_to 'メニュー一覧', menus_path, class: "hlb" %>
             <% end %>
+
+
+
             </li>
             <li class="nav-item">
               <%= link_to 'マイページ', user_path(current_user.id), class: "header-link hlb" %>
