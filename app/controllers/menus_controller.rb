@@ -1,5 +1,6 @@
 class MenusController < ApplicationController
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
     @menus = Menu.all
@@ -48,5 +49,12 @@ class MenusController < ApplicationController
 
   def menu_params
     params.require(:menu).permit(:menu_name, :time_require, :price, :menu_content)
+  end
+
+  def ensure_correct_user
+  @menu = Menu.find_by(id: params[:id])
+    if current_user.id != @menu.user_id
+      redirect_to menus_path
+    end
   end
 end

@@ -1,6 +1,7 @@
 class StaffsController < ApplicationController
   before_action :set_staff, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:show]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
     @staffs = Staff.all
@@ -65,5 +66,13 @@ class StaffsController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def ensure_correct_user
+  @staff = Staff.find_by(id: params[:id])
+    if @staff.user_id != current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to staffs_path
+    end
   end
 end

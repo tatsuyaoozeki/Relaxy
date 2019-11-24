@@ -1,6 +1,7 @@
 class FeedsController < ApplicationController
   before_action :set_feed, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:show]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
     @feeds = Feed.all.reverse
@@ -53,4 +54,13 @@ class FeedsController < ApplicationController
   def feed_params
     params.require(:feed).permit(:title, :content, :image, :image_cache)
   end
+
+  def ensure_correct_user
+  @feed = Feed.find_by(id: params[:id])
+    if current_user.id != @feed.user_id
+      redirect_to feeds_path
+    end
+  end
+
+
 end
