@@ -8,6 +8,8 @@
         <% if user_signed_in? %>
           <p class="get_word">ユーザーを登録していろんなメニューを見てみよう！</p>
           <li class="get_new"><%= link_to "Get start", new_user_registration_path, class: "btn btn-primary"%></li>
+        <% else %>
+          <p class="get_word">メニューを見て予約してしてみよう！</p>
         <% end %>
       </ul>
     </nav>
