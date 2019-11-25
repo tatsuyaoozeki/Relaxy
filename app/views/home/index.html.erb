@@ -6,10 +6,11 @@
     <nav class="get_start">
       <ul class="home">
         <% if user_signed_in? %>
-          <p class="get_word">ユーザーを登録していろんなメニューを見てみよう！</p>
-          <li class="get_new"><%= link_to "Get start", new_user_registration_path, class: "btn btn-primary"%></li>
-        <% elsif user_logged_in? %>
-          <p class="get_word">メニューを見て予約してしてみよう！</p>
+        <p class="get_word">投稿やメニューを見て予約してしてみよう！</p>
+
+        <% else %>
+        <p class="get_word">ユーザーを登録していろんなメニューを見てみよう！</p>
+        <li class="get_new"><%= link_to "Get start", new_user_registration_path, class: "btn btn-primary"%></li>
         <% end %>
       </ul>
     </nav>
