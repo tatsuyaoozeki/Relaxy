@@ -18,15 +18,45 @@
           <div class="mi-container-inner">
             <div class="mi-container-content">
               <div>
-                <ul class="mi-cont">
-                  <li class="all mif-menu-name"><%= menu.user.name %></li>
-                  <li class="all mif-menu-name"><%= menu.menu_name %></li>
-                  <li class="all mif-time_require"><%= menu.time_require %>&nbsp;分</li>
-                  <li class="all mif-price"><%= menu.price %>&nbsp;円</li>
-                  <li class="all mif-menu-content"><%= menu.menu_content %></li>
-                  <li class="f-show"><%= link_to t('.show_menu'), menu_path(menu.id), class: "btn btn-primary btn-show" %></li>
-                </ul>
+                <div class="ss-form-groups row mt-1">
+                  <label class="col-sm-4 col-form-label msl">スタッフ名</label>
+                  <div class="col-mr-sm-8">
+                    <%= menu.user.name %>
+                  </div>
+                </div>
+                <div class="ss-form-groups row mt-1">
+                  <label class="col-sm-4 col-form-label msl">メニュー名</label>
+                  <div class="col-mr-sm-8">
+                    <%= menu.menu_name %>
+                  </div>
+                </div>
+                <div class="ss-form-groups row mt-1">
+                  <label class="col-sm-4 col-form-label msl">施術時間</label>
+                  <div class="col-mr-sm-8">
+                    <%= menu.time_require %>&nbsp;分
+                  </div>
+                </div>
+
+                <div class="ss-form-groups row mt-1">
+                  <label class="col-sm-4 col-form-label msl">価格</label>
+                  <div class="col-mr-sm-8">
+                    <%= menu.price %>&nbsp;円
+                  </div>
+                </div>
+                <div class="ss-form-groups row mt-1">
+                  <label class="col-sm-4 col-form-label msl">施術内容</label>
+                  <div class="col-mr-sm-8">
+                    <%= menu.menu_content %>
+                  </div>
+                </div>
+                <div class="ms-form-groups column mt-1">
+                  <label class="col-sm-4 col-form-label msl"></label>
+                  <div class="col-mr-sm-8 m-show">
+                    <%= link_to t('.show_menu'), menu_path(menu.id), class: "btn btn-primary btn-show" %>
+                  </div>
+                </div>
               </div>
+
             <% if current_user.id == menu.user.id %>
               <%= link_to t('.show_destroy'), menu, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary mif_brn2" %>
               <%= link_to t('.show_edit'), edit_menu_path(menu), class: "btn btn-primary mif_brn1" %>

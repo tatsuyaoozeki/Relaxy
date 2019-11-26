@@ -11,17 +11,47 @@
       <% @feeds.each do |feed| %>
       <div class="f-container-inner">
         <div class="f-container-content">
-
           <div>
-            <ul class="feed-content">
+            <!-- <ul class="feed-content">
               <li><%= feed.user.name %></li>
               <li class="all"><%= feed.title %></li>
               <li class="all"><%= feed.content %></li>
               <li class="all"><%= image_tag(feed.image.url) if feed.image && feed.image.url %></li>
               <li class="f-show">
-                <%= link_to '詳細', feed_path(feed.id), class: "btn btn-primary" %>
+
               </li>
-            </ul>
+            </ul> -->
+            <div class="ss-form-groups row mt-1">
+              <label class="col-sm-4 col-form-label msl">スタッフ名</label>
+              <div class="col-mr-sm-8">
+                <%= feed.user.name %>
+              </div>
+            </div>
+            <div class="ss-form-groups row mt-1">
+              <label class="col-sm-4 col-form-label msl">タイトル</label>
+              <div class="col-mr-sm-8">
+                <%= feed.title %>
+              </div>
+            </div>
+            <div class="ss-form-groups row mt-1">
+              <label class="col-sm-4 col-form-label msl">内容</label>
+              <div class="col-mr-sm-8">
+                <%= feed.content %>
+              </div>
+            </div>
+            <div class="ss-form-groups row mt-1">
+              <label class="col-sm-4 col-form-label msl">イメージ</label>
+              <div class="col-mr-sm-8">
+                <%= image_tag(feed.image.url) if feed.image && feed.image.url %>
+              </div>
+            </div>
+            <div class="fs-form-groups mt-1">
+              <label class="col-sm-4 col-form-label msl"></label>
+              <div class="col-mr-sm-8 f-show">
+                <%= link_to '詳細', feed_path(feed.id), class: "btn btn-primary" %>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
