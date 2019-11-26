@@ -9,8 +9,7 @@ class MenusController < ApplicationController
     @result = @search.result(distinct: true)
   end
 
-  def show
-    
+  def show  
   end
 
   def new

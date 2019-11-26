@@ -1,7 +1,6 @@
 class StaffsController < ApplicationController
   before_action :set_staff, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:show]
-  # before_action :set_menu, only: [:show]
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
@@ -39,7 +38,6 @@ class StaffsController < ApplicationController
   end
 
   def destroy
-    # @staff = Staff.find(params[:id])
     @staff.destrory
     redirect_to staffs_path, notice: "スタッフ情報を削除しました"
   end
@@ -69,10 +67,6 @@ class StaffsController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
-
-  # def set_menu
-  #   @menu = Menu.find(params[:id])
-  # end
 
   def ensure_correct_user
   @staff = Staff.find_by(id: params[:id])

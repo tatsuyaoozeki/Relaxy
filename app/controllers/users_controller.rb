@@ -6,11 +6,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-
   end
 
   private
-
 
   def test
     @user = User.find(params[:id])

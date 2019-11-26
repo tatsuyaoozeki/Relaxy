@@ -12,12 +12,11 @@
         </div>
       <div class="fs-link">
         <div class="feeds-btn-wrap">
-        <% if @feed.user_id == current_user.id %>
-          <div>
-            <%= link_to '編集', edit_feed_path(@feed.id), class: "btn btn-primary mbv" %>
-          </div>
-        <% end %>
-
+          <% if @feed.user_id == current_user.id %>
+            <div>
+              <%= link_to '編集', edit_feed_path(@feed.id), class: "btn btn-primary mbv" %>
+            </div>
+          <% end %>
           <div><%= link_to '戻る', feeds_path, class: 'btn btn-primary mbw' %></div>
           <div><%= link_to 'メニュー一覧へ', menus_path, class: 'btn btn-primary mbz'%></div>
         </div>

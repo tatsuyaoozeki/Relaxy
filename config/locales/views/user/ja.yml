@@ -9,3 +9,15 @@ ja:
         status:
           true: スタッフ
           false: 一般ユーザー
+      staff:
+        content: 自己紹介
+        gender:
+          one: gender
+          true: 男性
+          false: 女性
+        gender: 性別
+  errors:
+    messages:
+      staff:
+        gender:
+          inclusion: 選択してください

@@ -10,7 +10,6 @@ class FeedsController < ApplicationController
   def show
   end
 
-
   def new
     @feed = Feed.new
   end
@@ -39,7 +38,6 @@ class FeedsController < ApplicationController
     @feed.destroy
     redirect_to @feed, notice: '投稿を削除しました'
   end
-
 
   private
 

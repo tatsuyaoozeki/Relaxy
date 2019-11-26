@@ -3,12 +3,9 @@
     <div class="mne-container">
         <h1>メニューを<%= title %></h1>
           <div class="text-center mb-4">
-
             <%= form_with(model: @menu, local: true) do |form| %>
               <% if @menu.errors.any? %>
                 <div id="error_explanation">
-
-
                   <ul>
                   <% @menu.errors.full_messages.each do |message| %>
                     <li><%= message %></li>
@@ -16,22 +13,17 @@
                   </ul>
                 </div>
               <% end %>
-
-            <!-- <div class=menu-mne>
-              <ul class="mne-content">
-                <div class="mne-menu_name"> -->
-                <div class="form-groups row mt-5">
-                  <label class="col-sm-4 col-form-label mne">メニュー名</label>
-                  <div class="col-mr-sm-8">
-                    <%= form.text_field :menu_name, class: 'form-control' %>
-                  </div>
+              <div class="form-groups row mt-5">
+                <label class="col-sm-4 col-form-label mne">メニュー名</label>
+                <div class="col-mr-sm-8">
+                  <%= form.text_field :menu_name, class: 'form-control' %>
                 </div>
-                <!-- </div> -->
+              </div>
 
-                <div class="form-groups row mt-5">
-                  <label class="col-sm-4 col-form-label mne">施術時間</label>
-                  <div class="col-mr-sm-8">
-                    <%= form.number_field :time_require, min: 30, max: 90, step: 15  %>&nbsp;分
+              <div class="form-groups row mt-5">
+                <label class="col-sm-4 col-form-label mne">施術時間</label>
+                <div class="col-mr-sm-8">
+                  <%= form.number_field :time_require, min: 30, max: 90, step: 15  %>&nbsp;分
                 </div>
               </div>
 
@@ -48,13 +40,11 @@
                   <%= form.text_area :menu_content, :size => "60x15" %>
                 </div>
               </div>
-              <!-- </ul> -->
-            <!-- </div> -->
-            <div class="feed-btn-wrap">
-              <p class="feed-btn"><%= link_to 'back', menus_path, class: "btn btn-primary" %></p>&ensp;
-              <p class="feed-btn"><%= form.submit '作成', class: 'btn btn-primary' %></p>
-            </div>
-          <% end %>
+              <div class="feed-btn-wrap">
+                <p class="feed-btn"><%= link_to 'back', menus_path, class: "btn btn-primary" %></p>&ensp;
+                <p class="feed-btn"><%= form.submit '作成', class: 'btn btn-primary' %></p>
+              </div>
+            <% end %>
         </div>
       </div>
     </div>

@@ -3,10 +3,14 @@
     <div class="sfe-container">
       <h1>スタッフ情報登録</h1>
       <%= form_with(model: @staff, local: true) do |form| %>
-        <% flash.each do |message_type, message| %>
-            <div class="alert alert-<%= message_type %>">
-              
-            </div>
+        <% if @staff.errors.any? %>
+          <div id="error_explanation">
+            <ul>
+            <% @staff.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
         <% end %>
         <div class="staff_edit">
           <ul class="sfe-content">
