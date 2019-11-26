@@ -17,10 +17,11 @@
 
         <div class="feed_edit">
           <ul class="fne-contents">
-            <li class="ne-title"><%= form.text_field :title, placeholder: "タイトル" %></li>
-            <li class="ne-content"><%= form.text_area :content, placeholder: "内容" %></li><br>
+            <li class="ne-title">タイトル<%= form.text_field :title, placeholder: "キャンペーンや空きがあるなど..." %></li>
+            <li class="ne-content">内容<%= form.text_area :content, placeholder: "得意な施術やお店の雰囲気など..." %></li><br>
             <li class="ne-sample"><%= image_tag(@feed.image.url) if @feed.image.url %></li>
-            <li class="ne-image"><%= form.file_field :image %></li>
+            <li class="ne-image">お店の画像や施術風景</li>
+            <li><%= form.file_field :image %></li>
           </ul>
         </div>
         <div class="feed-btn-wrap">

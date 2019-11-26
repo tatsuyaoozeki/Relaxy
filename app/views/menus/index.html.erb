@@ -19,9 +19,10 @@
             <div class="mi-container-content">
               <div>
                 <ul class="mi-cont">
+                  <li class="all mif-menu-name"><%= menu.user.name %></li>
                   <li class="all mif-menu-name"><%= menu.menu_name %></li>
-                  <li class="all mif-time_require"><%= menu.time_require %></li>
-                  <li class="all mif-price"><%= menu.price %></li>
+                  <li class="all mif-time_require"><%= menu.time_require %>&nbsp;分</li>
+                  <li class="all mif-price"><%= menu.price %>&nbsp;円</li>
                   <li class="all mif-menu-content"><%= menu.menu_content %></li>
                   <li class="f-show"><%= link_to t('.show_menu'), menu_path(menu.id), class: "btn btn-primary btn-show" %></li>
                 </ul>

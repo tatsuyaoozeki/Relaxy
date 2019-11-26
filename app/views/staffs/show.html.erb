@@ -39,7 +39,6 @@
 
         <ul class="staff_links">
           <% unless @staff.user_id == current_user.id %>
-              <li class="links_margin1"><%= link_to 'このスタッフのメニューを見る', menus_path(@staff.id), class:'btn btn-info' %></li>
               <li class="links_margin1"><%= render "staffs/follow_form" %></li>
           <% else %>
               <li class="links_margin1"><%= link_to 'メニュー作成', new_menu_path, class:'btn btn-info' %></li>
@@ -53,6 +52,27 @@
         </li>
         <li class="links_margin2"><%= link_to 'back', staffs_path, class: "btn btn-primary" %></li>
       </ul>
+    </div>
+  </div>
+
+  <div class="mi-contents2" id="staff_menu">
+    <div class="mi-container2">
+      <h1>メニュー</h1>
+      <% @menus.each do |menu| %>
+      <div class="mi-container-inner">
+        <div class="mi-container-content">
+          <div>
+            <ul class="mi-cont">
+              <li class="all mif-menu-name"><%= menu.menu_name %></li>
+              <li class="all mif-time_require"><%= menu.time_require %>&nbsp;分</li>
+              <li class="all mif-price"><%= menu.price %>&nbsp;円</li>
+              <li class="all mif-menu-content"><%= menu.menu_content %></li>
+              <li class="f-show"><%= link_to 'メニューの詳細', menu_path(menu.id), class: "btn btn-primary btn-show" %></li>
+            </ul>
+          </div>
+        </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

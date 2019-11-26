@@ -3,13 +3,14 @@ class MenusController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @menus = Menu.all
+    @menus = Menu.all.reverse
     @params = params[:q]
     @search = Menu.ransack(@params)
     @result = @search.result(distinct: true)
   end
 
   def show
+    
   end
 
   def new

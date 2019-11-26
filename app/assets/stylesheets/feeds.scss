@@ -197,6 +197,7 @@ ul {
   width: 300px;
 }
 
+
 input#feed_title {
   width: 800px;
   margin-bottom: 30px;
@@ -205,6 +206,7 @@ input#feed_title {
 
 .ne-content {
   height: 150px;
+  font-weight: bold;
 }
 
 textarea#feed_content {
@@ -223,6 +225,15 @@ textarea#feed_content {
   line-height: 0;
   vertical-align: bottom;
   object-fit: cover;
+}
+
+.ne-image {
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.feed-image {
+  
 }
 
 .feed-btn-wrap {

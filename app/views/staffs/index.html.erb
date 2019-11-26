@@ -15,7 +15,7 @@
                 <li class="all ui-cont"><%= staff.content %></li>
                 <!-- <li class="all ui-gender"></li> -->
                 <div class="usi-link">
-                  <li class="usi-menu"><%= link_to 'メニュー一覧へ', menus_path, class: 'btn btn-primary' %></li>
+                  <li class="usi-menu"><%= link_to 'このスタッフのメニューへ', staff_path(staff.id, anchor: 'staff_menu'), class: 'btn btn-primary' %></li>
                   <li class="usi-show"><%= link_to '詳細を確認する', staff_path(staff.id), class: 'btn btn-primary' %></li>
                 </div>
               </ul>
